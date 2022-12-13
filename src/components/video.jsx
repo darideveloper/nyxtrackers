@@ -29,6 +29,7 @@ export default function Video({ video }) {
                 }}
                 muted
                 autoPlay
+                loop
             >
                 <source
                     src={video}

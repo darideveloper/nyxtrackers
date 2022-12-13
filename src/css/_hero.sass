@@ -28,9 +28,15 @@
             display: flex
             align-items: center
 
+            &:hover .counter-icon
+                transform: scale(1.15)
+                opacity: 1
+
             .counter-icon
-                width: 60px
+                opacity: 0.6
+                width: 55px
                 margin-right: 20px
+                transition-duration: $transition-duration
 
             .separator
                 width: 3px

@@ -169,9 +169,15 @@ h1, h2, h3, h4, h5, h6, .title {
   display: flex;
   align-items: center;
 }
+#hero .counters-wrapper .counter:hover .counter-icon {
+  transform: scale(1.15);
+  opacity: 1;
+}
 #hero .counters-wrapper .counter .counter-icon {
-  width: 60px;
+  opacity: 0.6;
+  width: 55px;
   margin-right: 20px;
+  transition-duration: 0.6s;
 }
 #hero .counters-wrapper .counter .separator {
   width: 3px;
@@ -217,13 +223,21 @@ h1, h2, h3, h4, h5, h6, .title {
   align-items: flex-start;
   justify-content: flex-start;
 }
+#about .about-cards .card .content:hover .video-wrapper {
+  width: 450px;
+}
+#about .about-cards .card .content:hover p {
+  width: calc(100% - 450px - 30px);
+}
 #about .about-cards .card .content .video-wrapper {
   width: 300px;
   margin-right: 30px;
+  transition-duration: 0.6s;
 }
 #about .about-cards .card .content p {
   width: calc(100% - 300px - 30px);
   color: #E7F6F2;
+  transition-duration: 0.6s;
 }
 
 /*# sourceMappingURL=styles.css.map */
