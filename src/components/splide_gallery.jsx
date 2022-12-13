@@ -2,14 +2,11 @@ import PropTypes from 'prop-types'
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
 
-export default function SplideGallery({ images_data }) {
+export default function SplideGallery({ images_data, options }) {
     return (
         <Splide
             aria-label='Hero gallery'
-            options={{
-                wheel: true,
-                autoplay: true,
-            }}
+            options={options}
         >
             {images_data.map((image_data) => {
                 return (
@@ -32,4 +29,5 @@ export default function SplideGallery({ images_data }) {
 
 SplideGallery.propTypes = {
     images_data: PropTypes.array.isRequired,
+    options: PropTypes.object.isRequired,
 }

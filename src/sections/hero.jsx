@@ -2,14 +2,21 @@ import { hero_gallery_data, hero_counters_data } from '../api/hero'
 import SplideGallery from '../components/splide_gallery'
 import Counter from '../components/counter'
 
-export default function Hero () {
+export default function Hero() {
     return (
-        <section className='regular-width' id='hero'>
-            <SplideGallery 
+        <section
+            className='regular-width'
+            id='hero'
+        >
+            <SplideGallery
                 images_data={hero_gallery_data}
+                options={{
+                    autoplay: true,
+                    type: 'loop',
+                }}
             />
-            <div className="counters-wrapper">
-                { hero_counters_data.map((counter_data) => {
+            <div className='counters-wrapper'>
+                {hero_counters_data.map((counter_data) => {
                     return (
                         <Counter
                             key={counter_data.title}
@@ -18,7 +25,7 @@ export default function Hero () {
                             title={counter_data.title}
                         />
                     )
-                }) }
+                })}
             </div>
         </section>
     )
