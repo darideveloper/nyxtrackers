@@ -1,0 +1,155 @@
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2C3333;
+  font-family: "regular-font", sans-serif;
+}
+
+.wrapper-img {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper-img img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  font-size: 18px;
+}
+p.small {
+  font-size: 16px;
+}
+
+.hide {
+  display: none !important;
+}
+
+a {
+  text-decoration: none;
+  color: #E7F6F2;
+}
+
+.regular-width {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1300px) {
+  .regular-width {
+    padding: 0 5%;
+    width: 90%;
+  }
+}
+
+.full-width {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6, .title {
+  font-family: "title-font", cursive;
+  color: #A5C9CA;
+}
+
+*:focus {
+  outline: none;
+}
+
+.paralax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+}
+
+.shadow {
+  box-shadow: 4px 4px 30px -15px #E7F6F2;
+}
+
+.btn {
+  display: inline-block;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #A5C9CA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E7F6F2;
+  margin-top: -5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #395B64;
+}
+
+#hero .splide {
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 0 15px -5px #395B64;
+}
+#hero .splide li.splide__slide a {
+  width: 100%;
+  height: auto;
+}
+#hero .splide li.splide__slide img {
+  width: 100%;
+}
+#hero .counters-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+#hero .counters-wrapper .counter {
+  width: calc(30% - 40px);
+  margin: 0 auto;
+  background-color: #395B64;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+}
+#hero .counters-wrapper .counter .counter-icon {
+  width: 60px;
+  margin-right: 20px;
+}
+#hero .counters-wrapper .counter .separator {
+  width: 3px;
+  height: 80px;
+  margin-right: 20px;
+  background-color: #2C3333;
+}
+#hero .counters-wrapper .counter h3 {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+#hero .counters-wrapper .counter h3 .counter-number {
+  color: #E7F6F2;
+}
+#hero .counters-wrapper .counter h3 .counter-title {
+  color: #A5C9CA;
+}
+
+/*# sourceMappingURL=styles.css.map */

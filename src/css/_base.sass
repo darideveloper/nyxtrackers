@@ -1,0 +1,73 @@
+$color-a: #E7F6F2
+$color-b: #A5C9CA
+$color-c: #395B64
+$color-d: #2C3333
+$transition-duration: 0.3s
+$regular-width: 1250px
+$regular-width-media-query: $regular-width + 50px
+    
+html
+    margin: 0
+    padding: 0
+    scroll-behavior: smooth
+
+body
+    margin: 0
+    padding: 0
+    background-color: $color-d
+    font-family: 'regular-font', sans-serif
+
+.wrapper-img
+    margin: 0
+    padding: 0
+    display: flex
+    align-items: center
+    justify-content: center
+
+    img
+        margin: 0
+        padding: 0
+        width: 100%
+        height: 100%
+
+p
+    font-size: 18px
+
+    &.small
+        font-size: 16px
+
+.hide
+    display: none !important
+
+a
+    text-decoration: none
+    color: $color-a
+
+.regular-width
+    max-width: $regular-width
+    margin: 0 auto
+
+    @media screen and (max-width: $regular-width-media-query)
+        padding: 0 5%
+        width: 90%
+
+.full-width
+    max-width: 100%
+    margin: 0 auto
+
+h1, h2, h3, h4, h5, h6, .title
+    font-family: 'title-font', cursive
+    color: $color-b
+
+*:focus
+    outline: none
+
+.paralax
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    height: 600px
+
+.shadow
+    box-shadow: 4px 4px 30px -15px $color-a
