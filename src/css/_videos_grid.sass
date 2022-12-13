@@ -1,0 +1,12 @@
+#videos-grid
+    .videos
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 30px
+
+        .video-wrapper
+            padding: 20px
+            transition-duration: $transition-duration
+
+            &:hover
+                padding: 0
