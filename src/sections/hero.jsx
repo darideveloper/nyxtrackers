@@ -12,6 +12,7 @@ export default function Hero () {
                 { hero_counters_data.map((counter_data) => {
                     return (
                         <Counter
+                            key={counter_data.title}
                             icon={counter_data.icon}
                             counter={counter_data.counter}
                             title={counter_data.title}

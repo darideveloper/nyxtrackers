@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #2C3333;
-  font-family: "regular-font", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 
 .wrapper-img {
@@ -58,7 +58,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6, .title {
-  font-family: "title-font", cursive;
+  font-family: "Asap Condensed", cursive;
   color: #A5C9CA;
 }
 
@@ -76,6 +76,23 @@ h1, h2, h3, h4, h5, h6, .title {
 
 .shadow {
   box-shadow: 4px 4px 30px -15px #E7F6F2;
+}
+
+.title-separator {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.title-separator h2 {
+  font-size: 35px;
+  margin: 0;
+  margin-left: 100px;
+  background-color: #2C3333;
+  display: inline-block;
+  padding: 40px;
+  text-transform: uppercase;
+}
+.title-separator hr {
+  margin-top: -60px;
 }
 
 .btn {
@@ -118,12 +135,12 @@ h1, h2, h3, h4, h5, h6, .title {
   margin-top: 30px;
 }
 #hero .counters-wrapper .counter {
-  width: calc(30% - 40px);
+  width: calc(30% - 80px);
   margin: 0 auto;
   background-color: #395B64;
   border-radius: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   display: flex;
   align-items: center;
 }
@@ -140,16 +157,17 @@ h1, h2, h3, h4, h5, h6, .title {
 #hero .counters-wrapper .counter h3 {
   display: flex;
   flex-direction: column;
-  font-size: 25px;
+  font-size: 20px;
   margin: 0;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 #hero .counters-wrapper .counter h3 .counter-number {
   color: #E7F6F2;
 }
 #hero .counters-wrapper .counter h3 .counter-title {
   color: #A5C9CA;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=styles.css.map */
