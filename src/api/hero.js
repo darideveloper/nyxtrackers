@@ -16,8 +16,20 @@ export const hero_gallery_data = [
     },
 ]
 
-export const hero_counters_data = [
-    { icon: 'counter_icon_1.svg', counter: '120+', title: 'Customers' },
-    { icon: 'counter_icon_2.svg', counter: '3', title: 'Models' },
-    { icon: 'counter_icon_3.svg', counter: '12+', title: 'Battery hours' },
+export const hero_info_cards_data = [
+    {
+        icon: 'counter_icon_1.svg',
+        title: '120+',
+        text: 'Customers',
+    },
+    {
+        icon: 'counter_icon_2.svg',
+        title: '3',
+        text: 'Models',
+    },
+    {
+        icon: 'counter_icon_3.svg',
+        title: '12+',
+        text: 'Battery hours',
+    },
 ]

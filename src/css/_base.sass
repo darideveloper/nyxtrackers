@@ -18,19 +18,6 @@ body
     font-family: 'Overpass', sans-serif
     font-size: 16px
 
-.wrapper-img
-    margin: 0
-    padding: 0
-    display: flex
-    align-items: center
-    justify-content: center
-
-    img
-        margin: 0
-        padding: 0
-        width: 100%
-        height: 100%
-
 p
     font-size: 1rem
 
@@ -62,16 +49,6 @@ h1, h2, h3, h4, h5, h6, .title
 
 *:focus
     outline: none
-
-.paralax
-    background-attachment: fixed
-    background-position: center
-    background-repeat: no-repeat
-    background-size: cover
-    height: 600px
-
-.shadow
-    box-shadow: 4px 4px 30px -15px $color-a
 
 .title-separator
     margin-top: 80px
@@ -120,3 +97,53 @@ h1, h2, h3, h4, h5, h6, .title
         transition-duration: $transition-duration
         opacity: 0.6
         filter: blur(2px)
+
+.info-cards-wrapper
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    margin-top: 30px
+
+    .card
+        width: calc(30% - 80px)
+        margin: 0 auto
+        background-color: $color-c
+        border-radius: 30px
+        padding-left: 40px
+        padding-right: 40px
+        display: flex
+        align-items: center
+
+        &:hover .icon
+            transform: scale(1.15)
+            opacity: 1
+
+        .icon
+            opacity: 0.6
+            width: 55px
+            margin-right: 21px
+            transition-duration: $transition-duration
+
+        .separator
+            width: 3px
+            height: 80px
+            margin-right: 21px
+            background-color: $color-d
+
+        .text
+            width: calc(100% - 100px)
+            
+
+            h3
+                display: block
+                font-size: 1.25rem
+                margin: 0
+                margin-top: 20px
+                color: $color-a
+
+            p
+                display: block
+                color: $color-b
+                margin-top: 10px
+                margin-bottom: 20px

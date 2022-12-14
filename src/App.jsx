@@ -3,6 +3,7 @@ import About from './sections/about'
 import VideosGrid from './sections/videos_grid'
 import Models from './sections/models'
 import Testimonials from './sections/testimonials'
+import WhyUs from './sections/why_us'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <VideosGrid/>
       <Models/>
       <Testimonials/>
+      <WhyUs />
     </>
 
   )

@@ -1,5 +1,5 @@
-import PropsTypes from 'prop-types'
 import { testimonials_data } from '../api/testimonials'
+import { wrap_text } from '../tools/text'
 import SplideGallery from '../components/splide_gallery'
 import TitleSeparator from '../components/title_separator'
 
@@ -7,9 +7,7 @@ export default function Testimonials() {
 
     // Truncate the number of characters in the testimonial text
     testimonials_data.forEach((testimonial) => {
-        if (testimonial.text.length > 200) {
-            testimonial.text = testimonial.text.slice(0, 250) + '...'
-        }
+        testimonial.text = wrap_text(testimonial.text, 250)
     })
 
     return (
