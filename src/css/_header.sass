@@ -1,5 +1,61 @@
 #header
     
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 2
+
+    .bg
+        position: absolute
+        top: -10px
+        left: 0
+        width: 100%
+        height: calc(100% + 10px)
+        background-color: rgba($color-c, 0.8)
+        z-index: -1
+        backdrop-filter: blur(4px)
+
+    .content
+        .content-internal
+            height: 50px
+            width: 90%
+            margin: 0 auto
+            display: flex
+            align-items: center
+            justify-content: space-between
+
+            .logo
+                margin: 0
+                padding: 0
+                height: 100%
+                img
+                    height: 100%
+                    width: auto
+
+            nav
+                ul
+                    margin: 0
+                    padding: 0
+                    display: flex
+                    align-items: center
+                    justify-content: flex-end
+
+                li
+                    list-style: none
+
+                    &:hover a
+                        color: $color-b
+                        font-size: 0.9rem
+
+                    a
+                        transition-duration: $transition-duration
+                        color: $color-a
+                        padding: 10px 20px
+                        margin: 5px
+                        font-size: 0.8rem
+
+
 
     // @media screen and (max-width: $regular-width-media-query)
         
