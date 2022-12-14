@@ -1,0 +1,69 @@
+#models
+    .models-wrapper
+        width: 60%
+        margin: 0 auto
+
+        .card
+            margin-top: 30px
+            border-radius: 10px
+            border: 4px solid $color-c
+
+
+            header
+                background-color: $color-c
+                display: flex
+                align-items: center
+                justify-content: center
+
+                span
+                    color: $color-b
+                    padding: 5px 10px
+                    display: inline-block
+                    font-size: 0.8rem
+
+            .content
+                display: flex
+                align-items: center
+                justify-content: center
+                padding: 20px
+
+                img
+                    width: 40%
+                    height: auto
+
+                .info
+                    width: 60%
+                    display: flex
+                    align-items: flex-start
+                    justify-content: center
+                    flex-direction: column
+
+                    h3
+                        font-size: 1.5rem
+                        color: $color-b
+                        margin: 0
+                        margin-bottom: 10px
+
+                    .price
+                        font-size: 1.2rem
+                        color: $color-a
+                        margin-left: 20px
+
+                    .features
+                        margin: 10px 0
+
+                        li
+                            list-style: none
+                            margin: 10px 0
+                            color: rgba($color-b, 0.8)
+
+                            &:before
+                                content: '•'
+                                color: rgba($color-b, 0.8)
+                                font-weight: bold
+                                display: inline-block
+                                width: 1rem
+                                margin-left: -1rem
+
+                    .btn
+                        width: calc(100% - 60px)

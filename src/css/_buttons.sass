@@ -1,8 +1,18 @@
 .btn
     display: inline-block
+    cursor: pointer
 
-    // &.cta
+    &.text
+        padding: 15px 30px
+        border-radius: 100px
+        text-align: center
+        background-color: $color-d
+        box-shadow: 0 0 10px 0px rgba($color-b, 0.5)
+        transition-duration: $transition-duration
 
-    //     &:hover
+        &:hover
+            box-shadow: 0 0 0px 0px rgba($color-a, 0)
+            background: $color-c
 
-    //     &:active
+        &:active
+            background: rgba($color-c, 0.5)

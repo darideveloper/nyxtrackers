@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   margin: 0;
   padding: 0;
@@ -9,6 +10,7 @@ body {
   padding: 0;
   background-color: #2C3333;
   font-family: "Overpass", sans-serif;
+  font-size: 16px;
 }
 
 .wrapper-img {
@@ -127,6 +129,22 @@ h1, h2, h3, h4, h5, h6, .title {
 
 .btn {
   display: inline-block;
+  cursor: pointer;
+}
+.btn.text {
+  padding: 15px 30px;
+  border-radius: 100px;
+  text-align: center;
+  background-color: #2C3333;
+  box-shadow: 0 0 10px 0px rgba(165, 201, 202, 0.5);
+  transition-duration: 0.6s;
+}
+.btn.text:hover {
+  box-shadow: 0 0 0px 0px rgba(231, 246, 242, 0);
+  background: #395B64;
+}
+.btn.text:active {
+  background: rgba(57, 91, 100, 0.5);
 }
 
 ::-webkit-scrollbar {
@@ -256,6 +274,75 @@ h1, h2, h3, h4, h5, h6, .title {
 }
 #videos-grid .videos .video-wrapper:hover {
   padding: 0;
+}
+
+#models .models-wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+#models .models-wrapper .card {
+  margin-top: 30px;
+  border-radius: 10px;
+  border: 4px solid #395B64;
+}
+#models .models-wrapper .card header {
+  background-color: #395B64;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#models .models-wrapper .card header span {
+  color: #A5C9CA;
+  padding: 5px 10px;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+#models .models-wrapper .card .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#models .models-wrapper .card .content img {
+  width: 40%;
+  height: auto;
+}
+#models .models-wrapper .card .content .info {
+  width: 60%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+#models .models-wrapper .card .content .info h3 {
+  font-size: 1.5rem;
+  color: #A5C9CA;
+  margin: 0;
+  margin-bottom: 10px;
+}
+#models .models-wrapper .card .content .info .price {
+  font-size: 1.2rem;
+  color: #E7F6F2;
+  margin-left: 20px;
+}
+#models .models-wrapper .card .content .info .features {
+  margin: 10px 0;
+}
+#models .models-wrapper .card .content .info .features li {
+  list-style: none;
+  margin: 10px 0;
+  color: rgba(165, 201, 202, 0.8);
+}
+#models .models-wrapper .card .content .info .features li:before {
+  content: "•";
+  color: rgba(165, 201, 202, 0.8);
+  font-weight: bold;
+  display: inline-block;
+  width: 1rem;
+  margin-left: -1rem;
+}
+#models .models-wrapper .card .content .info .btn {
+  width: calc(100% - 60px);
 }
 
 /*# sourceMappingURL=styles.css.map */

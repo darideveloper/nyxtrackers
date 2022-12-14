@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import Hero from './sections/hero'
 import About from './sections/about'
 import VideosGrid from './sections/videos_grid'
+import Models from './sections/models'
 
 function App() {
 
@@ -10,6 +10,7 @@ function App() {
       <Hero/>
       <About/>
       <VideosGrid/>
+      <Models/>
     </>
 
   )
