@@ -5,6 +5,7 @@ import Models from './sections/models'
 import Testimonials from './sections/testimonials'
 import WhyUs from './sections/why_us'
 import Footer from './sections/footer'
+import Socials from './sections/socials'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <Testimonials/>
       <WhyUs />
       <Footer />
+      <Socials />
     </>
 
   )

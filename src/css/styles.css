@@ -351,6 +351,36 @@ h1, h2, h3, h4, h5, h6, .title {
   height: 150px;
 }
 
+#socials {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #A5C9CA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 10px 0;
+}
+#socials a {
+  transition-duration: 0.6s;
+  opacity: 0.6;
+}
+#socials a:hover {
+  opacity: 1;
+}
+#socials a:hover img {
+  width: 35px;
+}
+#socials a img {
+  transition-duration: 0.6s;
+  width: 20px;
+  padding: 10px;
+}
+
 #footer {
   background-color: rgba(57, 91, 100, 0.8);
   margin-top: 50px;

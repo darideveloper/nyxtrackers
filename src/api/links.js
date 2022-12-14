@@ -15,14 +15,14 @@ export const payments_data = [
 
 export const links_socials_data = [
     {
-        title: 'Instagram',
-        link: 'https://www.instagram.com/nyxtrackers/',
-        image: 'instagram.png',
-    },
-    {
         title: 'Discord',
         link: 'https://discord.gg/nyxtrackers',
-        image: 'discord.png',
+        image: 'social_1.svg',
+    },
+    {
+        title: 'Instagram',
+        link: 'https://www.instagram.com/nyxtrackers/',
+        image: 'social_2.svg',
     },
 ]
 
