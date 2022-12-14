@@ -28,10 +28,10 @@ body {
 }
 
 p {
-  font-size: 18px;
+  font-size: 1rem;
 }
 p.small {
-  font-size: 16px;
+  font-size: 0.8rem;
 }
 
 .hide {
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6, .title {
   margin-bottom: 60px;
 }
 .title-separator h2 {
-  font-size: 35px;
+  font-size: 2.2rem;
   margin: 0;
   margin-left: 100px;
   background-color: #2C3333;
@@ -213,7 +213,7 @@ h1, h2, h3, h4, h5, h6, .title {
 #hero .counters-wrapper .counter h3 {
   display: flex;
   flex-direction: column;
-  font-size: 20px;
+  font-size: 1.25rem;
   margin: 0;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -237,7 +237,7 @@ h1, h2, h3, h4, h5, h6, .title {
   display: block;
   width: calc(100% - 15px);
   background-color: #395B64;
-  font-size: 25px;
+  font-size: 1.6rem;
   text-transform: capitalize;
   padding-top: 5px;
   padding-bottom: 5px;
