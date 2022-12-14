@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Loading from './sections/loading'
 import Header from './sections/header'
 import Hero from './sections/hero'
@@ -11,12 +12,13 @@ import Socials from './sections/socials'
 import { sleep } from './tools/events'
 
 function App() {
-    
 
-    window.addEventListener('load', async () => {
-        await sleep(5)
-        document.getElementById('loading').style.display = 'none'
-    })
+    // Wait for the page to load before removing the loading screen
+    useEffect(() => {
+        sleep(5).then(() => {
+            document.getElementById('loading').style.display = 'none'
+        })
+    }, [])
 
     return (
         <>

@@ -55,7 +55,50 @@
                         margin: 5px
                         font-size: 0.8rem
 
+            .btn.display
+                height: 100%
+                display: none
 
+                img
+                    height: 80%
+                    width: auto
 
-    // @media screen and (max-width: $regular-width-media-query)
-        
+    @media screen and (max-width: 766px)
+
+        .content
+            .content-internal
+                width: 100%
+                height: 60px
+
+                .btn.display
+                    display: block
+
+                nav
+                    position: absolute
+                    right: 0
+                    top: 60px
+                    margin: 0
+                    height: 100vh
+                    transition-duration: $transition-duration
+
+                    ul
+                        padding: 40px
+                        padding-bottom: 0
+                        flex-direction: column
+                        background-color: rgba($color-c, 0.8)
+                        align-items: flex-start
+                        justify-content: flex-start
+                        height: 100%
+
+                        li
+
+                            a
+                                font-size: 1.5rem
+                                padding: 20px 0
+                                display: inline-block
+
+        &.clossed .content .content-internal
+            nav
+                right: -300px
+
+            

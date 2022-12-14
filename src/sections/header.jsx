@@ -1,6 +1,23 @@
+import { useState } from "react"
+
 export default function Header () {
+
+    const [headerClass, setHeaderClass] = useState('clossed')
+    const [image_button, setImageButton] = useState('menu_opened_icon.svg')
+
+    function toggleMenu () {
+        if (headerClass === 'clossed') {
+            setHeaderClass('opened')
+            setImageButton('menu_clossed_icon.svg')
+        } else {
+            setHeaderClass('clossed')
+            setImageButton('menu_opened_icon.svg')
+        }
+    }
+
+
     return (
-        <header className="clossed" id="header">
+        <header className={`${headerClass} header`} id="header">
             <div className="bg"></div>
             <div className="content regular-width">
                 <div className="content-internal">
@@ -16,11 +33,9 @@ export default function Header () {
                             <li><a href="#why-us">Why us</a></li>
                         </ul>
                     </nav>
-                    {/* <button className "btn display">
-                        <svg>
-                            <use xlink:href="#svg-arrow"></use>
-                        </svg>
-                    </button> */}
+                    <button className="btn display" onClick={toggleMenu}>
+                        <img src={image_button} alt={`header menu ${headerClass} icon`} />
+                    </button>
                 </div>
             </div>
         </header>

@@ -11,6 +11,7 @@ body {
   background-color: #2C3333;
   font-family: "Overpass", sans-serif;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 p {
@@ -156,6 +157,8 @@ h1, h2, h3, h4, h5, h6, .title {
 .btn {
   display: inline-block;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 .btn.text {
   padding: 15px 30px;
@@ -243,6 +246,48 @@ h1, h2, h3, h4, h5, h6, .title {
   padding: 10px 20px;
   margin: 5px;
   font-size: 0.8rem;
+}
+#header .content .content-internal .btn.display {
+  height: 100%;
+  display: none;
+}
+#header .content .content-internal .btn.display img {
+  height: 80%;
+  width: auto;
+}
+@media screen and (max-width: 766px) {
+  #header .content .content-internal {
+    width: 100%;
+    height: 60px;
+  }
+  #header .content .content-internal .btn.display {
+    display: block;
+  }
+  #header .content .content-internal nav {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    margin: 0;
+    height: 100vh;
+    transition-duration: 0.6s;
+  }
+  #header .content .content-internal nav ul {
+    padding: 40px;
+    padding-bottom: 0;
+    flex-direction: column;
+    background-color: rgba(57, 91, 100, 0.8);
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+  }
+  #header .content .content-internal nav ul li a {
+    font-size: 1.5rem;
+    padding: 20px 0;
+    display: inline-block;
+  }
+  #header.clossed .content .content-internal nav {
+    right: -300px;
+  }
 }
 
 #loading {
