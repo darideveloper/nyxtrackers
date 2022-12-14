@@ -93,11 +93,10 @@ h1, h2, h3, h4, h5, h6, .title
 
 .video-wrapper
     position: relative
-    filter: grayscale(80%)
-    transition-duration: $transition-duration
-
-    &:hover
-        filter: grayscale(0%)
+    
+    &:hover video
+        opacity: 1
+        filter: blur(0)
 
 
     .play-icon
@@ -107,7 +106,7 @@ h1, h2, h3, h4, h5, h6, .title
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-        opacity: 0.4
+        opacity: 0.8
         display: flex
         align-items: center
         justify-content: center
@@ -118,3 +117,6 @@ h1, h2, h3, h4, h5, h6, .title
 
     video
         width: 100%
+        transition-duration: $transition-duration
+        opacity: 0.6
+        filter: blur(2px)
