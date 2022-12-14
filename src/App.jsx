@@ -4,6 +4,7 @@ import VideosGrid from './sections/videos_grid'
 import Models from './sections/models'
 import Testimonials from './sections/testimonials'
 import WhyUs from './sections/why_us'
+import Footer from './sections/footer'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Models/>
       <Testimonials/>
       <WhyUs />
+      <Footer />
     </>
 
   )

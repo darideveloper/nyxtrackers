@@ -351,4 +351,50 @@ h1, h2, h3, h4, h5, h6, .title {
   height: 150px;
 }
 
+#footer {
+  background-color: rgba(57, 91, 100, 0.8);
+  margin-top: 50px;
+  padding-top: 50px;
+}
+#footer .content .content-internal {
+  width: 80%;
+  margin: 0 auto;
+}
+#footer .content .content-internal a, #footer .content .content-internal p {
+  color: #E7F6F2;
+}
+#footer .content .content-internal a:hover {
+  color: #A5C9CA;
+}
+#footer .content .content-internal .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#footer .content .content-internal .top a {
+  padding: 0px 20px;
+  display: inline-block;
+}
+#footer .content .content-internal .top a:first-child {
+  padding-left: 0;
+}
+#footer .content .content-internal .top a:last-child {
+  padding-right: 0;
+}
+#footer .content .content-internal hr {
+  margin: 20px 0;
+}
+#footer .content .content-internal .buttom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#footer .content .content-internal .buttom address, #footer .content .content-internal .buttom p, #footer .content .content-internal .buttom a {
+  font-size: 0.8rem;
+}
+#footer .content .content-internal .buttom img {
+  height: 30px;
+  margin: 10px;
+}
+
 /*# sourceMappingURL=styles.css.map */

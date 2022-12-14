@@ -1,5 +1,46 @@
 #footer
-    
+    background-color: rgba($color-c, 0.8)
+    margin-top: 50px
+    padding-top: 50px
 
-    // @media screen and (max-width: $regular-width-media-query)
-        
+    .content
+
+        .content-internal
+            width: 80%
+            margin: 0 auto
+
+            a, p
+                color: $color-a
+
+            a:hover
+                color: $color-b
+
+            .top
+                display: flex
+                align-items: center
+                justify-content: space-between
+
+                a
+                    padding: 0px 20px
+                    display: inline-block
+
+                    &:first-child
+                        padding-left: 0
+
+                    &:last-child
+                        padding-right: 0
+
+            hr
+                margin: 20px 0
+
+            .buttom
+                display: flex
+                align-items: center
+                justify-content: space-between
+
+                address, p, a
+                    font-size: 0.8rem
+
+                img
+                    height: 30px
+                    margin: 10px
