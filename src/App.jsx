@@ -6,22 +6,30 @@ import Testimonials from './sections/testimonials'
 import WhyUs from './sections/why_us'
 import Footer from './sections/footer'
 import Socials from './sections/socials'
+import Loading from './sections/loading'
+import { sleep } from './tools/events'
 
 function App() {
+    
 
-  return (
-    <>
-      <Hero/>
-      <About/>
-      <VideosGrid/>
-      <Models/>
-      <Testimonials/>
-      <WhyUs />
-      <Footer />
-      <Socials />
-    </>
+    window.addEventListener('load', async () => {
+        await sleep(5)
+        document.getElementById('loading').style.display = 'none'
+    })
 
-  )
+    return (
+        <>
+            <Loading />
+            <Hero />
+            <About />
+            <VideosGrid />
+            <Models />
+            <Testimonials />
+            <WhyUs />
+            <Footer />
+            <Socials />
+        </>
+    )
 }
 
 export default App

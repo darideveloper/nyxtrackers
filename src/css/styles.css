@@ -189,6 +189,40 @@ h1, h2, h3, h4, h5, h6, .title {
   background: #395B64;
 }
 
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #2C3333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#loading img {
+  width: 30%;
+  border-radius: 50px;
+  animation-name: logo;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes logo {
+  0% {
+    opacity: 0;
+    width: 30%;
+  }
+  80% {
+    opacity: 1;
+    width: 40%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 #hero .splide {
   width: 80%;
   margin: 0 auto;
