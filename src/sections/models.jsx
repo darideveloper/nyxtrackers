@@ -1,5 +1,5 @@
 import { models_data } from '../api/models'
-import TitleSeparator from '../components/title-separator'
+import TitleSeparator from '../components/title_separator'
 import BuyCard from '../components/buy_card'
 
 export default function Models () {

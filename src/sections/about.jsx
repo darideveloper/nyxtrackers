@@ -1,6 +1,6 @@
 import { about_cards_data } from '../api/about'
-import TitleSeparator from '../components/title-separator'
-import DetailsCard from '../components/details-card'
+import TitleSeparator from '../components/title_separator'
+import DetailsCard from '../components/details_card'
 
 export default function About() {
     return (

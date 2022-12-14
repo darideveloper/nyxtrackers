@@ -347,4 +347,28 @@ h1, h2, h3, h4, h5, h6, .title {
   width: calc(100% - 60px);
 }
 
+#testimonials li.splide__slide .content {
+  background-color: #395B64;
+  margin: 30px;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+#testimonials li.splide__slide .content p {
+  margin: 0;
+  padding: 0;
+  color: rgba(231, 246, 242, 0.6);
+}
+#testimonials li.splide__slide .content img {
+  border-radius: 50%;
+  margin: 0;
+}
+#testimonials li.splide__slide .content h3 {
+  font-size: 1.4rem;
+  margin: 15px 0;
+}
+
 /*# sourceMappingURL=styles.css.map */

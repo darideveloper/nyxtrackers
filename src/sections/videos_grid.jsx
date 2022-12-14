@@ -1,6 +1,6 @@
 import { videos_data } from '../api/videos'
 import Video from '../components/video'
-import TitleSeparator from '../components/title-separator'
+import TitleSeparator from '../components/title_separator'
 
 
 export default function VideosGrid () {
