@@ -420,8 +420,9 @@ h1, h2, h3, h4, h5, h6, .title {
   padding: 20px;
 }
 #models .models-wrapper .card .content img {
-  width: 40%;
+  width: calc(40% - 80px);
   height: auto;
+  padding: 20px;
 }
 #models .models-wrapper .card .content .info {
   width: 60%;

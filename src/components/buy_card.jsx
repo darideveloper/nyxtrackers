@@ -13,7 +13,7 @@ export default function BuyCard ({name, is_new, is_available, image, price, feat
                 <div className="separator"></div>
                 <div className="info">
                     <h3>{name}</h3>
-                    <span className="price">$ {price} usd</span>
+                    <span className="price"> {price} €</span>
                     <ul className="features">
                         {features.map((feature, index) => (
                             <li key={index}>{feature}</li>
