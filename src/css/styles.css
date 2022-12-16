@@ -365,7 +365,7 @@ h1, h2, h3, h4, h5, h6, .title {
 #about .about-cards .card .content:hover .video-wrapper {
   width: 450px;
 }
-#about .about-cards .card .content:hover p {
+#about .about-cards .card .content:hover .texts {
   width: calc(100% - 450px - 30px);
 }
 #about .about-cards .card .content .video-wrapper {
@@ -373,7 +373,7 @@ h1, h2, h3, h4, h5, h6, .title {
   margin-right: 30px;
   transition-duration: 0.6s;
 }
-#about .about-cards .card .content p {
+#about .about-cards .card .content .texts {
   width: calc(100% - 300px - 30px);
   color: #E7F6F2;
   transition-duration: 0.6s;

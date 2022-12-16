@@ -17,7 +17,7 @@ export default function About() {
                             key={about_card.title}
                             title={about_card.title}
                             video={about_card.video}
-                            text={about_card.text}
+                            texts={about_card.texts}
                         />
                     )
                 })}

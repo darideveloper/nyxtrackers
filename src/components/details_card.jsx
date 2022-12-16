@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types'
 import Video from './video'
 
-export default function DetailsCard ({ title, video, text }) {
+export default function DetailsCard ({ title, video, texts }) {
     return (
         <div className='details-card card'>
             <h3>{title}</h3>
             <div className="content">
                 <Video video={video} />
-                <p>{text}</p>
+                <div className="texts">
+                    {texts.map ((text, index) => (
+                        <p key={index}>{text}</p>
+                    ))}
+                </div>
             </div>
         </div>
     )
@@ -16,5 +20,5 @@ export default function DetailsCard ({ title, video, text }) {
 DetailsCard.propTypes = {
     title: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
+    texts: PropTypes.array.isRequired,
 }
