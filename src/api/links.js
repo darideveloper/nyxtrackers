@@ -16,7 +16,7 @@ export const payments_data = [
 export const links_socials_data = [
     {
         title: 'Discord',
-        link: 'https://discord.gg/nyxtrackers',
+        link: 'https://discord.com/invite/YSYyDpeF8R',
         image: 'social_1.svg',
     },
     {
@@ -26,15 +26,4 @@ export const links_socials_data = [
     },
 ]
 
-export const links_legal_data = [
-    {
-        title: 'Terms of Service',
-        link: 'https://www.google.com',
-    },
-    {
-        title: 'Privacy Policy',
-        link: 'https://www.google.com',
-    },
-]
-
-export const contact_email = "support-nyctrackers@gmail.com"
+export const contact_email = "Nyxtrackers@gmail.com"

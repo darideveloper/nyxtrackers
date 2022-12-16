@@ -1,4 +1,4 @@
-import { payments_data, links_socials_data, links_legal_data, contact_email } from "../api/links"
+import { payments_data, links_socials_data, contact_email } from "../api/links"
 
 export default function Footer () {
     return (
@@ -12,9 +12,7 @@ export default function Footer () {
                             ))}
                         </section>
                         <section className="right">
-                            {links_legal_data.map ((legal, index) => (
-                                <a href={legal.link} key={index}>{legal.title}</a>
-                            ))}
+                            
                         </section>
                     </section>
                     <hr />
