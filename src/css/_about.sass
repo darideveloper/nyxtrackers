@@ -40,3 +40,48 @@
                     color: $color-a
                     transition-duration: $transition-duration
 
+    @media screen and (max-width: 900px)
+        .about-cards
+            width: 100%
+
+    @media screen and (max-width: 900px)
+        .about-cards
+
+            .card
+                .content
+                    flex-direction: column
+                    align-items: center
+
+                    .video-wrapper
+                        width: 60%
+                        margin-right: 0
+                    
+                    .texts
+                        width: 80%
+
+                    &:hover
+                        .video-wrapper
+                            width: 80%
+                        
+                        .texts
+                            width: 80%
+
+    @media screen and (max-width: 500px)
+        .about-cards
+
+            .card
+                .content
+
+                    .video-wrapper
+                        width: 80%
+                    
+                    .texts
+                        width: 100%
+
+                    &:hover
+                        .video-wrapper
+                            width: 100%
+                        
+                        .texts
+                            width: 100%
+

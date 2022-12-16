@@ -10,14 +10,18 @@ html
     margin: 0
     padding: 0
     scroll-behavior: smooth
+    font-size: 16px
+
+    @media screen and (max-width: 700px)
+        font-size: 12px
 
 body
     margin: 0
     padding: 0
     background-color: $color-d
     font-family: 'Overpass', sans-serif
-    font-size: 16px
     overflow-x: hidden
+
 
 p
     font-size: 1rem
@@ -68,6 +72,16 @@ h1, h2, h3, h4, h5, h6, .title
 
     hr
         margin-top: -20px
+
+    @media screen and (max-width: 700px)
+        h2
+            text-align: center
+            margin: 0
+            width: 100%
+            padding: 0
+
+        hr
+            display: none
 
 .video-wrapper
     position: relative
