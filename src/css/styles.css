@@ -153,6 +153,19 @@ h1, h2, h3, h4, h5, h6, .title {
   margin-top: 10px;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 900px) {
+  .info-cards-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .info-cards-wrapper .card {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .info-cards-wrapper .card {
+    width: 80%;
+  }
+}
 
 .btn {
   display: inline-block;
@@ -338,6 +351,11 @@ h1, h2, h3, h4, h5, h6, .title {
 }
 #hero .splide li.splide__slide img {
   width: 100%;
+}
+@media screen and (max-width: 900px) {
+  #hero .splide {
+    width: 100%;
+  }
 }
 
 #about .about-cards {

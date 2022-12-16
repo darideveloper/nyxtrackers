@@ -146,3 +146,14 @@ h1, h2, h3, h4, h5, h6, .title
                 color: $color-b
                 margin-top: 10px
                 margin-bottom: 20px
+
+    @media screen and (max-width: 900px)
+        grid-template-columns: repeat(1, 1fr)
+
+        .card
+            width: 60%
+
+    @media screen and (max-width: 500px)
+
+        .card
+            width: 80%
