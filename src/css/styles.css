@@ -548,6 +548,31 @@ h1, h2, h3, h4, h5, h6, .title {
 #models .models-wrapper .card .content .info .btn {
   width: calc(100% - 60px);
 }
+@media screen and (max-width: 1200px) {
+  #models .models-wrapper {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 800px) {
+  #models .models-wrapper {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  #models .models-wrapper .card .content {
+    flex-direction: column;
+  }
+  #models .models-wrapper .card .content img {
+    width: 80%;
+  }
+  #models .models-wrapper .card .content .info {
+    width: 100%;
+  }
+  #models .models-wrapper .card .content .info h3, #models .models-wrapper .card .content .info .price {
+    text-align: center;
+    width: 100%;
+  }
+}
 
 #testimonials li.splide__slide .content {
   background-color: #395B64;

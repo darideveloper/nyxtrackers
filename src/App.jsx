@@ -28,7 +28,7 @@ function App() {
                 <Hero />
                 <About />
                 <VideosGrid />
-                {/* <Models /> */}
+                <Models />
                 {/* <Testimonials /> */}
                 {/* <WhyUs /> */}
             </main>
