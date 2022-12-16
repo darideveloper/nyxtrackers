@@ -99,14 +99,14 @@ h1, h2, h3, h4, h5, h6, .title
         filter: blur(2px)
 
 .info-cards-wrapper
-    display: flex
-    align-items: center
-    justify-content: center
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
     width: 100%
     margin-top: 30px
+    gap: 30px
 
     .card
-        width: calc(30% - 80px)
+        width: calc(100% - 80px)
         margin: 0 auto
         background-color: $color-c
         border-radius: 30px
@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6, .title
 
         .separator
             width: 3px
-            height: 80px
+            height: 80%
             margin-right: 21px
             background-color: $color-d
 

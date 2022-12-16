@@ -105,14 +105,14 @@ h1, h2, h3, h4, h5, h6, .title {
 }
 
 .info-cards-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
   margin-top: 30px;
+  gap: 30px;
 }
 .info-cards-wrapper .card {
-  width: calc(30% - 80px);
+  width: calc(100% - 80px);
   margin: 0 auto;
   background-color: #395B64;
   border-radius: 30px;
@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5, h6, .title {
 }
 .info-cards-wrapper .card .separator {
   width: 3px;
-  height: 80px;
+  height: 80%;
   margin-right: 21px;
   background-color: #2C3333;
 }
@@ -484,10 +484,6 @@ h1, h2, h3, h4, h5, h6, .title {
 #testimonials li.splide__slide .content h3 {
   font-size: 1.4rem;
   margin: 15px 0;
-}
-
-#why-us .info-cards-wrapper .card {
-  height: 150px;
 }
 
 #socials {
