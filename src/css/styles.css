@@ -463,6 +463,21 @@ h1, h2, h3, h4, h5, h6, .title {
 #videos-grid .videos .video-wrapper:hover {
   padding: 0;
 }
+@media screen and (max-width: 1200px) {
+  #videos-grid .videos {
+    grid-gap: 10px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  #videos-grid .videos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 700px) {
+  #videos-grid .videos {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 #models .models-wrapper {
   width: 60%;
