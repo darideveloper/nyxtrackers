@@ -592,10 +592,21 @@ h1, h2, h3, h4, h5, h6, .title {
 #testimonials li.splide__slide .content img {
   border-radius: 50%;
   margin: 0;
+  width: 100px;
 }
 #testimonials li.splide__slide .content h3 {
   font-size: 1.4rem;
   margin: 15px 0;
+}
+@media screen and (max-width: 900px) {
+  #testimonials li.splide__slide .content {
+    margin: 10px;
+    padding: 10px;
+  }
+}
+
+#why-us .info-cards-wrapper {
+  display: block;
 }
 
 #socials {
