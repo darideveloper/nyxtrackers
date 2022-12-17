@@ -2,17 +2,17 @@ export const hero_gallery_data = [
     {
         image: 'hero_gallery_1.png',
         alt: 'Image 1',
-        link: 'https://www.darideveloper.com/',
+        link: 'https://discord.com/invite/YSYyDpeF8R',
     },
     {
         image: 'hero_gallery_2.png',
         alt: 'Image 2',
-        link: 'https://www.darideveloper.com/',
+        link: 'https://discord.com/invite/YSYyDpeF8R',
     },
     {
         image: 'hero_gallery_3.png',
         alt: 'Image 3',
-        link: 'https://www.darideveloper.com/',
+        link: 'https://discord.com/invite/YSYyDpeF8R',
     },
 ]
 
