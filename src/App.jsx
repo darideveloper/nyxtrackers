@@ -23,7 +23,7 @@ function App() {
     return (
         <>
             <Header />
-            {/* <Loading /> */}
+            <Loading />
             <main>
                 <Hero />
                 <About />
@@ -32,8 +32,8 @@ function App() {
                 <Testimonials />
                 <WhyUs />
             </main>
-            {/* <Footer /> */}
-            {/* <Socials /> */}
+            <Footer />
+            <Socials />
         </>
     )
 }

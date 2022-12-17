@@ -680,5 +680,30 @@ h1, h2, h3, h4, h5, h6, .title {
   height: 30px;
   margin: 10px;
 }
+@media screen and (max-width: 550px) {
+  #footer {
+    padding-top: 20px;
+  }
+  #footer .content .content-internal {
+    width: 100%;
+  }
+  #footer .content .content-internal .top {
+    flex-direction: column;
+    align-items: center;
+  }
+  #footer .content .content-internal .top a {
+    padding: 10px;
+  }
+  #footer .content .content-internal .buttom {
+    flex-direction: column;
+    align-items: center;
+  }
+  #footer .content .content-internal .buttom address, #footer .content .content-internal .buttom p, #footer .content .content-internal .buttom a {
+    text-align: center;
+  }
+  #footer .content .content-internal .buttom img {
+    margin: 10px;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
