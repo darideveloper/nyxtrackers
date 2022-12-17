@@ -19,11 +19,6 @@ export const links_socials_data = [
         link: 'https://discord.com/invite/YSYyDpeF8R',
         image: 'social_1.svg',
     },
-    {
-        title: 'Instagram',
-        link: 'https://www.instagram.com/nyxtrackers/',
-        image: 'social_2.svg',
-    },
 ]
 
 export const contact_email = "Nyxtrackers@gmail.com"

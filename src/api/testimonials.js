@@ -19,9 +19,4 @@ export const testimonials_data = [
         user: "Sphovi",
         text: 'I can twerk now, but for real, they work great!',
     },
-    {
-        image: 'user_5.png',
-        user: "John Doe 1",
-        text: 'Texto de ejemplo jhdwsf dfhbjsdfjhsdfasdfh safdjhsfad sdfjhk',
-    },
 ]
