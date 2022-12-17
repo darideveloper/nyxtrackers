@@ -30,7 +30,7 @@ function App() {
                 <VideosGrid />
                 <Models />
                 <Testimonials />
-                {/* <WhyUs /> */}
+                <WhyUs />
             </main>
             {/* <Footer /> */}
             {/* <Socials /> */}
