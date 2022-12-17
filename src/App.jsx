@@ -14,11 +14,11 @@ import { sleep } from './tools/events'
 function App() {
 
     // Wait for the page to load before removing the loading screen
-    // useEffect(() => {
-    //     sleep(5).then(() => {
-    //         document.getElementById('loading').style.display = 'none'
-    //     })
-    // }, [])
+    useEffect(() => {
+        sleep(5).then(() => {
+            document.getElementById('loading').style.display = 'none'
+        })
+    }, [])
 
     return (
         <>
