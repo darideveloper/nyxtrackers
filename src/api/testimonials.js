@@ -11,12 +11,17 @@ export const testimonials_data = [
     },
     {
         image: 'user_3.png',
-        user: "Marx",
-        text: 'Texto de ejemplo jhdwsf dfhbjsdfjhsdfasdfh safdjhsfad sdfjhk',
+        user: "Akane",
+        text: 'Amazing build quality and awesome personalization, I love my trackers!',
     },
     {
         image: 'user_4.png',
         user: "Sphovi",
         text: 'I can twerk now, but for real, they work great!',
+    },
+    {
+        image: 'user_5.png',
+        user: "クリス",
+        text: 'Doubted about it at first but everything went great!. Now I have customized red trackers! they are beautiful!!',
     },
 ]

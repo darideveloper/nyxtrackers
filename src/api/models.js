@@ -44,7 +44,7 @@ export const models_data = [
         name: 'ELITE set of Nyxtrackers 10 point fbt',
         is_new: true,
         is_available: true,
-        image: 'model_3.png',
+        image: 'model_4.png',
         price: 420,
         features: [
             'ALL ABOVE',
