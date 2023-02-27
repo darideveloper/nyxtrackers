@@ -407,10 +407,20 @@ h1, h2, h3, h4, h5, h6, .title {
   margin-right: 30px;
   transition-duration: 0.6s;
 }
-#about .about-cards .card .content .texts {
+#about .about-cards .card .content .text-chibis {
   width: calc(100% - 300px - 30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#about .about-cards .card .content .text-chibis .text {
   color: #E7F6F2;
   transition-duration: 0.6s;
+}
+#about .about-cards .card .content .text-chibis .chibi {
+  width: 80px;
+  padding: 15px;
 }
 @media screen and (max-width: 900px) {
   #about .about-cards {

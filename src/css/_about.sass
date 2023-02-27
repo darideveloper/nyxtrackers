@@ -28,17 +28,26 @@
                     .texts
                         width: calc(100% - 450px - 30px)
 
-    
-
                 .video-wrapper
                     width: 300px
                     margin-right: 30px
                     transition-duration: $transition-duration
 
-                .texts
+                .text-chibis
                     width: calc(100% - 300px - 30px)
-                    color: $color-a
-                    transition-duration: $transition-duration
+                    display: flex
+                    flex-direction: column
+                    justify-content: space-between
+                    align-items: flex-end
+
+                    .text
+                        color: $color-a
+                        transition-duration: $transition-duration
+
+                    .chibi
+                        width: 80px
+                        padding: 15px
+
 
     @media screen and (max-width: 900px)
         .about-cards
