@@ -395,6 +395,7 @@ h1, h2, h3, h4, h5, h6, .title {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  position: relative;
 }
 #about .about-cards .card .content:hover .video-wrapper {
   width: 450px;
@@ -407,30 +408,33 @@ h1, h2, h3, h4, h5, h6, .title {
   margin-right: 30px;
   transition-duration: 0.6s;
 }
-#about .about-cards .card .content .text-chibis {
+#about .about-cards .card .content .texts {
   width: calc(100% - 300px - 30px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-#about .about-cards .card .content .text-chibis .text {
   color: #E7F6F2;
   transition-duration: 0.6s;
 }
-#about .about-cards .card .content .text-chibis .chibi {
-  width: 80px;
+#about .about-cards .card .content .chibis-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#about .about-cards .card .content .chibis-wrapper .chibi {
+  height: 120px;
   padding: 15px;
+}
+@media screen and (max-width: 1050px) {
+  #about .about-cards .card .content {
+    padding-bottom: 50px;
+  }
 }
 @media screen and (max-width: 900px) {
   #about .about-cards {
     width: 100%;
   }
-}
-@media screen and (max-width: 900px) {
   #about .about-cards .card .content {
     flex-direction: column;
     align-items: center;
+    padding-bottom: 150px;
   }
   #about .about-cards .card .content .video-wrapper {
     width: 60%;
@@ -439,6 +443,10 @@ h1, h2, h3, h4, h5, h6, .title {
   #about .about-cards .card .content .texts {
     width: 80%;
   }
+  #about .about-cards .card .content .chibis-wrapper {
+    right: 50%;
+    transform: translateX(50%);
+  }
   #about .about-cards .card .content:hover .video-wrapper {
     width: 80%;
   }
@@ -446,12 +454,24 @@ h1, h2, h3, h4, h5, h6, .title {
     width: 80%;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 510px) {
+  #about .about-cards .card .content {
+    padding-bottom: 90px;
+  }
   #about .about-cards .card .content .video-wrapper {
     width: 80%;
   }
   #about .about-cards .card .content .texts {
     width: 100%;
+  }
+  #about .about-cards .card .content .chibis-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #about .about-cards .card .content .chibis-wrapper .chibi {
+    height: 80px;
   }
   #about .about-cards .card .content:hover .video-wrapper {
     width: 100%;

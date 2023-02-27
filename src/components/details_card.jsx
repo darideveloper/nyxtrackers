@@ -8,14 +8,12 @@ export default function DetailsCard ({ title, video, texts }) {
             <h3>{title}</h3>
             <div className="content">
                 <Video video={video} />
-                <div className="text-chibis">
-                    <div className="text">
-                      {texts.map ((text, index) => (
-                          <p key={index}>{text}</p>
-                      ))}
-                    </div>
-                    <Chibis />
+                <div className="texts">
+                    {texts.map ((text, index) => (
+                        <p key={index}>{text}</p>
+                    ))}
                 </div>
+                <Chibis />
             </div>
         </div>
     )

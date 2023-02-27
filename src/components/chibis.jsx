@@ -5,9 +5,9 @@ export default function Chibis () {
     return (
         <div className="chibis-wrapper">
 
-            {chibis.map((chibi_image) => {
+            {chibis.map((chibi_image, index) => {
               return (
-                <img className='chibi' src={chibi_image} alt="chibi 1" />
+                <img className='chibi' src={chibi_image} alt={`chibi ${index + 1}`} key={index} />
               )
             })}
         </div>
