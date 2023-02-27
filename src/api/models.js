@@ -4,7 +4,7 @@ export const models_data = [
         is_new: true,
         is_available: true,
         image: 'model_1.png',
-        price: 245,
+        price: 270,
         features: [
             '2x main Feet tracker (Ankle)',
             '2x main knee tracker',
@@ -19,7 +19,7 @@ export const models_data = [
         is_new: true,
         is_available: true,
         image: 'model_2.png',
-        price: 260,
+        price: 285,
         features: [
             'ALL ABOVE',
             '1x External tracker (chest position and rotation)'
@@ -31,7 +31,7 @@ export const models_data = [
         is_new: true,
         is_available: true,
         image: 'model_3.png',
-        price: 300,
+        price: 325,
         features: [
             'ALL ABOVE',
             '+2x external trackers  (foot position and rotation)',
@@ -45,7 +45,7 @@ export const models_data = [
         is_new: true,
         is_available: true,
         image: 'model_4.png',
-        price: 420,
+        price: 445,
         features: [
             'ALL ABOVE',
             '* + 2x MAIN trackers  (Elbow position + rotation).'
