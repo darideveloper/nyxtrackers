@@ -509,6 +509,16 @@ h1, h2, h3, h4, h5, h6, .title {
   }
 }
 
+#colors-options .img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#colors-options .img-wrapper img {
+  width: 80%;
+}
+
 #models .models-wrapper {
   width: 60%;
   margin: 0 auto;

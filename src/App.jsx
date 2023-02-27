@@ -4,6 +4,7 @@ import Header from './sections/header'
 import Hero from './sections/hero'
 import About from './sections/about'
 import VideosGrid from './sections/videos_grid'
+import ColorOptions from './sections/colors_option'
 import Models from './sections/models'
 import Testimonials from './sections/testimonials'
 import WhyUs from './sections/why_us'
@@ -27,6 +28,7 @@ function App() {
             <main>
                 <Hero />
                 <About />
+                <ColorOptions />
                 <VideosGrid />
                 <Models />
                 <Testimonials />
