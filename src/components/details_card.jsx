@@ -12,10 +12,10 @@ export default function DetailsCard({ title, video, texts }) {
           {texts.map((text, index) => (
             <span key={index}>{text}</span>
           ))}
-          <div className="white-spaces">
+          <span className="white-spaces">
             <br />
             <br />
-          </div>
+          </span>
         </p>
         <Chibis />
       </div>
