@@ -38,11 +38,30 @@
                     width: calc(100% - 300px - 30px)
                     color: $color-a
                     transition-duration: $transition-duration
+                    height: 200px
+                    overflow: scroll
+                    overflow-x: hidden
+
+                    &::-webkit-scrollbar
+                        width: 8px
+
+                    &::-webkit-scrollbar-track
+                        background: $color-d
+
+                    &::-webkit-scrollbar-thumb
+                        background: $color-c
+                        margin-top: -5px
+
+
+
+                    span
+                        display: block
+                        margin: 15px 0
 
                 .chibis-wrapper
                     position: absolute
                     bottom: 0
-                    right: 0
+                    right: 20px
 
                     .chibi
                         height: 120px
@@ -70,6 +89,11 @@
                     
                     .texts
                         width: 80%
+                        overflow: visible
+                        height: auto
+
+                        .white-spaces
+                            display: none
 
                     .chibis-wrapper
                         right: 50%

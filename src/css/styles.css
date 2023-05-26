@@ -412,11 +412,28 @@ h1, h2, h3, h4, h5, h6, .title {
   width: calc(100% - 300px - 30px);
   color: #E7F6F2;
   transition-duration: 0.6s;
+  height: 200px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+#about .about-cards .card .content .texts::-webkit-scrollbar {
+  width: 8px;
+}
+#about .about-cards .card .content .texts::-webkit-scrollbar-track {
+  background: #2C3333;
+}
+#about .about-cards .card .content .texts::-webkit-scrollbar-thumb {
+  background: #395B64;
+  margin-top: -5px;
+}
+#about .about-cards .card .content .texts span {
+  display: block;
+  margin: 15px 0;
 }
 #about .about-cards .card .content .chibis-wrapper {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 20px;
 }
 #about .about-cards .card .content .chibis-wrapper .chibi {
   height: 120px;
@@ -442,6 +459,11 @@ h1, h2, h3, h4, h5, h6, .title {
   }
   #about .about-cards .card .content .texts {
     width: 80%;
+    overflow: visible;
+    height: auto;
+  }
+  #about .about-cards .card .content .texts .white-spaces {
+    display: none;
   }
   #about .about-cards .card .content .chibis-wrapper {
     right: 50%;
