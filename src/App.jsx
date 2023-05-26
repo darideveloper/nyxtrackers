@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { sleep } from './tools/events'
 import Loading from './sections/loading'
 import Header from './sections/header'
 import Hero from './sections/hero'
@@ -10,7 +11,7 @@ import Testimonials from './sections/testimonials'
 import WhyUs from './sections/why_us'
 import Footer from './sections/footer'
 import Socials from './sections/socials'
-import { sleep } from './tools/events'
+import Collaborations from './sections/collaborations'
 
 // Alert imports
 import Swal from 'sweetalert2'
@@ -52,6 +53,7 @@ function App() {
                 <VideosGrid />
                 <Models />
                 <Testimonials />
+                <Collaborations />
                 <WhyUs />
             </main>
             <Footer />
