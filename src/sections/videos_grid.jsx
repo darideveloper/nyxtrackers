@@ -7,7 +7,7 @@ export default function VideosGrid () {
     return (
         <section id='videos-grid' className='regular-width'>
             <TitleSeparator title='Videos' />
-            <div className="videos">
+            <div className="grid">
                 {videos_data.map((video_file) => {
                     return (
                         <Video

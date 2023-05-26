@@ -12,6 +12,7 @@ import WhyUs from './sections/why_us'
 import Footer from './sections/footer'
 import Socials from './sections/socials'
 import Collaborations from './sections/collaborations'
+import Personalization from './sections/personalization'
 
 // Alert imports
 import Swal from 'sweetalert2'
@@ -49,6 +50,7 @@ function App() {
             <main>
                 <Hero />
                 <About />
+                <Personalization />
                 <ColorOptions />
                 <VideosGrid />
                 <Models />

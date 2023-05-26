@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function Video({ video }) {
     const [play, setPlay] = useState(false)
 
     return (
-        <div className='video-wrapper'>
+        <div className='zoom-wrapper'>
             <div className='play-icon'>
                 {/* Show play icon only in pause state  */}
                 {!play && (
