@@ -19,7 +19,7 @@ export const hero_gallery_data = [
 export const hero_info_cards_data = [
     {
         icon: 'counter_icon_1.svg',
-        title: '+20',
+        title: '+190',
         text: 'Customers',
     },
     {
@@ -29,7 +29,7 @@ export const hero_info_cards_data = [
     },
     {
         icon: 'counter_icon_3.svg',
-        title: '10+',
+        title: '11+',
         text: 'Battery hours',
     },
 ]
