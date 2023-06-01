@@ -44,12 +44,12 @@ Project type: **client's project**
 
 # Roadmap
 
-- [x] Desktop layout\r
-- [x] Mobile layout\r
-- [x] Hover animations\r
-- [x] Experience gallery\r
-- [x] Slider\r
-- [x] Domain\r
+- [x] Desktop layout
+- [x] Mobile layout
+- [x] Hover animations
+- [x] Experience gallery
+- [x] Slider
+- [x] Domain
 - [x] Hosting
 
 
