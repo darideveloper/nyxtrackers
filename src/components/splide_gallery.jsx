@@ -1,18 +1,12 @@
 import PropTypes from 'prop-types'
-import { Splide, SplideSlide } from '@splidejs/react-splide'
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
+import '@splidejs/react-splide/css'
 
-// Import splide react css
-import '@splidejs/splide/dist/css/themes/splide-default.min.css'
-
-export default function SplideGallery({ images_data }) {
-
+export default function SplideGallery({ images_data, options, cards_data }) {
   return (
     <Splide
       aria-label='Hero gallery'
-      options={{
-        autoplay: true,
-        type: 'loop',
-      }}
+      options={options}
     >
       {images_data && images_data.map((image_data, index) => {
         return (
@@ -29,10 +23,27 @@ export default function SplideGallery({ images_data }) {
           </SplideSlide>
         )
       })}
+
+      {cards_data && cards_data.map((card_data, index) => {
+        return (
+          <SplideSlide key={index}>
+            <div className="content">
+              <img
+                src={card_data.image}
+                alt={`${card_data.user} profile image`}
+              />
+              <h3>{card_data.user}</h3>
+              <p>{card_data.text}</p>
+            </div>
+          </SplideSlide>
+        )
+      })}
     </Splide>
   )
 }
 
 SplideGallery.propTypes = {
   images_data: PropTypes.array,
+  cards_data: PropTypes.array,
+  options: PropTypes.object.isRequired,
 }
