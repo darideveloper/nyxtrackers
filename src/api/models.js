@@ -12,7 +12,7 @@ export const models_data = [
             'Customizable color!',
             'Customizable text/logos on lid',
         ],
-        buy_link: 'https://discord.gg/YSYyDpeF8R',
+        buy_link: 'https://ko-fi.com/nyxtrackers/commissions',
     },
     {
         name: 'Standard set of Nyxtrackers 6 point fbt',
@@ -24,7 +24,7 @@ export const models_data = [
             'ALL ABOVE',
             '1x External tracker (chest position and rotation)'
         ],
-        buy_link: 'https://discord.gg/YSYyDpeF8R',
+        buy_link: 'https://ko-fi.com/nyxtrackers/commissions',
     },
     {
         name: 'ENHANCED set of Nyxtrackers 8 point fbt (PERSONAL RECOMMENDATION)',
@@ -38,7 +38,7 @@ export const models_data = [
             'Extra feet tracking quality',
             'Personal Recommendation'
         ],
-        buy_link: 'https://discord.gg/YSYyDpeF8R',
+        buy_link: 'https://ko-fi.com/nyxtrackers/commissions',
     },
     {
         name: 'ELITE set of Nyxtrackers 10 point fbt',
@@ -50,6 +50,6 @@ export const models_data = [
             'ALL ABOVE',
             '* + 2x MAIN trackers  (Elbow position + rotation).'
         ],
-        buy_link: 'https://discord.gg/YSYyDpeF8R',
+        buy_link: 'https://ko-fi.com/nyxtrackers/commissions',
     },
 ]

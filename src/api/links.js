@@ -16,7 +16,7 @@ export const payments_data = [
 export const links_socials_data = [
     {
         title: 'Discord',
-        link: 'https://ko-fi.com/nyxtrackers/commissions',
+        link: 'https://discord.com/invite/YSYyDpeF8R',
         image: 'discord-logo.svg',
     },
     {
