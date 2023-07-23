@@ -17,8 +17,13 @@ export const links_socials_data = [
     {
         title: 'Discord',
         link: 'https://discord.com/invite/YSYyDpeF8R',
-        image: 'social_1.svg',
+        image: 'discord-logo.svg',
     },
+    {
+      title: 'Ko-Fi',
+      link: 'https://ko-fi.com/nyxtrackers',
+      image: 'kofi-logo.png',
+  },
 ]
 
 export const contact_email = "Nyxtrackers@gmail.com"
