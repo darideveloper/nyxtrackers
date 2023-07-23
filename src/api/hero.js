@@ -7,17 +7,17 @@ export const hero_gallery_data = [
   {
     image: 'hero_gallery_1.png',
     alt: 'Gallery Image',
-    link: 'https://discord.com/invite/YSYyDpeF8R',
+    link: 'https://ko-fi.com/nyxtrackers/commissions',
   },
   {
     image: 'hero_gallery_2.png',
     alt: 'Gallery Image',
-    link: 'https://discord.com/invite/YSYyDpeF8R',
+    link: 'https://ko-fi.com/nyxtrackers/commissions',
   },
   {
     image: 'hero_gallery_3.png',
     alt: 'Gallery Image',
-    link: 'https://discord.com/invite/YSYyDpeF8R',
+    link: 'https://ko-fi.com/nyxtrackers/commissions',
   },
 ]
 

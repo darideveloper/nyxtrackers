@@ -24,12 +24,12 @@ function App() {
 
   // Wait for the page to load before removing the loading screen
   useEffect(() => {
-    sleep(0)
+    sleep(2)
       .then(() => {
         document.getElementById('loading').style.display = 'none'
       })
       .then(() => {
-        sleep(0)
+        sleep(1)
           .then(() => {
             // Show alert after loading ends
             const MySwal = withReactContent(Swal)
@@ -39,7 +39,7 @@ function App() {
               title: alert_title,
               text: alert_text,
               showConfirmButton: false,
-              timer: 8000000,
+              timer: 6000,
             })
           })
           .then(() => {

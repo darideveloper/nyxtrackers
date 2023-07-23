@@ -43,5 +43,5 @@ export function autoPlay() {
       console.log('goNext after first')
       goNext()
     }, 4000)
-  }, 5000)
+  }, 8000)
 }
