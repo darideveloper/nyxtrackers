@@ -10,8 +10,10 @@ function goNext() {
 
 export function autoPlay() {
 
+  return null
+
   if (autoPlayStarted) {
-    return
+    return null
   }
 
   autoPlayStarted = true

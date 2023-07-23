@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { testimonials_data } from '../api/testimonials'
-import SplideGallery from '../components/splide_gallery'
+import Gallery from '../components/gallery'
 import TitleSeparator from '../components/title_separator'
 
 export default function Testimonials() {
@@ -36,14 +36,12 @@ export default function Testimonials() {
         >
             <TitleSeparator title='Testimonials' />
 
-            <SplideGallery
+            <Gallery
                 cards_data={testimonials_data}
-                options={{
-                    perPage: perPage,
-                    rewind: true,
-                    padding: '5rem',
-                    perMove: 1,
-                }}
+                spaceBetween={20}
+                slidesPerView={perPage}
+                loop={false}
+                pagination={false}
             />
         </section>
     )

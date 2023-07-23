@@ -1,5 +1,5 @@
 import { hero_gallery_data, hero_info_cards_data } from '../api/hero'
-import SplideGallery from '../components/splide_gallery'
+import Gallery from '../components/gallery'
 import InfoCard from '../components/info_card'
 
 export default function Hero() {
@@ -9,7 +9,7 @@ export default function Hero() {
       className='regular-width'
       id='hero'
     >
-      <SplideGallery
+      <Gallery
         images_data={hero_gallery_data}
       />
       <div className='info-cards-wrapper'>

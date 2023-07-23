@@ -218,6 +218,17 @@ h1, h2, h3, h4, h5, h6, .title {
   width: 80px;
 }
 
+.debug {
+  border: 1px solid red !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: rgba(231, 246, 242, 0.8) !important;
+}
+.swiper-button-next .swiper-button-disabled, .swiper-button-prev .swiper-button-disabled {
+  color: rgba(231, 246, 242, 0.1) !important;
+}
+
 .btn {
   display: inline-block;
   cursor: pointer;
@@ -391,16 +402,16 @@ h1, h2, h3, h4, h5, h6, .title {
 #hero {
   margin-top: 80px;
 }
-#hero .splide {
-  width: 80%;
+#hero .swiper-wrapper {
+  width: 100%;
   margin: 0 auto;
   box-shadow: 0 0 15px -5px #395B64;
 }
-#hero .splide li.splide__slide a {
+#hero .swiper-wrapper .swiper-slide a {
   width: 100%;
   height: auto;
 }
-#hero .splide li.splide__slide img {
+#hero .swiper-wrapper .swiper-slide img {
   width: 100%;
 }
 @media screen and (max-width: 900px) {
@@ -643,7 +654,13 @@ h1, h2, h3, h4, h5, h6, .title {
   }
 }
 
-#testimonials li.splide__slide .content {
+#testimonials .swiper {
+  height: 300px;
+}
+#testimonials .swiper-slide {
+  height: 100%;
+}
+#testimonials .swiper-slide .content {
   background-color: #395B64;
   margin: 30px;
   padding: 20px;
@@ -653,24 +670,34 @@ h1, h2, h3, h4, h5, h6, .title {
   justify-content: flex-start;
   flex-direction: column;
 }
-#testimonials li.splide__slide .content p {
+#testimonials .swiper-slide .content p {
   margin: 0;
   padding: 0;
   color: rgba(231, 246, 242, 0.6);
 }
-#testimonials li.splide__slide .content img {
+#testimonials .swiper-slide .content img {
   border-radius: 50%;
   margin: 0;
   width: 100px;
 }
-#testimonials li.splide__slide .content h3 {
+#testimonials .swiper-slide .content h3 {
   font-size: 1.4rem;
   margin: 15px 0;
 }
 @media screen and (max-width: 900px) {
-  #testimonials li.splide__slide .content {
+  #testimonials .swiper-slide .content {
     margin: 10px;
     padding: 10px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  #testimonials .swiper .swiper-slide .content {
+    margin: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #testimonials .swiper {
+    height: 250px;
   }
 }
 
@@ -711,6 +738,7 @@ h1, h2, h3, h4, h5, h6, .title {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   padding: 10px 0;
+  z-index: 1;
 }
 #socials a {
   transition-duration: 0.6s;

@@ -18,7 +18,7 @@ import Personalization from './sections/personalization'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { alert_title, alert_text } from './api/alert'
-import { autoPlay } from './lib/splide_gallery'
+import { autoPlay } from './lib/gallery'
 
 function App() {
 

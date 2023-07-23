@@ -1,5 +1,10 @@
 #testimonials
-    li.splide__slide
+    .swiper 
+        height: 300px
+
+    .swiper-slide
+        height: 100%
+
         .content
             background-color: $color-c
             margin: 30px
@@ -27,3 +32,11 @@
             @media screen and (max-width: 900px)
                 margin: 10px
                 padding: 10px
+
+    @media screen and (max-width:1300px)
+        .swiper .swiper-slide .content
+            margin: 10px
+
+    @media screen and (max-width: 768px)
+        .swiper 
+            height: 250px
