@@ -24,22 +24,22 @@ function App() {
 
   // Wait for the page to load before removing the loading screen
   useEffect(() => {
-    sleep(5)
+    sleep(0)
       .then(() => {
         document.getElementById('loading').style.display = 'none'
       })
       .then(() => {
-        sleep(3)
+        sleep(0)
           .then(() => {
             // Show alert after loading ends
             const MySwal = withReactContent(Swal)
             MySwal.fire({
               position: 'top-end',
-              icon: 'info',
+              iconHtml: '<img src="./kofi-logo.png"/>',
               title: alert_title,
               text: alert_text,
               showConfirmButton: false,
-              timer: 8000,
+              timer: 8000000,
             })
           })
           .then(() => {

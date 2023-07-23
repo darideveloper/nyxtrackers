@@ -211,6 +211,13 @@ h1, h2, h3, h4, h5, h6, .title {
   }
 }
 
+.swal2-icon.swal2-icon-show {
+  border: none !important;
+}
+.swal2-icon.swal2-icon-show img {
+  width: 80px;
+}
+
 .btn {
   display: inline-block;
   cursor: pointer;
