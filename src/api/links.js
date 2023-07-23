@@ -11,6 +11,10 @@ export const payments_data = [
         image: 'payment_3.svg',
         name: 'Paypal',
     },
+    {
+      image: 'kofi-logo.png',
+      name: 'Kofi',
+  },
 ]
 
 export const links_socials_data = [
