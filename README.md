@@ -36,7 +36,7 @@ Project type: **client**
 
 # Media
 
-![landing](https://github.com/darideveloper/nyxtrackers/raw/master/public/screenshot.png)
+![](https://github.com/darideveloper/nyxtrackers/raw/master/public/screenshot.png)
 
 # Roadmap
 
