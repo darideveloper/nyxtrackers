@@ -6,12 +6,14 @@
                 <img src='https://img.shields.io/static/v1?style=for-the-badge&message=Telegram&color=26A5E4&logo=Telegram&logoColor=FFFFFF&label=' alt='Telegram' height='30px'/>
             </a><a href='https://github.com/darideveloper' target='_blank'>
                 <img src='https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=181717&logo=GitHub&logoColor=FFFFFF&label=' alt='Github' height='30px'/>
-            </a><a href='https://www.fiverr.com/darideveloper?up_rollout=true' target='_blank'>
+            </a><a href='https://www.fiverr.com/darideveloper' target='_blank'>
                 <img src='https://img.shields.io/static/v1?style=for-the-badge&message=Fiverr&color=222222&logo=Fiverr&logoColor=1DBF73&label=' alt='Fiverr' height='30px'/>
             </a><a href='https://discord.com/users/992019836811083826' target='_blank'>
                 <img src='https://img.shields.io/static/v1?style=for-the-badge&message=Discord&color=5865F2&logo=Discord&logoColor=FFFFFF&label=' alt='Discord' height='30px'/>
             </a><a href='mailto:darideveloper@gmail.com?subject=Hello Dari Developer' target='_blank'>
                 <img src='https://img.shields.io/static/v1?style=for-the-badge&message=Gmail&color=EA4335&logo=Gmail&logoColor=FFFFFF&label=' alt='Gmail' height='30px'/>
+            </a><a href='https://www.twitch.tv/darideveloper' target='_blank'>
+                <img src='https://img.shields.io/static/v1?style=for-the-badge&message=Twitch&color=b9a3e3&logo=Twitch&logoColor=ffffff&label=' alt='Twitch' height='30px'/>
             </a></div><div align='center'><br><br><img src='https://github.com/darideveloper/nyxtrackers/raw/master/public/logo.png' alt='NYX Trackers' height='80px'/>
 
 # NYX Trackers
@@ -36,7 +38,9 @@ Project type: **client**
 
 # Media
 
-![](https://github.com/darideveloper/nyxtrackers/raw/master/public/screenshot.png)
+![home](https://github.com/darideveloper/nyxtrackers/blob/master/screenshots/home.png?raw=true)
+
+![alert](https://github.com/darideveloper/nyxtrackers/blob/master/screenshots/alert.png?raw=true)
 
 # Roadmap
 
@@ -47,4 +51,5 @@ Project type: **client**
 - [x] Slider
 - [x] Domain
 - [x] Hosting
+- [x] Kofi integration
 
