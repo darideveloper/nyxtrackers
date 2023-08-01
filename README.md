@@ -1,6 +1,6 @@
 <div><a href='https://github.com/darideveloper/nyxtrackers/blob/master/LICENSE' target='_blank'>
-            <img src='https://img.shields.io/github/license/darideveloper/nyxtrackers.svg?style=for-the-badge' alt='MIT License' height='30px'/>
-        </a><a href='https://www.linkedin.com/in/francisco-dari-hernandez-6456b6181/' target='_blank'>
+                <img src='https://img.shields.io/github/license/darideveloper/nyxtrackers.svg?style=for-the-badge' alt='MIT License' height='30px'/>
+            </a><a href='https://www.linkedin.com/in/francisco-dari-hernandez-6456b6181/' target='_blank'>
                 <img src='https://img.shields.io/static/v1?style=for-the-badge&message=LinkedIn&color=0A66C2&logo=LinkedIn&logoColor=FFFFFF&label=' alt='Linkedin' height='30px'/>
             </a><a href='https://t.me/darideveloper' target='_blank'>
                 <img src='https://img.shields.io/static/v1?style=for-the-badge&message=Telegram&color=26A5E4&logo=Telegram&logoColor=FFFFFF&label=' alt='Telegram' height='30px'/>
@@ -14,9 +14,11 @@
                 <img src='https://img.shields.io/static/v1?style=for-the-badge&message=Gmail&color=EA4335&logo=Gmail&logoColor=FFFFFF&label=' alt='Gmail' height='30px'/>
             </a><a href='https://www.twitch.tv/darideveloper' target='_blank'>
                 <img src='https://img.shields.io/static/v1?style=for-the-badge&message=Twitch&color=b9a3e3&logo=Twitch&logoColor=ffffff&label=' alt='Twitch' height='30px'/>
-            </a></div><div align='center'><br><br><img src='https://github.com/darideveloper/nyxtrackers/raw/master/public/logo.png' alt='NYX Trackers' height='80px'/>
+            </a></div><div align='center'><br><br><img src='https://github.com/darideveloper/nyxtrackers/raw/master/public/logo.png' alt='Nyx Trackers' height='80px'/>
 
-# NYX Trackers
+
+
+# Nyx Trackers
 
 Visit at: **[nyxtrackers.com](http://nyxtrackers.com/)**
 
@@ -44,12 +46,13 @@ Project type: **client**
 
 # Roadmap
 
-- [x] Desktop layout
-- [x] Mobile layout
-- [x] Hover animations
-- [x] Experience gallery
-- [x] Slider
-- [x] Domain
-- [x] Hosting
-- [x] Kofi integration
+- [x] Desktop layout
+- [x] Mobile layout
+- [x] Hover animations
+- [x] Experience gallery
+- [x] Slider
+- [x] Domain
+- [x] Hosting
+- [x] Kofi integration
+- [x] Google analytics
 
