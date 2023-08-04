@@ -628,6 +628,34 @@ h1, h2, h3, h4, h5, h6, .title {
 #models .models-wrapper .card .content .info .btn {
   width: calc(100% - 60px);
 }
+#models .technicals {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+#models .technicals .btn {
+  margin: 0 auto;
+  display: block;
+  color: white;
+}
+#models .technicals .btn.active {
+  background-color: #395B64;
+  color: #A5C9CA;
+}
+#models .technicals .list {
+  height: 0px;
+  overflow: hidden;
+  color: white;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 40px;
+  transition-duration: 0.6s;
+}
+#models .technicals .list ul {
+  line-height: 1.7rem;
+  margin-bottom: 50px;
+}
 @media screen and (max-width: 1200px) {
   #models .models-wrapper {
     width: 80%;

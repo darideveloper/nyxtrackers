@@ -48,7 +48,7 @@ export const models_data = [
         price: 445,
         features: [
             'ALL ABOVE',
-            '* + 2x MAIN trackers  (Elbow position + rotation).'
+            '+ 2x MAIN trackers  (Elbow position + rotation).'
         ],
         buy_link: 'https://ko-fi.com/nyxtrackers/commissions',
     },
