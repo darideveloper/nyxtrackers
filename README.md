@@ -30,6 +30,7 @@ Project type: **client**
             <summary>Table of Contents</summary>
             <ol>
 <li><a href='#buildwith'>Build With</a></li>
+<li><a href='#relatedprojects'>Related Projects</a></li>
 <li><a href='#media'>Media</a></li>
 <li><a href='#roadmap'>Roadmap</a></li></ol>
         </details><br>
@@ -37,6 +38,10 @@ Project type: **client**
 # Build with
 
 <div align='center'><a href='https://developer.mozilla.org/en-US/docs/Web/HTML' target='_blank'> <img src='https://i.imgur.com/OitgDfl.jpeg' alt='HTML + CSS' title='HTML + CSS' height='50px'/> </a><a href='https://react.dev/' target='_blank'> <img src='https://cdn.svgporn.com/logos/react.svg' alt='React' title='React' height='50px'/> </a><a href='https://sass-lang.com/' target='_blank'> <img src='https://cdn.svgporn.com/logos/sass.svg' alt='Sass' title='Sass' height='50px'/> </a><a href='https://www.w3schools.com/js/js_es6.asp' target='_blank'> <img src='https://cdn.svgporn.com/logos/javascript.svg' alt='JavaScript' title='JavaScript' height='50px'/> </a><a href='https://vitejs.dev/guide/' target='_blank'> <img src='https://cdn.svgporn.com/logos/vitejs.svg' alt='Vite' title='Vite' height='50px'/> </a></div>
+
+# Related projects
+
+<div align='center'><a href='https://github.com/darideveloper/kofi-api' target='_blank'> <img src='https://github.com/darideveloper/kofi-api-sheets-email/blob/master/logo.png?raw=true' alt='Kofi Api' title='Kofi Api' height='50px'/> </a></div>
 
 # Media
 
@@ -46,13 +51,13 @@ Project type: **client**
 
 # Roadmap
 
-- [x] Desktop layout
-- [x] Mobile layout
-- [x] Hover animations
-- [x] Experience gallery
-- [x] Slider
-- [x] Domain
-- [x] Hosting
-- [x] Kofi integration
+- [x] Desktop layout
+- [x] Mobile layout
+- [x] Hover animations
+- [x] Experience gallery
+- [x] Slider
+- [x] Domain
+- [x] Hosting
+- [x] Kofi integration
 - [x] Google analytics
 
