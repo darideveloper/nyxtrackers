@@ -4,15 +4,17 @@ import { technicalsData } from '../api/technicals'
 import TitleSeparator from '../components/title_separator'
 import BuyCard from '../components/buy_card'
 
-import { useState, useEffect } from 'react'
+import { TechnicalsContext } from "../context/technicals"
+import { useEffect } from 'react'
+import { useContext } from "react"
 
 export default function Models() {
 
-  const [active, setActive] = useState(false)
+  const { isOpen, setIsOpen } = useContext(TechnicalsContext)
 
   useEffect(() => {
     const list = document.querySelector('.list')
-    if (active) {
+    if (isOpen) {
       // Get height of ul
       const ul = list.querySelector('ul')
       const height = ul.clientHeight
@@ -23,7 +25,7 @@ export default function Models() {
       // Update height of list
       list.style.height = `0px`
     }
-  }, [active])
+  }, [isOpen])
 
 
   return (
@@ -39,8 +41,8 @@ export default function Models() {
       <div className="technicals" id="technicals">
 
         <button
-          className={`btn text ${active && "active"}`}
-          onClick={() => setActive(!active)}
+          className={`btn text ${isOpen && "isOpen"}`}
+          onClick={() => setIsOpen(!isOpen)}
         >
           Tracker Technical Specs
         </button>
