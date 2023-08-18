@@ -13,6 +13,7 @@ import Footer from './sections/footer'
 import Socials from './sections/socials'
 import Collaborations from './sections/collaborations'
 import Personalization from './sections/personalization'
+import Form from './components/form'
 
 // Alert imports
 import Swal from 'sweetalert2'
@@ -51,6 +52,7 @@ function App() {
       <Loading />
       <main>
         <Hero />
+        <Form />
         <About />
         <Personalization />
         <ColorOptions />
