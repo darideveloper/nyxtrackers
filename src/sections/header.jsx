@@ -31,6 +31,7 @@ export default function Header () {
                             <li><a href="#models">Models</a></li>
                             <li><a href="#testimonials">Testimonials</a></li>
                             <li><a href="#why-us">Why us</a></li>
+                            <li><a href="#technicals">Technical Specs</a></li>
                         </ul>
                     </nav>
                     <button className="btn display" onClick={toggleMenu}>

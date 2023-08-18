@@ -36,7 +36,7 @@ export default function Models() {
         ))}
       </div>
 
-      <div className="technicals">
+      <div className="technicals" id="technicals">
 
         <button
           className={`btn text ${active && "active"}`}
