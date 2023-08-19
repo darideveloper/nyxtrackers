@@ -12,7 +12,7 @@ export default function Hero() {
       <Gallery
         images_data={hero_gallery_data}
       />
-      <div className='info-cards-wrapper'>
+      <div className='info-cards-wrapper hero'>
         {hero_info_cards_data.map((info_cards, index) => {
           return (
             <InfoCard
@@ -20,6 +20,7 @@ export default function Hero() {
               icon={info_cards.icon}
               title={info_cards.title}
               text={info_cards.text}
+              link={info_cards.link}
             />
           )
         })}

@@ -121,6 +121,9 @@ h1, h2, h3, h4, h5, h6, .title
     margin-top: 30px
     gap: 30px
 
+    &.hero
+        grid-template-columns: repeat(4, 1fr)
+
     .card
         width: calc(100% - 80px)
         margin: 0 auto
@@ -130,6 +133,14 @@ h1, h2, h3, h4, h5, h6, .title
         padding-right: 40px
         display: flex
         align-items: center
+
+        &.link
+            cursor: pointer
+            transition-duration: $transition-duration
+
+            &:hover
+                opacity: 0.8
+                transform: scale(1.05)
 
         &:hover .icon
             transform: scale(1.15)
@@ -163,16 +174,23 @@ h1, h2, h3, h4, h5, h6, .title
                 margin-top: 10px
                 margin-bottom: 20px
 
+    @media screen and (max-width: 1250px)
+        &.hero
+            grid-template-columns: repeat(2, 1fr)
+
     @media screen and (max-width: 900px)
         grid-template-columns: repeat(1, 1fr)
 
+        &.hero
+            grid-template-columns: repeat(1, 1fr)
+
         .card
-            width: 60%
+            width: calc(70% - 80px)
 
     @media screen and (max-width: 500px)
 
         .card
-            width: 80%
+            width: calc(90% - 80px)
 
 .grid
     display: grid
