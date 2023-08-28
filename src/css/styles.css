@@ -951,7 +951,7 @@ h1, h2, h3, h4, h5, h6, .title {
     position: fixed;
     bottom: -110px;
     right: 0;
-    opacity: 0.3;
+    opacity: 0.8;
     width: 500px;
     z-index: 2;
     display: flex;
