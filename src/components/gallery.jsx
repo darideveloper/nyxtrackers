@@ -9,7 +9,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-export default function Gallery({ images_data, cards_data, spaceBetween=10, slidesPerView=1, loop=true, pagination=true }) {
+export default function Gallery({ images_data, cards_data, spaceBetween=10, slidesPerView=1, loop=true, pagination=true, onClick }) {
 
   const [delay, setDelay] = useState(8000)
 
@@ -58,9 +58,8 @@ export default function Gallery({ images_data, cards_data, spaceBetween=10, slid
               <img
                 src={card_data.image}
                 alt={`${card_data.user} profile image`}
+                onClick={onClick}
               />
-              <h3>{card_data.user}</h3>
-              <p>{card_data.text}</p>
             </div>
           </SwiperSlide>
         )

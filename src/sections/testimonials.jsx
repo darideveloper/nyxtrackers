@@ -2,10 +2,13 @@ import { useEffect, useState } from 'react'
 import { testimonials_data } from '../api/testimonials'
 import Gallery from '../components/gallery'
 import TitleSeparator from '../components/title_separator'
+import ImageViwer from '../components/image_viwer'
 
 export default function Testimonials() {
 
     const [perPage, setPerPage] = useState(3)
+    const [imageViwerVisible, setImageViwerVisible] = useState(false)
+    const [imageViwerUrl, setImageViwerUrl] = useState('')
 
     function handleResize() {
         // Resize gallery elements
@@ -42,6 +45,19 @@ export default function Testimonials() {
                 slidesPerView={perPage}
                 loop={false}
                 pagination={false}
+                onClick={(e) => {
+                    setImageViwerVisible(true)
+                    setImageViwerUrl(e.target.src)
+                }}
+            />
+
+            <ImageViwer 
+                src={imageViwerUrl}
+                onClick={() => {
+                    setImageViwerVisible(false)
+                  }
+                }
+                is_visible={imageViwerVisible}
             />
         </section>
     )
