@@ -26,7 +26,7 @@
                     .zoom-wrapper
                         width: 450px
                     
-                    .texts
+                    .text-wrapper
                         width: calc(100% - 450px - 30px)
 
                 .zoom-wrapper
@@ -34,38 +34,38 @@
                     margin-right: 30px
                     transition-duration: $transition-duration
 
-                .texts
+                .text-wrapper
                     width: calc(100% - 300px - 30px)
-                    color: $color-a
-                    transition-duration: $transition-duration
-                    height: 200px
-                    overflow: scroll
-                    overflow-x: hidden
+                    display: flex
+                    align-items: flex-end
+                    justify-content: center
+                    flex-direction: column
 
-                    &::-webkit-scrollbar
-                        width: 8px
+                    .texts
+                        color: $color-a
+                        transition-duration: $transition-duration
+                        overflow-x: hidden
 
-                    &::-webkit-scrollbar-track
-                        background: $color-d
+                        &::-webkit-scrollbar
+                            width: 8px
 
-                    &::-webkit-scrollbar-thumb
-                        background: $color-c
-                        margin-top: -5px
+                        &::-webkit-scrollbar-track
+                            background: $color-d
 
+                        &::-webkit-scrollbar-thumb
+                            background: $color-c
+                            margin-top: -5px
 
+                        span
+                            display: block
+                            margin: 15px 0
 
-                    span
-                        display: block
-                        margin: 15px 0
+                    .chibis-wrapper
+                        right: 20px
 
-                .chibis-wrapper
-                    position: absolute
-                    bottom: 0
-                    right: 20px
-
-                    .chibi
-                        height: 120px
-                        padding: 15px
+                        .chibi
+                            height: 120px
+                            padding: 15px
 
     @media screen and (max-width: 1050px)
         .about-cards
@@ -103,7 +103,7 @@
                         .zoom-wrapper
                             width: 80%
                         
-                        .texts
+                        .text-wrapper 
                             width: 80%
 
     @media screen and (max-width: 510px)

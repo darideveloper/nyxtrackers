@@ -8,16 +8,14 @@ export default function DetailsCard({ title, video, texts }) {
       <h3>{title}</h3>
       <div className="content">
         <Video video={video} />
-        <p className="texts">
-          {texts.map((text, index) => (
-            <span key={index}>{text}</span>
-          ))}
-          <span className="white-spaces">
-            <br />
-            <br />
-          </span>
-        </p>
-        <Chibis />
+        <div className="text-wrapper">
+          <p className="texts">
+            {texts.map((text, index) => (
+              <span key={index}>{text}</span>
+            ))}
+          </p>
+          <Chibis />
+        </div>
       </div>
     </div>
   )

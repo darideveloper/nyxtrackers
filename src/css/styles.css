@@ -480,7 +480,7 @@ h1, h2, h3, h4, h5, h6, .title {
 #about .about-cards .card .content:hover .zoom-wrapper {
   width: 450px;
 }
-#about .about-cards .card .content:hover .texts {
+#about .about-cards .card .content:hover .text-wrapper {
   width: calc(100% - 450px - 30px);
 }
 #about .about-cards .card .content .zoom-wrapper {
@@ -488,34 +488,36 @@ h1, h2, h3, h4, h5, h6, .title {
   margin-right: 30px;
   transition-duration: 0.6s;
 }
-#about .about-cards .card .content .texts {
+#about .about-cards .card .content .text-wrapper {
   width: calc(100% - 300px - 30px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+#about .about-cards .card .content .text-wrapper .texts {
   color: #E7F6F2;
   transition-duration: 0.6s;
-  height: 200px;
-  overflow: scroll;
   overflow-x: hidden;
 }
-#about .about-cards .card .content .texts::-webkit-scrollbar {
+#about .about-cards .card .content .text-wrapper .texts::-webkit-scrollbar {
   width: 8px;
 }
-#about .about-cards .card .content .texts::-webkit-scrollbar-track {
+#about .about-cards .card .content .text-wrapper .texts::-webkit-scrollbar-track {
   background: #2C3333;
 }
-#about .about-cards .card .content .texts::-webkit-scrollbar-thumb {
+#about .about-cards .card .content .text-wrapper .texts::-webkit-scrollbar-thumb {
   background: #395B64;
   margin-top: -5px;
 }
-#about .about-cards .card .content .texts span {
+#about .about-cards .card .content .text-wrapper .texts span {
   display: block;
   margin: 15px 0;
 }
-#about .about-cards .card .content .chibis-wrapper {
-  position: absolute;
-  bottom: 0;
+#about .about-cards .card .content .text-wrapper .chibis-wrapper {
   right: 20px;
 }
-#about .about-cards .card .content .chibis-wrapper .chibi {
+#about .about-cards .card .content .text-wrapper .chibis-wrapper .chibi {
   height: 120px;
   padding: 15px;
 }
@@ -552,7 +554,7 @@ h1, h2, h3, h4, h5, h6, .title {
   #about .about-cards .card .content:hover .zoom-wrapper {
     width: 80%;
   }
-  #about .about-cards .card .content:hover .texts {
+  #about .about-cards .card .content:hover .text-wrapper {
     width: 80%;
   }
 }
