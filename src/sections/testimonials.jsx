@@ -59,6 +59,16 @@ export default function Testimonials() {
                 }
                 is_visible={imageViwerVisible}
             />
+
+            <div className="btn-wrapper">
+              <a 
+                className="btn text"
+                href="https://discord.com/invite/YSYyDpeF8R"
+                target="_blank"
+              >
+                Join discord to check more!
+              </a>
+            </div>
         </section>
     )
 }

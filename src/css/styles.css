@@ -745,6 +745,14 @@ h1, h2, h3, h4, h5, h6, .title {
     padding: 10px;
   }
 }
+#testimonials .btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#testimonials .btn-wrapper .btn {
+  margin-top: 50px;
+}
 @media screen and (max-width: 1300px) {
   #testimonials .swiper .swiper-slide .content {
     margin: 10px;
