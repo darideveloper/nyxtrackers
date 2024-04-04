@@ -25,6 +25,14 @@ export default function Hero() {
           )
         })}
       </div>
+
+      <video 
+        src="hero.mp4"
+        controls
+        muted
+        autoPlay
+        loop
+      />
     </section>
   )
 }
