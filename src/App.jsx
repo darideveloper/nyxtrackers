@@ -4,7 +4,8 @@ import Loading from './sections/loading'
 import Header from './sections/header'
 import Hero from './sections/hero'
 import About from './sections/about'
-import VideosGrid from './sections/videos_grid'
+import VideosMain from './sections/videos_main'
+import VideosCustomer from './sections/videos_customer'
 import ColorOptions from './sections/colors_option'
 import Models from './sections/models'
 import Testimonials from './sections/testimonials'
@@ -56,9 +57,10 @@ function App() {
         <About />
         <Personalization />
         <ColorOptions />
-        <VideosGrid />
+        <VideosMain />
         <Models />
         <Testimonials />
+        <VideosCustomer />
         <Collaborations />
         <WhyUs />
       </main>
