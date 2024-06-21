@@ -22,8 +22,8 @@ export default function Hero() {
             <InfoCard
               key={index}
               icon={`/counter_${counter.key.replace(" ", "_")}.svg`}
-              title={counter.key}
-              text={counter.value}
+              title={counter.value}
+              text={counter.key}
               link={counter.link}
             />
           )
