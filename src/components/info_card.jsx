@@ -9,9 +9,9 @@ export default function InfoCard({ icon, title, text, link }) {
 
     return (
         <div 
-          className={`card info-card ${link !== "" && 'link'}`}
+          className={`card info-card ${link !== null && 'link'}`}
           onClick={() => {
-            if (link !== "") {
+            if (link !== null) {
               window.open(link, '_blank')
             }
           }}
