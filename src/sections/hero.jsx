@@ -1,8 +1,12 @@
-import { hero_gallery_data, hero_info_cards_data } from '../api/hero'
+import { hero_gallery_data } from '../api/hero'
+import { useContext } from 'react'
+import { DashboardContext } from '../context/dashboard'
 import Gallery from '../components/gallery'
 import InfoCard from '../components/info_card'
 
 export default function Hero() {
+
+  const { heroCounters } = useContext(DashboardContext)
 
   return (
     <section
@@ -13,14 +17,14 @@ export default function Hero() {
         images_data={hero_gallery_data}
       />
       <div className='info-cards-wrapper hero'>
-        {hero_info_cards_data.map((info_cards, index) => {
+        {heroCounters.map((counter, index) => {
           return (
             <InfoCard
               key={index}
-              icon={info_cards.icon}
-              title={info_cards.title}
-              text={info_cards.text}
-              link={info_cards.link}
+              icon={`/counter_${counter.key.replace(" ", "_")}.svg`}
+              title={counter.key}
+              text={counter.value}
+              link={counter.link}
             />
           )
         })}

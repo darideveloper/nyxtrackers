@@ -23,24 +23,6 @@ export const hero_gallery_data = [
 
 export const hero_info_cards_data = [
   {
-    icon: 'counter_icon_1.svg',
-    title: '600+',
-    text: 'Customers',
-    link: "",
-  },
-  {
-    icon: 'counter_icon_2.svg',
-    title: '4',
-    text: 'Sets',
-    link: "",
-  },
-  {
-    icon: 'counter_icon_3.svg',
-    title: '11+',
-    text: 'Battery hours',
-    link: "",
-  },
-  {
     icon: 'counter_icon_4.svg',
     title: 'Contact us',
     text: 'on Discord',

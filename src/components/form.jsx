@@ -26,8 +26,6 @@ export default function Form () {
       headers: headers,
       body: JSON.stringify({"email": email}),
     })
-    console.log (response)
-    console.log (response.status)
     
     // Disable loading
     loading.style.display = 'none'

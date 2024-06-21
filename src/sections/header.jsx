@@ -1,6 +1,5 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { TechnicalsContext } from "../context/technicals"
-import { useContext } from "react"
 
 export default function Header() {
 
@@ -18,7 +17,6 @@ export default function Header() {
       setImageButton('menu_opened_icon.svg')
     }
   }
-
 
   return (
     <header className={`${headerClass} header`} id="header">

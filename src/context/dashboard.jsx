@@ -13,7 +13,6 @@ export function DashboardContextProvider(props) {
     
     // Get texts
     const textEndpoint = `${apiBase}/texts/`
-    console.log(textEndpoint)
   
     // Get data with await/async
     fetch(textEndpoint)
