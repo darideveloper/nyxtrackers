@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState } from 'react'
 
 // Get context and set a name
 export const TechnicalsContext = createContext()
