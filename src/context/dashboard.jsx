@@ -6,6 +6,7 @@ export const DashboardContext = createContext()
 export function DashboardContextProvider(props) {
 
   const [heroCounters, setHeroCounters] = useState([])
+  const [notifications, setNotifications] = useState([])
 
   const apiBase = import.meta.env.VITE_DASHBOARD_API
 
@@ -23,6 +24,11 @@ export function DashboardContextProvider(props) {
         // Filter counters
         const counters = texts.filter(text => text.category == "counter")
         setHeroCounters(counters)
+
+        // Filter notifications
+        const notifications = texts.filter(text => text.category == "notification")
+        setNotifications(notifications)
+
       })
   }, [])
 
@@ -30,6 +36,7 @@ export function DashboardContextProvider(props) {
     <DashboardContext.Provider
       value={{
         heroCounters,
+        notifications,
       }}
     >
       {props.children}

@@ -15,6 +15,7 @@ import Socials from './sections/socials'
 import Collaborations from './sections/collaborations'
 import Personalization from './sections/personalization'
 import Form from './components/form'
+import Notifications from './sections/notifications'
 
 // Alert imports
 import Swal from 'sweetalert2'
@@ -52,6 +53,7 @@ function App() {
       <Header />
       <Loading />
       <main>
+        <Notifications />
         <Hero />
         <Form />
         <About />
