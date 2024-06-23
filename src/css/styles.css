@@ -587,8 +587,11 @@ h1, h2, h3, h4, h5, h6, .title {
     width: 60%;
     margin-right: 0;
   }
-  #about .about-cards .card .content .texts {
+  #about .about-cards .card .content .text-wrapper {
     width: 80%;
+  }
+  #about .about-cards .card .content .texts {
+    width: 100%;
     overflow: visible;
     height: auto;
   }
@@ -597,7 +600,6 @@ h1, h2, h3, h4, h5, h6, .title {
   }
   #about .about-cards .card .content .chibis-wrapper {
     right: 50%;
-    transform: translateX(50%);
   }
   #about .about-cards .card .content:hover .zoom-wrapper {
     width: 80%;
