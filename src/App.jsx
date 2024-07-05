@@ -26,7 +26,7 @@ function App() {
 
   // Wait for the page to load before removing the loading screen
   useEffect(() => {
-    sleep(2)
+    sleep(3.5)
       .then(() => {
         document.getElementById('loading').style.display = 'none'
       })
