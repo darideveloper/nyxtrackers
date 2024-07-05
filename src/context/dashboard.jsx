@@ -14,59 +14,46 @@ export function DashboardContextProvider(props) {
 
   useEffect(() => {
 
-    const endpoints = [
+    const states = [
       {
-        endpoint: "images",
-        states: [
-          {
-            setState: setHeroImages,
-            category: "hero"
-          },
-        ]
+        setState: setHeroImages,
+        type: "images",
+        category: "hero"
       },
       {
-        endpoint: "texts",
-        states: [
-          {
-            setState: setHeroCounters,
-            category: "counter"
-          },
-          {
-            setState: setNotifications,
-            category: "notification"
-          }
-        ]
+        setState: setHeroCounters,
+        type: "texts",
+        category: "counter"
       },
       {
-        endpoint: "videos",
-        states: [
-          {
-            setState: setAboutVideos,
-            category: "about"
-          },
-        ]
+        setState: setNotifications,
+        type: "texts",
+        category: "notification"
+      },
+      {
+        setState: setAboutVideos,
+        type: "videos",
+        category: "about"
       },
     ]
 
     // Lopp through endpoints
-    endpoints.forEach(endpoint => {
-      const url = `${apiBase}/${endpoint.endpoint}/`
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          const items = data.data
-          endpoint.states.forEach(state => {
-            const filteredItems = items.filter(item => item.category == state.category)
-            state.setState(filteredItems)
-          })
+    const url = `${apiBase}/batch/`
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        states.forEach(state => {
+          const items = data[state.type]
+          const filteredItems = items.filter(item => item.category == state.category)
+          state.setState(filteredItems)
         })
-        .catch(error => console.error(error))
-    })
+      })
+      .catch(error => console.error(error))
   }, [])
 
-  // useEffect(() => {
-  //   console.log({heroCounters, notifications, heroImages, aboutVideos})
-  // }, [heroCounters, notifications, heroImages, aboutVideos])
+  useEffect(() => {
+    console.log({heroCounters, notifications, heroImages, aboutVideos})
+  }, [heroCounters, notifications, heroImages, aboutVideos])
 
   return (
     <DashboardContext.Provider
