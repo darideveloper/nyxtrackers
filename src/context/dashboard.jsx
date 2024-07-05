@@ -7,29 +7,61 @@ export function DashboardContextProvider(props) {
 
   const [heroCounters, setHeroCounters] = useState([])
   const [notifications, setNotifications] = useState([])
+  const [heroImages, setHeroImages] = useState([])
+  const [aboutVideos, setAboutVideos] = useState([])
 
   const apiBase = import.meta.env.VITE_DASHBOARD_API
 
   useEffect(() => {
-    
-    // Get texts
-    const textEndpoint = `${apiBase}/texts/`
-  
-    // Get data with await/async
-    fetch(textEndpoint)
-      .then(response => response.json())
-      .then(textData => {
-        const texts = textData.data
 
-        // Filter counters
-        const counters = texts.filter(text => text.category == "counter")
-        setHeroCounters(counters)
+    const endpoints = [
+      {
+        endpoint: "texts",
+        states: [
+          {
+            setState: setHeroCounters,
+            category: "counter"
+          },
+          {
+            setState: setNotifications,
+            category: "notification"
+          }
+        ]
+      },
+      {
+        endpoint: "images",
+        states: [
+          {
+            setState: setHeroImages,
+            category: "hero"
+          },
+        ]
+      },
+      {
+        endpoint: "videos",
+        states: [
+          {
+            setState: setAboutVideos,
+            category: "about"
+          },
+        ]
+      },
+    ]
 
-        // Filter notifications
-        const notifications = texts.filter(text => text.category == "notification")
-        setNotifications(notifications)
-
-      })
+    // Lopp through endpoints
+    endpoints.forEach(endpoint => {
+      const url = `${apiBase}/${endpoint.endpoint}/`
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const items = data.data
+          endpoint.states.forEach(state => {
+            const filteredItems = items.filter(item => item.category == state.category)
+            state.setState(filteredItems)
+          })
+        })
+        .catch(error => console.error(error))
+    })
   }, [])
 
   return (
@@ -37,6 +69,8 @@ export function DashboardContextProvider(props) {
       value={{
         heroCounters,
         notifications,
+        heroImages,
+        aboutVideos,
       }}
     >
       {props.children}
