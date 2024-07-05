@@ -16,6 +16,15 @@ export function DashboardContextProvider(props) {
 
     const endpoints = [
       {
+        endpoint: "images",
+        states: [
+          {
+            setState: setHeroImages,
+            category: "hero"
+          },
+        ]
+      },
+      {
         endpoint: "texts",
         states: [
           {
@@ -26,15 +35,6 @@ export function DashboardContextProvider(props) {
             setState: setNotifications,
             category: "notification"
           }
-        ]
-      },
-      {
-        endpoint: "images",
-        states: [
-          {
-            setState: setHeroImages,
-            category: "hero"
-          },
         ]
       },
       {
