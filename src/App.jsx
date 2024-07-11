@@ -16,6 +16,7 @@ import Collaborations from './sections/collaborations'
 import Personalization from './sections/personalization'
 import Form from './components/form'
 import Notifications from './sections/notifications'
+import TopBar from './sections/top-bar'
 
 // Alert imports
 import Swal from 'sweetalert2'
@@ -50,6 +51,7 @@ function App() {
 
   return (
     <>
+      <TopBar />
       <Header />
       <Loading />
       <main>
