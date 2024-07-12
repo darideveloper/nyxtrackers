@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
 export default function TopBar() {
 
@@ -36,11 +36,15 @@ export default function TopBar() {
 
   }, [])
 
+  function clickLogout() {
+    document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+  }
+
   return (
     <section className="top-bar">
       {
         links.map((link, index) => (
-          <a key={index} href={link.link} target="_blank">
+          <a key={index} href={link.link} target="_blank" onClick={link.text === 'logout' ? clickLogout : null}>
             {link.text}
           </a>
         ))
