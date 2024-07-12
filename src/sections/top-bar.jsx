@@ -37,7 +37,7 @@ export default function TopBar() {
   }, [])
 
   function deleteCookie() {
-    document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+    document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.nyxtrackers.com;`
   }
 
   return (
