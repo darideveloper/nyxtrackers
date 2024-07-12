@@ -36,7 +36,7 @@ export default function TopBar() {
 
   }, [])
 
-  function clickLogout() {
+  function deleteCookie() {
     document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
   }
 
@@ -44,9 +44,17 @@ export default function TopBar() {
     <section className="top-bar">
       {
         links.map((link, index) => (
-          <a key={index} href={link.link} target="_blank" onClick={link.text === 'logout' ? clickLogout : null}>
+          <button key={index} onClick={() => {
+            // Delete cookie if logout and refresh page
+            if (link.text === 'logout') {
+              deleteCookie()
+              setTimeout(() => window.location.reload(), 1000)
+            } 
+            // Open link in new tab
+            window.open(link.link, '_blank')
+          }}>
             {link.text}
-          </a>
+          </button>
         ))
       }
     </section>

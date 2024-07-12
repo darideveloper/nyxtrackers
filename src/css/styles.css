@@ -404,7 +404,7 @@ h1, h2, h3, h4, h5, h6, .title {
   justify-content: flex-end;
   align-items: center;
 }
-.top-bar a {
+.top-bar button {
   margin: 0 10px;
   padding: 5px 20px;
   background-color: rgba(57, 91, 100, 0.8);
@@ -412,8 +412,10 @@ h1, h2, h3, h4, h5, h6, .title {
   border-top-left-radius: 5px;
   text-transform: capitalize;
   transition-duration: 0.6s;
+  border: none;
+  color: #E7F6F2;
 }
-.top-bar a:hover {
+.top-bar button:hover {
   background-color: rgba(165, 201, 202, 0.8);
   color: #2C3333;
 }

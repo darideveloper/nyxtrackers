@@ -51,9 +51,9 @@ export function DashboardContextProvider(props) {
       .catch(error => console.error(error))
   }, [])
 
-  useEffect(() => {
-    console.log({heroCounters, notifications, heroImages, aboutVideos})
-  }, [heroCounters, notifications, heroImages, aboutVideos])
+  // useEffect(() => {
+  //   console.log({heroCounters, notifications, heroImages, aboutVideos})
+  // }, [heroCounters, notifications, heroImages, aboutVideos])
 
   return (
     <DashboardContext.Provider
