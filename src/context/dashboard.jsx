@@ -38,7 +38,7 @@ export function DashboardContextProvider(props) {
     ]
 
     // Lopp through endpoints
-    const url = `${apiBase}/batch/`
+    const url = `${apiBase}/landing/batch/`
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -51,9 +51,9 @@ export function DashboardContextProvider(props) {
       .catch(error => console.error(error))
   }, [])
 
-  // useEffect(() => {
-  //   console.log({heroCounters, notifications, heroImages, aboutVideos})
-  // }, [heroCounters, notifications, heroImages, aboutVideos])
+  useEffect(() => {
+    console.log({heroCounters, notifications, heroImages, aboutVideos})
+  }, [heroCounters, notifications, heroImages, aboutVideos])
 
   return (
     <DashboardContext.Provider
