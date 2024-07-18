@@ -5,10 +5,15 @@ export const DashboardContext = createContext()
 
 export function DashboardContextProvider(props) {
 
+  // Landing api states
   const [heroCounters, setHeroCounters] = useState([])
   const [notifications, setNotifications] = useState([])
   const [heroImages, setHeroImages] = useState([])
   const [aboutVideos, setAboutVideos] = useState([])
+
+  // Store states
+  const now = new Date()
+  const [nextFutureStock, setNextFutureStock] = useState(now)
 
   const apiBase = import.meta.env.VITE_DASHBOARD_API
 
@@ -37,7 +42,7 @@ export function DashboardContextProvider(props) {
       },
     ]
 
-    // Lopp through endpoints
+    // Loop through landing endpoints
     const url = `${apiBase}/landing/batch/`
     fetch(url)
       .then(response => response.json())
@@ -51,9 +56,22 @@ export function DashboardContextProvider(props) {
       .catch(error => console.error(error))
   }, [])
 
+  // Get store data
+  const url = `${apiBase}/store/next-future-stock/`
   useEffect(() => {
-    console.log({heroCounters, notifications, heroImages, aboutVideos})
-  }, [heroCounters, notifications, heroImages, aboutVideos])
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const nextFutureStockStr = data["next_future_stock"]
+        const nextFutureStockDate = new Date(nextFutureStockStr)
+        setNextFutureStock(nextFutureStockDate)
+      })
+      .catch(error => console.error(error))
+  }, [])
+
+  useEffect(() => {
+    console.log({heroCounters, notifications, heroImages, aboutVideos, nextFutureStock})
+  }, [heroCounters, notifications, heroImages, aboutVideos, nextFutureStock])
 
   return (
     <DashboardContext.Provider
@@ -62,6 +80,7 @@ export function DashboardContextProvider(props) {
         notifications,
         heroImages,
         aboutVideos,
+        nextFutureStock,
       }}
     >
       {props.children}

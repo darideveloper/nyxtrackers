@@ -490,6 +490,49 @@ h1, h2, h3, h4, h5, h6, .title {
     transform: scale(1.05);
   }
 }
+.countdown {
+  color: #2C3333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 15px 0px;
+}
+.countdown h2 {
+  margin-bottom: 10px;
+}
+.countdown p, .countdown small {
+  color: #E7F6F2;
+}
+.countdown .counters {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #A5C9CA;
+  padding: 0px 10px;
+  margin: 0px 30px;
+  margin-top: 0px;
+}
+.countdown .counters p {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  color: #2C3333;
+}
+.countdown .counters p span:first-child {
+  font-size: 50px;
+  margin: 5px;
+  text-align: right;
+}
+@media screen and (max-width: 500px) {
+  .countdown .counters p span:first-child {
+    font-size: 18px;
+  }
+}
+
 #hero {
   margin-top: 80px;
 }

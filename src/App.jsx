@@ -14,9 +14,10 @@ import Footer from './sections/footer'
 import Socials from './sections/socials'
 import Collaborations from './sections/collaborations'
 import Personalization from './sections/personalization'
-import Form from './components/form'
+import Form from './sections/form'
 import Notifications from './sections/notifications'
 import TopBar from './sections/top-bar'
+import CountDown from './sections/countdown'
 
 // Alert imports
 import Swal from 'sweetalert2'
@@ -51,13 +52,13 @@ function App() {
 
   return (
     <>
+      <Loading />
       <TopBar />
       <Header />
-      <Loading />
       <main>
         <Notifications />
+        <CountDown />
         <Hero />
-        <Form />
         <About />
         <Personalization />
         <ColorOptions />
@@ -67,6 +68,7 @@ function App() {
         <VideosCustomer />
         <Collaborations />
         <WhyUs />
+        <Form />
       </main>
       <Footer />
       <Socials />
