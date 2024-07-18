@@ -501,7 +501,7 @@ h1, h2, h3, h4, h5, h6, .title {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 15px 0px;
+  margin: 55px 0px;
 }
 .countdown h2 {
   margin: 0px;
