@@ -56,8 +56,8 @@ function App() {
       <TopBar />
       <Header />
       <main>
-        <Notifications />
         <CountDown />
+        <Notifications />
         <Hero />
         <About />
         <Personalization />

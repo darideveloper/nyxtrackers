@@ -1,5 +1,7 @@
 .form-wrapper
     transition-duration: $transition-duration
+    max-width: 700px
+    margin: 0 auto
 
     form
         background-color: $color-c
@@ -55,24 +57,3 @@
             
             input[type="submit"]
                 width: 30%
-
-    @media screen and (min-width: 768px)
-        position: fixed
-        bottom: -110px
-        right: 0
-        opacity: 0.8
-        width: 500px
-        z-index: 2
-        display: flex
-        justify-content: flex-end
-        align-items: flex-end
-        padding-top: 20px
-        padding-left: 20px
-
-        form
-            width: 100%
-            margin: 0
-
-        &.active
-            opacity: 1
-            bottom: 0
