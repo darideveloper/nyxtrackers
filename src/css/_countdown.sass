@@ -5,6 +5,9 @@
     justify-content: center
     flex-direction: column
     margin: 55px 0px
+    
+    &.animated
+        animation: scale 0.5s ease-in-out infinite alternate
 
     h2
         margin: 0px
@@ -34,6 +37,14 @@
                 margin: 5px
                 text-align: right
     
+
+
     @media screen and (max-width: 500px)
         .counters p span:first-child
                 font-size: 18px
+
+@keyframes scale
+    from
+        transform: scale(0.9)
+    to
+        transform: scale(1.0)

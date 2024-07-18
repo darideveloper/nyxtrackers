@@ -11,25 +11,10 @@ export default function CountDown() {
   const [minutes, setMinutes] = useState(0)
   const [seconds, setSeconds] = useState(0)
   const [totalSeconds, setTotalSeconds] = useState(0)
-  const [totalSeocndsLoaded, setTotalSecondsLoaded] = useState(false)
-
-
-  function updateCounter() {
-    // Calculate new days, hours, minutes, and seconds
-    const days = Math.floor(totalSeconds / (3600 * 24))
-    const hours = Math.floor(totalSeconds % (3600 * 24) / 3600)
-    const minutes = Math.floor(totalSeconds % 3600 / 60)
-    const seconds = Math.floor(totalSeconds % 60)
-
-    // Set the new values
-    setDays(days)
-    setHours(hours)
-    setMinutes(minutes)
-    setSeconds(seconds)
-  }
+  const [totalSecondsLoaded, setTotalSecondsLoaded] = useState(false)
 
   useEffect(() => {
-    if (!totalSeocndsLoaded && nextFutureStock != 0) {
+    if (!totalSecondsLoaded && nextFutureStock != 0) {
       // Save the total seconds
       setTotalSeconds(nextFutureStock)
       setTotalSecondsLoaded(true)
@@ -38,21 +23,38 @@ export default function CountDown() {
 
   // Start running the counter
   useEffect(() => {
-    if (totalSeocndsLoaded) {
+    if (totalSecondsLoaded) {
       const interval = setInterval(() => {
-        if (totalSeconds > 0) {
-          setTotalSeconds(totalSeconds - 1)
-          updateCounter()
-        }
+        setTotalSeconds(prevTotalSeconds => {
+          if (prevTotalSeconds > 0) {
+            const newTotalSeconds = prevTotalSeconds - 1
+            // Update the counter
+            const days = Math.floor(newTotalSeconds / (3600 * 24))
+            const hours = Math.floor(newTotalSeconds % (3600 * 24) / 3600)
+            const minutes = Math.floor(newTotalSeconds % 3600 / 60)
+            const seconds = Math.floor(newTotalSeconds % 60)
+
+            // Skip if seoonds are lower than 0
+            if (seconds < 0) return prevTotalSeconds
+
+            setDays(days)
+            setHours(hours)
+            setMinutes(minutes)
+            setSeconds(seconds)
+
+            return newTotalSeconds
+          }
+          return prevTotalSeconds
+        })
       }, 1000)
 
       return () => clearInterval(interval)
     }
-  }, [totalSeconds])
+  }, [totalSecondsLoaded])
 
   return (
-    <section className="countdown">
-      <h2>New sets in</h2>
+    <section className={`countdown ${totalSeconds <= 0 ? 'animated' : ''}`}>
+      <h2>New sets {totalSeconds <= 0 ? 'are available now!' : 'coming soon!'}</h2>
       <div className="counters">
         <p className="counter-item">
           <span>{days.toString().length < 2 ? '0' + days : days}</span>
@@ -73,25 +75,18 @@ export default function CountDown() {
       </div>
 
       {
-        totalSeconds === 0
+        totalSeconds <= 0
           ?
-          <>
-            <p>
-              New sets are available now!
-            </p>
-            <Button
-              text="Buy here!"
-              link="#buy-form"
-            />
-          </>
+          <Button
+            text="Buy here!"
+            link="#buy-form"
+          />
           :
           <Button
             text="Notify me"
             link="#mailing-list-form"
           />
-      }
-
-      
+      }      
     </section>
   )
 }

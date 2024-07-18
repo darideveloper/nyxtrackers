@@ -503,6 +503,9 @@ h1, h2, h3, h4, h5, h6, .title {
   flex-direction: column;
   margin: 55px 0px;
 }
+.countdown.animated {
+  animation: scale 0.5s ease-in-out infinite alternate;
+}
 .countdown h2 {
   margin: 0px;
 }
@@ -537,6 +540,14 @@ h1, h2, h3, h4, h5, h6, .title {
   }
 }
 
+@keyframes scale {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 #hero {
   margin-top: 80px;
 }
