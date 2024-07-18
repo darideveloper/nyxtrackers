@@ -20,7 +20,7 @@ export default function CountDown() {
     const hours = Math.floor(totalSeconds % (3600 * 24) / 3600)
     const minutes = Math.floor(totalSeconds % 3600 / 60)
     const seconds = Math.floor(totalSeconds % 60)
-  
+
     // Set the new values
     setDays(days)
     setHours(hours)
@@ -71,14 +71,27 @@ export default function CountDown() {
           <span>Sec</span>
         </p>
       </div>
-      <p>
-        <small>Next set will be available on {new Date(nextFutureStock).toLocaleString()}</small>
-      </p>
 
-      <Button 
-        text="Notify me"
-        link="#form"
-      />
+      {
+        totalSeconds === 0
+          ?
+          <>
+            <p>
+              New sets are available now!
+            </p>
+            <Button
+              text="Buy here!"
+              link="#buy-form"
+            />
+          </>
+          :
+          <Button
+            text="Notify me"
+            link="#mailing-list-form"
+          />
+      }
+
+      
     </section>
   )
 }

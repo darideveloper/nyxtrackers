@@ -505,7 +505,6 @@ h1, h2, h3, h4, h5, h6, .title {
 }
 .countdown h2 {
   margin: 0px;
-  margin-bottom: 10px;
 }
 .countdown p, .countdown small {
   color: #E7F6F2;
@@ -517,7 +516,7 @@ h1, h2, h3, h4, h5, h6, .title {
   justify-content: center;
   background-color: #A5C9CA;
   padding: 0px 10px;
-  margin: 0px 30px;
+  margin: 20px 0;
 }
 .countdown .counters p {
   display: inline-block;

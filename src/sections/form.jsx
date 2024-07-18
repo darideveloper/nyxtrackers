@@ -57,7 +57,7 @@ export default function Form () {
       className={`form-wrapper ${formActive && "active"}`}
       onMouseEnter={() => {setFormActive(true)}}
       onMouseLeave={() => {setFormActive(false)}}
-      id="form"
+      id="mailing-list-form"
     >
       <form
         onSubmit={handleSubmit}
