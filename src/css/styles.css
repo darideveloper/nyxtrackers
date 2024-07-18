@@ -5,18 +5,22 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
 }
+
 @media screen and (max-width: 700px) {
   html {
     font-size: 12px;
   }
 }
-
 body {
   margin: 0;
   padding: 0;
   background-color: #2C3333;
   font-family: "Overpass", sans-serif;
+}
+
+#root {
   overflow-x: hidden;
+  width: 100vw;
 }
 
 p {
