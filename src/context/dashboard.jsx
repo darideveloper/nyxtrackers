@@ -12,8 +12,7 @@ export function DashboardContextProvider(props) {
   const [aboutVideos, setAboutVideos] = useState([])
 
   // Store states
-  const now = new Date()
-  const [nextFutureStock, setNextFutureStock] = useState(now)
+  const [nextFutureStock, setNextFutureStock] = useState(0)
 
   const apiBase = import.meta.env.VITE_DASHBOARD_API
 
@@ -62,9 +61,7 @@ export function DashboardContextProvider(props) {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        const nextFutureStockStr = data["next_future_stock"]
-        const nextFutureStockDate = new Date(nextFutureStockStr)
-        setNextFutureStock(nextFutureStockDate)
+        setNextFutureStock(data["next_future_stock"])
       })
       .catch(error => console.error(error))
   }, [])

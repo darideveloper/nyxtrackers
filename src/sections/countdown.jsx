@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { DashboardContext } from '../context/dashboard'
 import Button from '../components/button'
 
@@ -10,32 +10,45 @@ export default function CountDown() {
   const [hours, setHours] = useState(0)
   const [minutes, setMinutes] = useState(0)
   const [seconds, setSeconds] = useState(0)
+  const [totalSeconds, setTotalSeconds] = useState(0)
+  const [totalSeocndsLoaded, setTotalSecondsLoaded] = useState(false)
 
-  // Form states
-  const [email, setEmail] = useState('')
 
-  const apiBase = import.meta.env.VITE_DASHBOARD_API
-  const formAction = `${apiBase}/store/notify/`
-
-  // Update the countdown every 1 second
-  setInterval(function () {
-
-    // Calculate the distance between now and the target date
-    var now = new Date().getTime()
-    var distance = nextFutureStock - now
-
+  function updateCounter() {
     // Calculate new days, hours, minutes, and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24))
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000)
-
+    const days = Math.floor(totalSeconds / (3600 * 24))
+    const hours = Math.floor(totalSeconds % (3600 * 24) / 3600)
+    const minutes = Math.floor(totalSeconds % 3600 / 60)
+    const seconds = Math.floor(totalSeconds % 60)
+  
     // Set the new values
     setDays(days)
     setHours(hours)
     setMinutes(minutes)
     setSeconds(seconds)
-  }, 1000)
+  }
+
+  useEffect(() => {
+    if (!totalSeocndsLoaded && nextFutureStock != 0) {
+      // Save the total seconds
+      setTotalSeconds(nextFutureStock)
+      setTotalSecondsLoaded(true)
+    }
+  }, [nextFutureStock])
+
+  // Start running the counter
+  useEffect(() => {
+    if (totalSeocndsLoaded) {
+      const interval = setInterval(() => {
+        if (totalSeconds > 0) {
+          setTotalSeconds(totalSeconds - 1)
+          updateCounter()
+        }
+      }, 1000)
+
+      return () => clearInterval(interval)
+    }
+  }, [totalSeconds])
 
   return (
     <section className="countdown">
