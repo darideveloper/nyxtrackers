@@ -36,8 +36,10 @@ export default function Form () {
       alertTitle = "Thank you for suscribing!"
       alertText = "Now you will get notified when commissions open, by email!"
     } else {
+      const jsonData = await response.json()
+      const message = jsonData.message
       alertTitle = "Error"
-      alertText = "Please try again later"
+      alertText = `${message}. Please try again later`
     }
     
     // Show alert
