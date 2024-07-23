@@ -6,16 +6,15 @@ export default function Form () {
 
   const [email, setEmail] = useState('')
   const [formActive, setFormActive] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
-  const formHost = import.meta.env.VITE_FORM_HOST
-  const formEndpoint = `${formHost}/contact-form`
-  const loading = document.getElementById('loading')
+  const formHost = import.meta.env.VITE_DASHBOARD_API
+  const formEndpoint = `${formHost}/store/future-stock-subscription/`
 
   async function handleSubmit (e) {
     e.preventDefault()
 
-    // Show loading
-    loading.style.display = 'flex'
+    setIsLoading(true)
 
     // Submit form data as json
     const headers = new Headers()
@@ -24,11 +23,11 @@ export default function Form () {
     let response = await fetch(formEndpoint, {
       method: 'POST',
       headers: headers,
-      body: JSON.stringify({"email": email}),
+      body: JSON.stringify({
+        "email": email,
+        "type": "add",
+      }),
     })
-    
-    // Disable loading
-    loading.style.display = 'none'
 
     // Validate response status
     let alertTitle = ''
@@ -49,7 +48,9 @@ export default function Form () {
         text: alertText,
         showConfirmButton: false,
       })
-    }, 1000)
+    }, 100)
+
+    setIsLoading(false)
   }
 
   return (
@@ -82,7 +83,7 @@ export default function Form () {
           />
           <input 
             type="submit" 
-            value="Suscribe" 
+            value={isLoading ? "Loading..." : "Submit"}
             className="btn submit" 
           />
         </div>
