@@ -18,28 +18,27 @@ export function DashboardContextProvider(props) {
 
   useEffect(() => {
 
-    // TODO: reactivate
     const states = [
-      // {
-      //   setState: setHeroImages,
-      //   type: "images",
-      //   category: "hero"
-      // },
-      // {
-      //   setState: setHeroCounters,
-      //   type: "texts",
-      //   category: "counter"
-      // },
-      // {
-      //   setState: setNotifications,
-      //   type: "texts",
-      //   category: "notification"
-      // },
-      // {
-      //   setState: setAboutVideos,
-      //   type: "videos",
-      //   category: "about"
-      // },
+      {
+        setState: setHeroImages,
+        type: "images",
+        category: "hero"
+      },
+      {
+        setState: setHeroCounters,
+        type: "texts",
+        category: "counter"
+      },
+      {
+        setState: setNotifications,
+        type: "texts",
+        category: "notification"
+      },
+      {
+        setState: setAboutVideos,
+        type: "videos",
+        category: "about"
+      },
     ]
 
     // Loop through landing endpoints
