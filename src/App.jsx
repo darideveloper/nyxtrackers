@@ -14,11 +14,11 @@ import Footer from './sections/footer'
 import Socials from './sections/socials'
 import Collaborations from './sections/collaborations'
 import Personalization from './sections/personalization'
-import EmailForm from './sections/email-form'
+import EmailForm from './sections/email_form'
 import Notifications from './sections/notifications'
-import TopBar from './sections/top-bar'
+import TopBar from './sections/top_bar'
 import CountDown from './sections/countdown'
-import BuyForm from './sections/buy-form'
+import BuyForm from './sections/buy_form'
 
 function App() {
 

@@ -2,7 +2,7 @@ import { useState } from "react"
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
-export default function Form () {
+export default function EmailForm () {
 
   const [email, setEmail] = useState('')
   const [formActive, setFormActive] = useState(false)
@@ -57,7 +57,7 @@ export default function Form () {
 
   return (
     <div 
-      className={`form-wrapper ${formActive && "active"}`}
+      className={`email_form ${formActive && "active"}`}
       onMouseEnter={() => {setFormActive(true)}}
       onMouseLeave={() => {setFormActive(false)}}
       id="mailing-list-form"
