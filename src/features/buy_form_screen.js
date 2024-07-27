@@ -18,13 +18,15 @@ export const buyFormScreenSlice = createSlice({
   reducers: {
     next: state => {
       const currentScreenIndex = screens.indexOf(state.value)
-      if (currentScreenIndex == 0) { return }
-      state.value = screens[currentScreenIndex + 1]
+      const nextScreenIndex = currentScreenIndex + 1
+      if (nextScreenIndex == screens.length) { return }
+      state.value = screens[nextScreenIndex]
     },
     back: state => {
       const currentScreenIndex = screens.indexOf(state.value)
-      if (currentScreenIndex == screens.length - 1) { return }
-      state.value = screens[currentScreenIndex - 1]
+      const backScreenIndex = currentScreenIndex - 1
+      if (backScreenIndex < 0) { return }
+      state.value = screens[backScreenIndex]
     },
   }
 })
