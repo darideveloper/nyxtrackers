@@ -1,4 +1,4 @@
-export default function FormBtn({children, onClick}) {
+export default function FormBtn({children, onClick, disabled}) {
   return (
     <button
       className={`
@@ -6,6 +6,7 @@ export default function FormBtn({children, onClick}) {
       `}
       type="button"
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>

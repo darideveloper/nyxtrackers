@@ -1,16 +1,33 @@
 import { useEffect, useState } from "react"
+import { useDispatch } from 'react-redux'
+import { setSession, clearSession } from "../features/session_slice"
+import { useSelector } from 'react-redux'
 
 export default function TopBar() {
 
   const [links, setLinks] = useState([])
   const dashboardHost = import.meta.env.VITE_DASHBOARD_HOST
-  const cookieName = 'nyx'
+
+  // Redux
+  const dispatch = useDispatch()
 
   useEffect(() => {
     // Get nyx cookie
-    const nyxCookie = document.cookie.split(';').find(cookie => cookie.includes(cookieName))
-    if (nyxCookie) {
-      const username = nyxCookie.split('=')[1]
+    const cookies = document.cookie.split(';')
+    const nyxCookieUsername = cookies.find(cookie => cookie.includes("nyx_username"))
+    const nyxCookieEmail = cookies.find(cookie => cookie.includes("nyx_email"))
+    if (nyxCookieUsername && nyxCookieEmail) {
+
+      const username = nyxCookieUsername.split('=')[1]
+      const email = nyxCookieEmail.split('=')[1]
+
+      // Save cookie in hooks
+      dispatch(setSession({
+        username,
+        email
+      }))
+
+      // Update links
       setLinks([
         {
           "text": `Welcome ${username}`,
@@ -34,10 +51,20 @@ export default function TopBar() {
       ])
     }
 
+
   }, [])
 
+  // Delete cookie and clear email in redux
   function deleteCookie() {
-    document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.nyxtrackers.com;`
+    const deletebase = `expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.nyxtrackers.com;`
+    const deleteCookies = [
+      "nyx_username",
+      "nyx_email"
+    ]
+    deleteCookies.forEach(cookie => {
+      document.cookie = `${cookie}=; ${deletebase}`
+    })
+    dispatch(clearSession())
   }
 
   return (

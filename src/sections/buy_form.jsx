@@ -1,19 +1,17 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { hide } from '../features/buy_form_visible'
-import { next, back } from '../features/buy_form_screen'
-import BuyFormLogin from './buy_form_login'
-import BuyFormSet from './buy_form_set'
-import BuyFormCustomize from './buy_form_customize'
-import BuyFormExtrasPromo from './buy_form_extras_promo'
-import BuyFormShipping from './buy_form_shipping'
-import BuyFormDone from './buy_form_done'
+import { hideForm } from '../features/buy_form_visible_slice'
+import { nextScreen, backScreen } from '../features/buy_form_screen_slice'
+import BuyFormLogin from '../components/buy_form_screens/buy_form_login'
+import BuyFormSet from '../components/buy_form_screens/buy_form_set'
+import BuyFormCustomize from '../components/buy_form_screens/buy_form_customize'
+import BuyFormExtrasPromo from '../components/buy_form_screens/buy_form_extras_promo'
+import BuyFormShipping from '../components/buy_form_screens/buy_form_shipping'
+import BuyFormDone from '../components/buy_form_screens/buy_form_done'
 import FormBtn from '../components/form_btn'
 
 export default function BuyForm() {
-
-  const formElem = document.querySelector('.buy-form')
-  
+ 
   const screens = {
     "Login to buy": <BuyFormLogin />,
     "Select a Set": <BuyFormSet />,
@@ -24,9 +22,15 @@ export default function BuyForm() {
   }
   
 
+  // redux hooks
   const dispatch = useDispatch()
   const isFormVisible = useSelector(state => state.buyFormVisible.value)
   const formScreen = useSelector(state => state.buyFormScreen.value)
+  const formHasNext = useSelector(state => state.buyFormScreen.hasNext)
+  const formHasBack = useSelector(state => state.buyFormScreen.hasBack)
+
+  // local state
+  const [currentFormFilled, setCurrentFormFilled] = useState(false)
 
   return (
     <div
@@ -48,7 +52,7 @@ export default function BuyForm() {
             `}
             type="button"
             onClick={() => {
-              dispatch(hide())
+              dispatch(hideForm())
             }}
           >
             <svg
@@ -71,15 +75,17 @@ export default function BuyForm() {
         <div className="buttons">
           <FormBtn
             onClick={() => {
-              dispatch(back())
+              dispatch(backScreen())
             }}
+            disabled={!formHasBack}
           >
             Back
           </FormBtn>
           <FormBtn
             onClick={() => {
-              dispatch(next())
+              dispatch(nextScreen())
             }}
+            disabled={!formHasNext || !currentFormFilled}
           >
             Next
           </FormBtn>

@@ -1,13 +1,12 @@
 import { useContext, useState, useEffect } from 'react'
 import { DashboardContext } from '../context/dashboard'
 import Button from '../components/button'
-import { useSelector, useDispatch } from 'react-redux'
-import { show } from '../features/buy_form_visible'
+import { useDispatch } from 'react-redux'
+import { showForm } from '../features/buy_form_visible_slice'
 
 export default function CountDown() {
   
   const dispatch = useDispatch()
-  const isFormVisible = useSelector(state => state.buyFormVisible.value)
 
   const { nextFutureStock } = useContext(DashboardContext)
 
@@ -87,7 +86,7 @@ export default function CountDown() {
             text="Buy here!"
             onClick={() => {
               // Show form with redux
-              dispatch(show())
+              dispatch(showForm())
             }}
           />
           :

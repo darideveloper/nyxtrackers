@@ -2,21 +2,21 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Show and hide the buy form
 export const buyFormVisibleSlice = createSlice({
-  name: 'buy_form_visible',
+  name: 'buyFormVisible',
   initialState: {
-    value: false,
+    value: true,
   },
   reducers: {
-    show: state => {
+    showForm: state => {
       state.value = true
     },
-    hide: state => {
+    hideForm: state => {
       state.value = false
     },
   }
 })
 
 // Action creators are generated for each case reducer function
-export const { show, hide } = buyFormVisibleSlice.actions
+export const { showForm, hideForm } = buyFormVisibleSlice.actions
 
 export default buyFormVisibleSlice.reducer
