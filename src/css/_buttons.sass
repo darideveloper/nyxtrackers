@@ -43,6 +43,9 @@
         box-shadow: 0 0 0px 0px rgba($color-a, 0)
         background: $color-c
         margin: 10px
+        display: flex
+        justify-content: center
+        align-items: center
 
         &[disabled]
             opacity: 0.5
@@ -55,3 +58,31 @@
 
         &:active
             background: rgba($color-c, 0.5)
+
+        svg
+            margin: 10px
+            margin-right: 0 
+            width: 30px
+            height: 30px
+            fill: $color-a
+            transition-duration: $transition-duration
+
+            path
+                width: 100%
+                height: 100%
+
+        &.alternative
+            background: $color-a
+            color: $color-d
+            border: 2px solid $color-d
+
+            &:hover
+                background: rgba($color-a, 0.1)
+                color: $color-a
+                box-shadow: none
+
+                svg
+                    fill: $color-a
+
+            svg
+                fill: $color-d

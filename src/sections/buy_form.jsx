@@ -39,9 +39,7 @@ export default function BuyForm() {
         ${isFormVisible ? 'active' : ''}
       `}
     >
-      <form
-        id=""
-      >
+      <form>
         <div className="header">
           <h2>
             {formScreen}
@@ -58,7 +56,6 @@ export default function BuyForm() {
             <svg
               clipRule="evenodd"
               fillRule="evenodd"
-              strokeLinejoin="round"
               strokeMiterlimit="2"
               viewBox="0 0 24 24"
             >
@@ -68,8 +65,8 @@ export default function BuyForm() {
         </div>
 
         <div className="content">
-        {/* Render current screen */}
-        {screens[formScreen]}
+          {/* Render current screen */}
+          {screens[formScreen]}
         </div>
 
         <div className="buttons">

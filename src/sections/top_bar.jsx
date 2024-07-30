@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from 'react-redux'
 import { setSession, clearSession } from "../features/session_slice"
-import { useSelector } from 'react-redux'
+import { getCookies, clearCookies } from '../tools/session'
 
 export default function TopBar() {
 
@@ -12,14 +12,13 @@ export default function TopBar() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    // Get nyx cookie
-    const cookies = document.cookie.split(';')
-    const nyxCookieUsername = cookies.find(cookie => cookie.includes("nyx_username"))
-    const nyxCookieEmail = cookies.find(cookie => cookie.includes("nyx_email"))
-    if (nyxCookieUsername && nyxCookieEmail) {
+    // Get nyx cookie 
+    const cookies = getCookies()
+    
+    if (cookies.username && cookies.email) {
 
-      const username = nyxCookieUsername.split('=')[1]
-      const email = nyxCookieEmail.split('=')[1]
+      const username = cookies.username
+      const email = cookies.email
 
       // Save cookie in hooks
       dispatch(setSession({
@@ -54,28 +53,15 @@ export default function TopBar() {
 
   }, [])
 
-  // Delete cookie and clear email in redux
-  function deleteCookie() {
-    const deletebase = `expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.nyxtrackers.com;`
-    const deleteCookies = [
-      "nyx_username",
-      "nyx_email"
-    ]
-    deleteCookies.forEach(cookie => {
-      document.cookie = `${cookie}=; ${deletebase}`
-    })
-    dispatch(clearSession())
-  }
-
   return (
     <section className="top-bar">
       {
         links.map((link, index) => (
           <button key={index} onClick={() => {
             // Delete cookie if logout and refresh page
-            if (link.text === 'logout') {
-              deleteCookie()
-              setTimeout(() => window.location.reload(), 1000)
+            if (link.text === 'logout') {  
+              clearCookies()
+              dispatch(clearSession())
             } 
             // Open link in new tab
             window.open(link.link, '_blank')

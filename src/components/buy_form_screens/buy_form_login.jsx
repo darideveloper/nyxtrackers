@@ -1,5 +1,6 @@
 import FormBtn from "../../components/form_btn"
 import { useSelector } from 'react-redux'
+import BuyFormLoginLogged from "./buy_form_login_logged"
 
 export default function BuyFormLogin() {
 
@@ -7,9 +8,16 @@ export default function BuyFormLogin() {
   const sessionUsername = useSelector(state => state.session.username)
 
   return (
-    <FormBtn >
-      Continue as {sessionUsername}
-    </FormBtn>
-    
+    <section className="login">
+      {
+        sessionEmail
+        ?
+        <BuyFormLoginLogged
+          username={sessionUsername} 
+        />
+        :
+        <p>no </p>
+      }
+    </section>
   )
 }
