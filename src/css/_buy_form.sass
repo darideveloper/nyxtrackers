@@ -12,10 +12,15 @@
     opacity: 0
     pointer-events: none
     z-index: 2
+    transition-duration: 0.3s
 
     &.active
         opacity: 1
         pointer-events: all
+
+        form
+            margin-top: 0
+            opacity: 1
 
     form
         width: calc(90% - 60px)
@@ -25,6 +30,10 @@
         border-radius: 10px
         box-shadow: 4px 4px 10px rgba(black, 0.6)
         padding: 30px 50px
+        margin-top: 100px
+        opacity: 0
+        transition-duration: 0.3s
+        transition-delay: 0.2s
 
         .header
             display: flex
