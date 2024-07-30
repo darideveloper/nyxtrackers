@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { hideForm } from '../features/buy_form_visible_slice'
+import { hideForm, showForm } from '../features/buy_form_visible_slice'
 import { nextScreen, backScreen } from '../features/buy_form_screen_slice'
 import BuyFormLogin from '../components/buy_form_screens/buy_form_login'
 import BuyFormSet from '../components/buy_form_screens/buy_form_set'
@@ -9,6 +9,7 @@ import BuyFormExtrasPromo from '../components/buy_form_screens/buy_form_extras_p
 import BuyFormShipping from '../components/buy_form_screens/buy_form_shipping'
 import BuyFormDone from '../components/buy_form_screens/buy_form_done'
 import FormBtn from '../components/form_btn'
+import { useEffect } from 'react'
 
 export default function BuyForm() {
   
@@ -24,7 +25,6 @@ export default function BuyForm() {
     "Done": <BuyFormDone setFilled={setCurrentFormFilled} />
   }
   
-
   // redux hooks
   const dispatch = useDispatch()
   const isFormVisible = useSelector(state => state.buyFormVisible.value)
@@ -32,6 +32,12 @@ export default function BuyForm() {
   const formHasNext = useSelector(state => state.buyFormScreen.hasNext)
   const formHasBack = useSelector(state => state.buyFormScreen.hasBack)
 
+  // Render form if there is "#buy-form" in the URL
+  useEffect(() => {
+    if (window.location.hash === '#buy-form') {
+      dispatch(showForm())
+    }
+  }, [])
 
   return (
     <div
