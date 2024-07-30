@@ -38,8 +38,10 @@ export function clearCookies(redirectDashboard = false) {
     console.log("Clearing cookie:", { cookie, cookieExpired })
   })
 
-  // Refresh page
-  setTimeout(() => window.location.reload(), 100)
+  // Refresh page when recover focus
+  window.onfocus = () => {
+    window.location.reload()
+  }
 
   // Go to dashboard in new tab
   if (redirectDashboard) {
@@ -47,3 +49,4 @@ export function clearCookies(redirectDashboard = false) {
     window.open(logoutLink, '_blank')
   }
 }
+

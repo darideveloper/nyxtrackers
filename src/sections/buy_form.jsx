@@ -11,14 +11,17 @@ import BuyFormDone from '../components/buy_form_screens/buy_form_done'
 import FormBtn from '../components/form_btn'
 
 export default function BuyForm() {
+  
+  // local state
+  const [currentFormFilled, setCurrentFormFilled] = useState(false)
  
   const screens = {
-    "Login to buy": <BuyFormLogin />,
-    "Select a Set": <BuyFormSet />,
-    "Customize your Set": <BuyFormCustomize />,
-    "Extras and promo code": <BuyFormExtrasPromo />,
-    "Shipping address": <BuyFormShipping />,
-    "Done": <BuyFormDone />
+    "Login to buy": <BuyFormLogin setFilled={setCurrentFormFilled} />,
+    "Select a Set": <BuyFormSet setFilled={setCurrentFormFilled} />,
+    "Customize your Set": <BuyFormCustomize setFilled={setCurrentFormFilled} />,
+    "Extras and promo code": <BuyFormExtrasPromo setFilled={setCurrentFormFilled} />,
+    "Shipping address": <BuyFormShipping setFilled={setCurrentFormFilled} />,
+    "Done": <BuyFormDone setFilled={setCurrentFormFilled} />
   }
   
 
@@ -29,8 +32,6 @@ export default function BuyForm() {
   const formHasNext = useSelector(state => state.buyFormScreen.hasNext)
   const formHasBack = useSelector(state => state.buyFormScreen.hasBack)
 
-  // local state
-  const [currentFormFilled, setCurrentFormFilled] = useState(false)
 
   return (
     <div

@@ -27,7 +27,6 @@ body
     overflow-x: hidden
     width: 100vw
 
-
 p
     font-size: 1rem
 
@@ -236,3 +235,20 @@ h1, h2, h3, h4, h5, h6, .title
 
     .swiper-button-disabled
         color: rgba($color-a, 0.1) !important
+
+// Global inputs
+input
+    padding: 10px 15px
+    border-radius: 5px
+    width: 100%
+    box-sizing: border-box
+    transition-duration: $transition-duration
+    border: 2px solid $color-a
+
+    &:focus
+        opacity: 0.8
+        background-color: rgba($color-a, 0)
+        color: $color-a
+
+        &::placeholder 
+            color: rgba($color-a, 0.5)

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import Input from "../components/input"
 
 export default function EmailForm () {
 
@@ -68,18 +69,13 @@ export default function EmailForm () {
         <h2>Sign up to our mailing list</h2>
         <p>You will get notified when commissions opens</p>
         <div className={`inputs`}>
-          <label 
-            htmlFor="email"
-          >
-            Email
-          </label>
-          <input 
-            type="email" 
-            name="email" 
-            id="email" 
-            placeholder="sample@email.com" 
-            required 
-            autoComplete="off"
+          <Input 
+            type={"email"}
+            name={"email"}
+            label={"Email"}
+            hideLabel={true}
+            placeholder={"sample@email.com"} 
+            required={true}
             value={email}
             onChange={(e) => {setEmail(e.target.value)}}
           />

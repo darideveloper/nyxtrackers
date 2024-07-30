@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Show and hide the buy form
 export const sessionSlice = createSlice({
-  name: 'sessionUsername',
+  name: 'session',
   initialState: {
     email: "",
     username: "",

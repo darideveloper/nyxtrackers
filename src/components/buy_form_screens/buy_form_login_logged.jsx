@@ -1,13 +1,35 @@
 import FormBtn from "../../components/form_btn"
 import { clearCookies } from "../../tools/session"
+import { setEmail } from "../../features/buy_form_data"
+import { useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 
-export default function BuyFormLoginLogged({ username }) {
+/**
+ * Buy form login, when user is logged
+ * @param {Object} props - Component props
+ * @param {Function} props.setScreen - Set the next screen
+ * @returns {JSX.Element} Buy form login logged component
+ */
+export default function BuyFormLoginNoLogged({ setScreen }) {
+
+  // Redux data
+  const sessionUsername = useSelector(state => state.session.username)
+  const sessionEmail = useSelector(state => state.session.email)
+
+  // Redux
+  const dispatch = useDispatch()
+
   return (
-    <section className="logged">
+    <section className="login logged">
       <FormBtn
         alternative={true}
+        onClick={() => {
+          // Set email in redux
+          dispatch(setEmail(sessionEmail))
+          setScreen("next")
+        }}
       >
-        Continue as "{username}"
+        Continue as "{sessionUsername}"
         <svg
           strokeMiterlimit="2"
           viewBox="0 0 24 24"

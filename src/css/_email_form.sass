@@ -28,32 +28,16 @@
             label
                 display: none
             
-
-            input
-                padding: 10px 15px
-                border-radius: 5px
+            .input-wrapper
                 width: 100%
-                box-sizing: border-box
-                transition-duration: $transition-duration
 
-                &[type="email"]
-                    border: 2px solid $color-a
-
-                    &:focus
-                        opacity: 0.8
-                        background-color: rgba($color-a, 0)
-                        color: $color-a
-
-                        &::placeholder 
-                            color: rgba($color-a, 0.5)
+            input[type="submit"]
+                border: none
 
     @media screen and (min-width: 650px)
         form .inputs
             flex-direction: row
             gap: 5px
 
-            input[type="email"]
-                width: 70%
-            
             input[type="submit"]
                 width: 30%
