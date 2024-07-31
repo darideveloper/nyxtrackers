@@ -148,7 +148,7 @@ export default function BuyForm() {
                 dispatch(nextScreen())
               }, 500)
             }}
-            disabled={!formHasNext || !doneScreens.includes(formScreen)}
+            disabled={!formHasNext}
           >
             Next
           </FormBtn>

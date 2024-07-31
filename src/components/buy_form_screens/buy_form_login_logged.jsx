@@ -7,10 +7,10 @@ import { useSelector } from "react-redux"
 /**
  * Buy form login, when user is logged
  * @param {Object} props - Component props
- * @param {Function} props.setScreen - Set the next screen
+ * @param {Function} props.setLogged - Set the logged state
  * @returns {JSX.Element} Buy form login logged component
  */
-export default function BuyFormLoginNoLogged({ setScreen }) {
+export default function BuyFormLoginNoLogged({ setLogged }) {
 
   // Redux data
   const sessionUsername = useSelector(state => state.session.username)
@@ -26,7 +26,7 @@ export default function BuyFormLoginNoLogged({ setScreen }) {
         onClick={() => {
           // Set email in redux
           dispatch(setEmail(sessionEmail))
-          setScreen("next")
+          setLogged(true)
         }}
       >
         Continue as "{sessionUsername}"

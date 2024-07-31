@@ -16,26 +16,32 @@ export default function BuyFormLogin({startLoading}) {
 
   // Local screens
   const [screen, setScreen] = useState("noLogged")
+  const [logged, setLogged] = useState(false)
   const screens = {
-    "logged": <BuyFormLoginLogged setScreen={setScreen} />,
-    "noLogged": <BuyFormLoginNoLogged setScreen={setScreen} />,
+    "logged": <BuyFormLoginLogged setLogged={setLogged} />,
+    "noLogged": <BuyFormLoginNoLogged setLogged={setLogged} />
   }
 
   // Redux data
   const sessionEmail = useSelector(state => state.session.email)
   const dispatch = useDispatch()
 
-  // Setup initial screen
   useEffect(() => {
+    // Setup initial screen
     if (screen == "noLogged" && sessionEmail) {
       setScreen("logged")
-    } else if (screen == "next") {
+    } 
+  }, [screen, sessionEmail])
+
+  useEffect(() => {
+    // Move to next screen
+    if (logged) {
       startLoading()
       setTimeout(() => {
         dispatch(nextScreen())
       }, 500)
     }
-  }, [sessionEmail, screen])
+  }, [logged])
   
   return (
     <section className="login">

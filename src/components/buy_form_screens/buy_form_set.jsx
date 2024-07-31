@@ -16,8 +16,8 @@ export default function BuyFormSet() {
             <img src={`/sets/${set.name} ${colorsOptions[0]}.webp`} />
             <div className="info">
               <h3>{set.name}</h3>
-              <p>{set.points} points</p>
-              <p>${set.price}</p>
+              <p className='points'>{set.points} points</p>
+              <p className='price'>+${set.price} USD</p>
               {
                 set.recommended
                 &&

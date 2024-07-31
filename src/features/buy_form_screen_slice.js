@@ -1,13 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-
-const screens = [
-  "Login to buy",
-  "Select a Set",
-  "Customize your Set",
-  "Extras and promo code",
-  "Shipping address",
-  "Done",
-]
+import { screens, getHasNextBackScreen } from '../api/buy_form'
 
 // Manage the current screen in the buy form
 export const buyFormScreenSlice = createSlice({
@@ -32,7 +24,12 @@ export const buyFormScreenSlice = createSlice({
         return
       }
       state.value = screens[nextScreenIndex]
-      state.hasBack = true
+      
+      // Validate if have next done screen
+      const {hasNext, hasBack} = getHasNextBackScreen(state.value, state.doneScreens)
+      state.hasNext = hasNext
+      state.hasBack = hasBack
+      
     },
     backScreen: state => {
 
@@ -45,12 +42,23 @@ export const buyFormScreenSlice = createSlice({
       }
       state.value = screens[backScreenIndex]
       state.hasNext = true
+
+      // Validate if have next done screen
+      const {hasNext, hasBack} = getHasNextBackScreen(state.value, state.doneScreens)
+      state.hasNext = hasNext
+      state.hasBack = hasBack
+    },
+    setHasNext: (state, action) => {
+      state.hasNext = action.payload
+    },
+    setHasBack: (state, action) => {
+      state.hasBack = action.payload
     },
   }
 })
 
 
 // Action creators are generated for each case reducer function
-export const { nextScreen, backScreen } = buyFormScreenSlice.actions
+export const { nextScreen, backScreen, setHasNext, setHasBack } = buyFormScreenSlice.actions
 
 export default buyFormScreenSlice.reducer

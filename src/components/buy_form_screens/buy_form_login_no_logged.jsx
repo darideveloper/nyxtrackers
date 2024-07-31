@@ -2,23 +2,29 @@ import FormBtn from "../form_btn"
 import { useState } from "react"
 import Input from "../input"
 import { setEmail } from "../../features/buy_form_data"
+import { setHasNext } from "../../features/buy_form_screen_slice"
 import { useDispatch } from "react-redux"
+import { useEffect } from "react"
+
 
 /**
  * Buy form login, when user is not logged
  * @param {Object} props - Component props
- * @param {Function} props.setScreen - Set the next screen
+ * @param {Function} props.setLogged - Set the logged state
  * @returns {JSX.Element} Buy form login logged component
  */
-export default function BuyFormLoginNoLogged({ setScreen }) {
+export default function BuyFormLoginNoLogged({ setLogged }) {
 
   const dashboardHost = import.meta.env.VITE_DASHBOARD_HOST
-
   const [isGuest, setIsGuest] = useState(false)
 
   // Redux
   const dispatch = useDispatch()
 
+  useEffect(() => {
+    // Disable next button when user is not logged
+    dispatch(setHasNext(false))
+  }, [])
 
   return (
     <section className="login no-logged">
@@ -67,8 +73,8 @@ export default function BuyFormLoginNoLogged({ setScreen }) {
 
             <FormBtn
               onClick={() => {
-                // Set email in redux
-                setScreen("next")
+                // Go to next screen
+                setLogged(true)
               }}
             >
               Continue
