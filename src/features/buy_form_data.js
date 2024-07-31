@@ -1,44 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-
-export const setsOptions = [
-  {
-    "name": "basic",
-    "points": 5,
-    "price": 275,
-    "recommended": false,
-  },
-  {
-    "name": "standard",
-    "points": 6,
-    "price": 295,
-    "recommended": false,
-  },
-  {
-    "name": "enhanced",
-    "points": 8,
-    "price": 335,
-    "recommended": true,
-  },
-  {
-    "name": "elite",
-    "points": 10,
-    "price": 460,
-    "recommended": false,
-  },
-]
-
-export const colorsOptions = [
-  "blue",
-  "white",
-  "grey",
-  "green",
-  "yellow",
-  "orange",
-  "red",
-  "pink",
-  "purple",
-  "black",
-]
+import { setsOptions, colorsOptions } from '../api/buy_form'
 
 // Show and hide the buy form
 export const buyFormDataSlice = createSlice({
@@ -46,16 +7,24 @@ export const buyFormDataSlice = createSlice({
   initialState: {
     email: "",
     set: setsOptions[2],
-    color: colorsOptions[0]
+    setOptions: setsOptions,
+    color: colorsOptions[0],
+    colorOptions: colorsOptions,
   },
   reducers: {
     setEmail: (state, action) => {
       state.email = action.payload.email
     },
+    setSet: (state, action) => {
+      state.set = action.payload.set
+    },
+    setColor: (state, action) => {
+      state.color = action.payload.color
+    }
   }
 })
 
 // Action creators are generated for each case reducer function
-export const { setEmail } = buyFormDataSlice.actions
+export const { setEmail, setSet, setColor } = buyFormDataSlice.actions
 
 export default buyFormDataSlice.reducer

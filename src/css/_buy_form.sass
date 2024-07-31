@@ -13,6 +13,10 @@
     pointer-events: none
     z-index: 2
     transition-duration: 0.3s
+    overflow-y: scroll
+
+    &.mobile
+        align-items: flex-start
 
     &.active
         opacity: 1
@@ -24,7 +28,6 @@
 
     form
         width: calc(90% - 60px)
-        height: calc(90% - 100px)
         max-width: 800px
         background-color: $color-d
         border-radius: 10px
@@ -39,6 +42,7 @@
             display: flex
             justify-content: space-between
             align-items: center
+            margin-bottom: 30px
 
             h2
                 font-size: 2rem
@@ -63,9 +67,8 @@
                     transition-duration: 0.3s
 
         .content
-            border: 1px solid red
             width: 100%
-            height: calc(100% - 100px)
+            min-height: calc(100% - 100px)
             display: flex
             align-items: center
             justify-content: space-evenly
@@ -84,12 +87,14 @@
                 align-items: center
                 flex-direction: column
                 width: 50%
+                overflow: visible
 
             input
                 font-size: 1.1rem
                 padding: 15px 30px
 
-                
+            
+            // Custom scrreens
             .login
 
                 > section
@@ -102,9 +107,68 @@
                     .input-wrapper
                         margin-top: 30px
 
+            .set
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
+                grid-gap: 20px
+                
+                .set-option
+                    background-color: $color-c
+                    padding: 10px 20px
+                    border-radius: 5px
+                    box-shadow: 2px 2px 5px rgba(black, 0.6)
+                    transition-duration: 0.3s
+                    cursor: pointer
+                    color: rgba($color-a, 0.7)
+                    text-align: center
+                    position: relative
+
+                    &:hover
+                        background-color: rgba($color-c, 0.5)
+                        box-shadow: 2px 2px 15px rgba(black, 0.8)
+
+                    img
+                        width: 100px
+                    
+                    h3, p
+                        margin: 0
+                        padding: 0
+
+                    h3
+                        text-transform: capitalize
+                        font-size: 1.5rem
+
+                    .tag
+                        font-size: 0.8rem
+                        background-color: $color-d
+                        border-radius: 5px
+                        position: absolute
+                        top: -25px
+                        right: 50%
+                        transform: translate(50%, 50%)
+                        padding: 5px 10px
+                    
+
 
         .buttons
+            margin-top: 30px
             height: 60px
             display: flex
             justify-content: flex-end
             align-items: center
+
+    @media screen and (max-width: 600px)
+        form
+            padding: 30px 20px
+
+    @media screen and (max-width: 750px)
+        form
+            .content
+                flex-direction: column
+                justify-content: space-evenly
+
+                > section
+                    width: 100%
+
+                .buy-form-preview
+                    width: 80%

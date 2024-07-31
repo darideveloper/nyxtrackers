@@ -13,6 +13,17 @@ import BuyFormPreview from '../components/buy_form_preview'
 
 export default function BuyForm() {
  
+  function setFormMobile() {
+    const formElem = document.querySelector('.buy-form > form')
+    const screenHeight = window.innerHeight
+    const formHeight = formElem.offsetHeight
+    if (screenHeight < formHeight) {
+      formElem.parentNode.classList.add('mobile')
+    } else {
+      formElem.parentNode.classList.remove('mobile')
+    }
+  }
+
   const screens = {
     "Login to buy": <BuyFormLogin />,
     "Select a Set": <BuyFormSet />,
@@ -39,15 +50,33 @@ export default function BuyForm() {
     }
   }, [])
 
-  // Set full with content only to specific screens
   useEffect(() => {
+    console.log({formScreen})
+
+    // Set full with content only to specific screens
     const fullWithSceens = ['Login to buy']
     if (fullWithSceens.includes(formScreen)) {
       setFullWithContent(true)
     } else {
       setFullWithContent(false)
     }
+
+    // Update responsive form align
+    setTimeout(() => {
+      setFormMobile()
+    }, 10)
+
   }, [formScreen])
+
+  // Change form align when mobile
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setFormMobile()
+    })
+
+    // Set form align when component is mounted
+    setFormMobile()
+  }, [])
 
   return (
     <div
