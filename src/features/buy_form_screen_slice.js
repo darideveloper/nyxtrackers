@@ -16,9 +16,15 @@ export const buyFormScreenSlice = createSlice({
     value: screens[0],
     hasNext: true,
     hasBack: false,
+    doneScreens: [],
   },
   reducers: {
     nextScreen: state => {
+
+      // Save current screen as done
+      state.doneScreens.push(state.value)
+
+      // Move to next screen
       const currentScreenIndex = screens.indexOf(state.value)
       const nextScreenIndex = currentScreenIndex + 1
       if (nextScreenIndex == screens.length) { 
@@ -29,6 +35,8 @@ export const buyFormScreenSlice = createSlice({
       state.hasBack = true
     },
     backScreen: state => {
+
+      // Move to previous screen
       const currentScreenIndex = screens.indexOf(state.value)
       const backScreenIndex = currentScreenIndex - 1
       if (backScreenIndex < 0) { 

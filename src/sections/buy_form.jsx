@@ -12,17 +12,14 @@ import FormBtn from '../components/form_btn'
 import BuyFormPreview from '../components/buy_form_preview'
 
 export default function BuyForm() {
-  
-  // local state
-  const [currentFormFilled, setCurrentFormFilled] = useState(false)
  
   const screens = {
-    "Login to buy": <BuyFormLogin setFilled={setCurrentFormFilled} />,
-    "Select a Set": <BuyFormSet setFilled={setCurrentFormFilled} />,
-    "Customize your Set": <BuyFormCustomize setFilled={setCurrentFormFilled} />,
-    "Extras and promo code": <BuyFormExtrasPromo setFilled={setCurrentFormFilled} />,
-    "Shipping address": <BuyFormShipping setFilled={setCurrentFormFilled} />,
-    "Done": <BuyFormDone setFilled={setCurrentFormFilled} />
+    "Login to buy": <BuyFormLogin />,
+    "Select a Set": <BuyFormSet />,
+    "Customize your Set": <BuyFormCustomize />,
+    "Extras and promo code": <BuyFormExtrasPromo />,
+    "Shipping address": <BuyFormShipping />,
+    "Done": <BuyFormDone />
   }
   
   // redux hooks
@@ -31,6 +28,7 @@ export default function BuyForm() {
   const formScreen = useSelector(state => state.buyFormScreen.value)
   const formHasNext = useSelector(state => state.buyFormScreen.hasNext)
   const formHasBack = useSelector(state => state.buyFormScreen.hasBack)
+  const doneScreens = useSelector(state => state.buyFormScreen.doneScreens)
 
   const [fullWithContent, setFullWithContent] = useState(false)
 
@@ -104,7 +102,7 @@ export default function BuyForm() {
             onClick={() => {
               dispatch(nextScreen())
             }}
-            disabled={!formHasNext || !currentFormFilled}
+            disabled={!formHasNext || !doneScreens.includes(formScreen)}
           >
             Next
           </FormBtn>

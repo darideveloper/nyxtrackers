@@ -3,7 +3,7 @@ export default function FormBtn({children, onClick, disabled, alternative}) {
     <button
       className={`
         btn form-btn
-        ${alternative && 'alternative'}
+        ${alternative ? 'alternative': ''}
       `}
       type="button"
       onClick={onClick}
