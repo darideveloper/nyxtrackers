@@ -35,7 +35,6 @@ export function clearCookies(redirectDashboard = false) {
   deleteCookies.forEach(cookie => {
     const cookieExpired = `${cookie}=; ${deletebase}`
     document.cookie = cookieExpired
-    console.log("Clearing cookie:", { cookie, cookieExpired })
   })
 
   // Refresh page when recover focus

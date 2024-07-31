@@ -5,7 +5,13 @@ import BuyFormLoginNoLogged from "./buy_form_login_no_logged"
 import { nextScreen } from '../../features/buy_form_screen_slice'
 import { useDispatch } from 'react-redux'
 
-export default function BuyFormLogin() {
+/**
+ * Login form for the buy form
+ * @param {Object} props
+ * @param {Boolean} props.startLoading - Function to start loading 
+ * @returns 
+ */
+export default function BuyFormLogin({startLoading}) {
 
 
   // Local screens
@@ -24,7 +30,10 @@ export default function BuyFormLogin() {
     if (screen == "noLogged" && sessionEmail) {
       setScreen("logged")
     } else if (screen == "next") {
-      dispatch(nextScreen())
+      startLoading()
+      setTimeout(() => {
+        dispatch(nextScreen())
+      }, 500)
     }
   }, [sessionEmail, screen])
   

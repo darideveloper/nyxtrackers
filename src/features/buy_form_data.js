@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { setsOptions, colorsOptions } from '../api/buy_form'
 
+
 // Show and hide the buy form
 export const buyFormDataSlice = createSlice({
   name: 'buyFormData',

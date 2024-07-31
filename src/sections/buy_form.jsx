@@ -11,8 +11,22 @@ import BuyFormDone from '../components/buy_form_screens/buy_form_done'
 import FormBtn from '../components/form_btn'
 import BuyFormPreview from '../components/buy_form_preview'
 
+
 export default function BuyForm() {
  
+  // redux hooks
+  const dispatch = useDispatch()
+  const isFormVisible = useSelector(state => state.buyFormVisible.value)
+  const formScreen = useSelector(state => state.buyFormScreen.value)
+  const formHasNext = useSelector(state => state.buyFormScreen.hasNext)
+  const formHasBack = useSelector(state => state.buyFormScreen.hasBack)
+  const doneScreens = useSelector(state => state.buyFormScreen.doneScreens)
+  
+  // States
+  const [fullWithContent, setFullWithContent] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+
+  // Reuse functions
   function setFormMobile() {
     const formElem = document.querySelector('.buy-form > form')
     const screenHeight = window.innerHeight
@@ -24,34 +38,38 @@ export default function BuyForm() {
     }
   }
 
-  const screens = {
-    "Login to buy": <BuyFormLogin />,
-    "Select a Set": <BuyFormSet />,
-    "Customize your Set": <BuyFormCustomize />,
-    "Extras and promo code": <BuyFormExtrasPromo />,
-    "Shipping address": <BuyFormShipping />,
-    "Done": <BuyFormDone />
+  function startLoading() {
+    setIsLoading(true)
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 500)
   }
-  
-  // redux hooks
-  const dispatch = useDispatch()
-  const isFormVisible = useSelector(state => state.buyFormVisible.value)
-  const formScreen = useSelector(state => state.buyFormScreen.value)
-  const formHasNext = useSelector(state => state.buyFormScreen.hasNext)
-  const formHasBack = useSelector(state => state.buyFormScreen.hasBack)
-  const doneScreens = useSelector(state => state.buyFormScreen.doneScreens)
 
-  const [fullWithContent, setFullWithContent] = useState(false)
+  const screens = {
+    "Login to buy": <BuyFormLogin startLoading={startLoading}/>,
+    "Select a Set": <BuyFormSet startLoading={startLoading}/>,
+    "Customize your Set": <BuyFormCustomize startLoading={startLoading}/>,
+    "Extras and promo code": <BuyFormExtrasPromo startLoading={startLoading}/>,
+    "Shipping address": <BuyFormShipping startLoading={startLoading}/>,
+    "Done": <BuyFormDone startLoading={startLoading}/>
+  }
 
   // Render form if there is "#buy-form" in the URL
   useEffect(() => {
     if (window.location.hash === '#buy-form') {
       dispatch(showForm())
     }
+
+    // Change form align when mobile
+    window.addEventListener('resize', () => {
+      setFormMobile()
+    })
+
+    // Set form align when component is mounted
+    setFormMobile()
   }, [])
 
   useEffect(() => {
-    console.log({formScreen})
 
     // Set full with content only to specific screens
     const fullWithSceens = ['Login to buy']
@@ -68,16 +86,6 @@ export default function BuyForm() {
 
   }, [formScreen])
 
-  // Change form align when mobile
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      setFormMobile()
-    })
-
-    // Set form align when component is mounted
-    setFormMobile()
-  }, [])
-
   return (
     <div
       className={`
@@ -85,7 +93,10 @@ export default function BuyForm() {
         ${isFormVisible ? 'active' : ''}
       `}
     >
-      <form>
+      <form
+        className={`form ${isLoading ? 'loading' : ''}`}
+      >
+        
         <div className="header">
           <h2>
             {formScreen}
@@ -121,7 +132,10 @@ export default function BuyForm() {
         <div className="buttons">
           <FormBtn
             onClick={() => {
-              dispatch(backScreen())
+              startLoading()
+              setTimeout(() => {
+                dispatch(backScreen())
+              }, 500)
             }}
             disabled={!formHasBack}
           >
@@ -129,7 +143,10 @@ export default function BuyForm() {
           </FormBtn>
           <FormBtn
             onClick={() => {
-              dispatch(nextScreen())
+              startLoading()
+              setTimeout(() => {
+                dispatch(nextScreen())
+              }, 500)
             }}
             disabled={!formHasNext || !doneScreens.includes(formScreen)}
           >

@@ -24,7 +24,7 @@ export const buyFormScreenSlice = createSlice({
       // Save current screen as done
       state.doneScreens.push(state.value)
 
-      // Move to next screen
+      // Move to next screen with
       const currentScreenIndex = screens.indexOf(state.value)
       const nextScreenIndex = currentScreenIndex + 1
       if (nextScreenIndex == screens.length) { 
