@@ -46,7 +46,6 @@
         opacity: 0
         transition-delay: 0.2s
         position: relative
-        max-height: 1000px
         transition-duration: 0.2s
 
         .header
@@ -91,6 +90,11 @@
 
             .buy-form-preview 
                 width: 40%
+                position: relative
+                margin: 20px
+
+                > img
+                    width: 100%
 
             > section
                 display: flex
@@ -128,13 +132,14 @@
                 .set-option
                     background-color: $color-c
                     padding: 10px 20px
-                    border-radius: 5px
+                    border-radius: 8px
                     box-shadow: 2px 2px 5px rgba(black, 0.6)
                     transition-duration: 0.3s
                     cursor: pointer
                     color: rgba($color-a, 0.7)
                     text-align: center
                     position: relative
+                    border: 3px solid $color-c
 
                     &.selected
                         background-color: rgba($color-c, 0.3)

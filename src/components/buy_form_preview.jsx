@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux'
 import { useState, useEffect} from 'react'
+import Spinner from './spinner'
+import { set } from 'react-hook-form'
 
 export default function BuyFormPreview({}) {
 
@@ -9,9 +11,10 @@ export default function BuyFormPreview({}) {
   const formScreen = useSelector(state => state.buyFormScreen.value)
 
   const [isHidden, setIsHidden] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
-  // Hide image in login screen
   useEffect(() => {
+    // Hide image in login screen
     if (formScreen === 'Login to buy') {
       setIsHidden(true)
     } else {
@@ -19,13 +22,26 @@ export default function BuyFormPreview({}) {
     }
   }, [formScreen])
 
+  useEffect(() => {
+    // Show loading spinner when set or color changes
+    if (!isLoading) {
+      setIsLoading(true)
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 1000)
+    }
+  }, [currentSet, currentColor])
+
   // Image path
   const imagePath = `/sets/${currentSet.name} ${currentColor}.webp`
 
   return (
-    <img 
-      className={`buy-form-preview ${isHidden ? "hidden" : ""}`}
-      src={imagePath}
-    />
+    <div className="buy-form-preview">
+      <Spinner isLoading={isLoading} />
+      <img 
+        className={`${isHidden ? "hidden" : ""}`}
+        src={imagePath}
+      />
+    </div>
   )
 }
