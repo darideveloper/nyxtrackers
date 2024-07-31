@@ -7,20 +7,18 @@ export const buyFormDataSlice = createSlice({
   name: 'buyFormData',
   initialState: {
     email: "",
-    set: setsOptions[2],
-    setOptions: setsOptions,
-    color: colorsOptions[0],
-    colorOptions: colorsOptions,
+    setSelected: setsOptions[2],
+    colorSelected: colorsOptions[0],
   },
   reducers: {
     setEmail: (state, action) => {
       state.email = action.payload.email
     },
     setSet: (state, action) => {
-      state.set = action.payload.set
+      state.setSelected = action.payload
     },
     setColor: (state, action) => {
-      state.color = action.payload.color
+      state.colorSelected = action.payload
     }
   }
 })

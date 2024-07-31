@@ -20,7 +20,6 @@ export default function BuyForm() {
   const formScreen = useSelector(state => state.buyFormScreen.value)
   const formHasNext = useSelector(state => state.buyFormScreen.hasNext)
   const formHasBack = useSelector(state => state.buyFormScreen.hasBack)
-  const doneScreens = useSelector(state => state.buyFormScreen.doneScreens)
   
   // States
   const [fullWithContent, setFullWithContent] = useState(false)
@@ -47,7 +46,7 @@ export default function BuyForm() {
 
   const screens = {
     "Login to buy": <BuyFormLogin startLoading={startLoading}/>,
-    "Select a Set": <BuyFormSet startLoading={startLoading}/>,
+    "Select a Set": <BuyFormSet />,
     "Customize your Set": <BuyFormCustomize startLoading={startLoading}/>,
     "Extras and promo code": <BuyFormExtrasPromo startLoading={startLoading}/>,
     "Shipping address": <BuyFormShipping startLoading={startLoading}/>,

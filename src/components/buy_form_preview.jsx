@@ -4,8 +4,8 @@ import { useState, useEffect} from 'react'
 export default function BuyFormPreview({}) {
 
   // Redux
-  const currentSet = useSelector(state => state.buyFormData.set)
-  const currentColor = useSelector(state => state.buyFormData.color)
+  const currentSet = useSelector(state => state.buyFormData.setSelected)
+  const currentColor = useSelector(state => state.buyFormData.colorSelected)
   const formScreen = useSelector(state => state.buyFormScreen.value)
 
   const [isHidden, setIsHidden] = useState(false)
