@@ -1,5 +1,9 @@
-export default function BuyFormShipping(){
+export default function BuyFormShipping() {
   return (
-    <p>shipping</p>
+    <section
+      className="shipping"
+    >
+      <p>shipping</p>
+    </section>
   )
 }

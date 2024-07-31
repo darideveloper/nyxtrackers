@@ -1,5 +1,9 @@
 export default function BuyFormCustomize(){
   return (
-    <p>customize</p>
+    <section
+      className="customize"
+    >
+      <p>customize</p>
+    </section>
   )
 }

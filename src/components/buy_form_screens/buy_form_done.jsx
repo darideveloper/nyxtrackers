@@ -1,5 +1,9 @@
 export default function BuyFormDone() {
   return (
-    <p>done</p>
+    <section
+      className="done"
+    >
+      <p>done</p>
+    </section>
   )
 }

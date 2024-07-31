@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { hideForm, showForm } from '../features/buy_form_visible_slice'
 import { nextScreen, backScreen } from '../features/buy_form_screen_slice'
+import { useEffect, useState } from 'react'
 import BuyFormLogin from '../components/buy_form_screens/buy_form_login'
 import BuyFormSet from '../components/buy_form_screens/buy_form_set'
 import BuyFormCustomize from '../components/buy_form_screens/buy_form_customize'
@@ -9,7 +9,7 @@ import BuyFormExtrasPromo from '../components/buy_form_screens/buy_form_extras_p
 import BuyFormShipping from '../components/buy_form_screens/buy_form_shipping'
 import BuyFormDone from '../components/buy_form_screens/buy_form_done'
 import FormBtn from '../components/form_btn'
-import { useEffect } from 'react'
+import BuyFormPreview from '../components/buy_form_preview'
 
 export default function BuyForm() {
   
@@ -32,12 +32,24 @@ export default function BuyForm() {
   const formHasNext = useSelector(state => state.buyFormScreen.hasNext)
   const formHasBack = useSelector(state => state.buyFormScreen.hasBack)
 
+  const [fullWithContent, setFullWithContent] = useState(false)
+
   // Render form if there is "#buy-form" in the URL
   useEffect(() => {
     if (window.location.hash === '#buy-form') {
       dispatch(showForm())
     }
   }, [])
+
+  // Set full with content only to specific screens
+  useEffect(() => {
+    const fullWithSceens = ['Login to buy']
+    if (fullWithSceens.includes(formScreen)) {
+      setFullWithContent(true)
+    } else {
+      setFullWithContent(false)
+    }
+  }, [formScreen])
 
   return (
     <div
@@ -71,7 +83,10 @@ export default function BuyForm() {
           </button>
         </div>
 
-        <div className="content">
+
+        <div className={`content ${fullWithContent ? 'full-width': ""}`}>
+          <BuyFormPreview />
+          
           {/* Render current screen */}
           {screens[formScreen]}
         </div>

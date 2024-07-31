@@ -63,14 +63,34 @@
                     transition-duration: 0.3s
 
         .content
+            border: 1px solid red
+            width: 100%
             height: calc(100% - 100px)
+            display: flex
+            align-items: center
+            justify-content: space-between
+
+            &.full-width
+                > section
+                    width: 100%
+
+            .buy-form-preview 
+                width: 50%
+
+            > section
+                height: 100%
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: column
+                width: 50%
 
             input
                 font-size: 1.1rem
                 padding: 15px 30px
+
                 
             .login
-                height: 100%
 
                 > section
                     height: 100%

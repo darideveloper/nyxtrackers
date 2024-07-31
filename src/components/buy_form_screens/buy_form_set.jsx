@@ -1,5 +1,9 @@
 export default function BuyFormSet() {
   return (
-    <p>set</p>
+    <section
+      className="set"
+    >
+      <p>set</p>
+    </section>
   )
 }
