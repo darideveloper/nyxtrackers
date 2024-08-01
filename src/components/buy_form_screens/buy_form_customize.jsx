@@ -1,10 +1,10 @@
 import { setsColorsNumPrices, colorsOptions } from '../../api/buy_form'
 import { useState, useEffect } from 'react'
 import { setHasNext } from '../../features/buy_form_screen_slice'
-import { 
+import {
   setSelectedColor,
   setlogoColor1,
-  setlogoColor2, 
+  setlogoColor2,
   setlogoColor3,
   setLogoUrl,
   setColorsNum
@@ -35,7 +35,7 @@ export default function BuyFormCustomize() {
       set: setSelectedColor
     },
     {
-      label: "Primary Logo color", 
+      label: "Primary Logo color",
       state: logoColor1,
       set: setlogoColor1
     },
@@ -51,19 +51,14 @@ export default function BuyFormCustomize() {
     }
   ]
 
-  // Colors num options
-  const optionsNumColors = [
-    {
-      "label": "Select the number of colors",
-      "value": 0
-    },
-    ...setsColorsNumPrices.map(color => ({
-      label: color.details,
-      value: color.num
-    }))
-  ]
+  // Colors num options for select 
+  const optionsNumColors = setsColorsNumPrices.map(color => ({
+    label: color.details,
+    value: color.num
+  }))
 
-  // Colors options
+
+  // Colors options for select
   const optionsColorsSet = colorsOptions.map(color => ({
     label: color,
     value: color
@@ -101,7 +96,7 @@ export default function BuyFormCustomize() {
       <Select
         options={optionsNumColors}
         className='select numColors'
-        value={optionsNumColors.find(color => color === colorsNum)}
+        value={{ label: colorsNum.details, value: colorsNum.num }}
         onChange={(e) => {
           const colorsNumPrice = setsColorsNumPrices.find(color => color.num === e.value)
           dispatch(setColorsNum(colorsNumPrice))
@@ -111,12 +106,12 @@ export default function BuyFormCustomize() {
       <p className='warning'>
         {warning}
       </p>
-      
+
       <div className="colors">
         {
           [...Array(colorsNum.num)].map((_, index) => (
 
-            <SelectColor 
+            <SelectColor
               key={index}
               value={colorsStatesData[index].state}
               label={colorsStatesData[index].label}
@@ -124,7 +119,7 @@ export default function BuyFormCustomize() {
               options={optionsColorsSet}
               onChange={(e) => {
                 const setFunc = colorsStatesData[index].set
-                dispatch(setFunc(e.value))              
+                dispatch(setFunc(e.value))
               }}
             />
           ))
@@ -135,16 +130,16 @@ export default function BuyFormCustomize() {
       {
         colorsNum.num > 1
         &&
-          <InputImage 
-            name="user-logo"
-            label={"Upload your logo"}
-            warning={"Care to use .png without background / .svg !"}
-            imageSrc={logoUrl}
-            onChange={(imageUrl) => {
-              // Save in redux
-              dispatch(setLogoUrl(imageUrl))
-            }}
-          />
+        <InputImage
+          name="user-logo"
+          label={"Upload your logo"}
+          warning={"Care to use .png without background / .svg !"}
+          imageSrc={logoUrl}
+          onChange={(imageUrl) => {
+            // Save in redux
+            dispatch(setLogoUrl(imageUrl))
+          }}
+        />
       }
 
       {/* Render  */}
