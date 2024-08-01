@@ -16,7 +16,7 @@ import SelectColor from '../select_color'
 export default function BuyFormCustomize() {
 
   // Internal state
-  const [imageSrc, setImageSrc] = useState(null)
+  const [warning, setWarning] = useState("")
   const [colorsNum, setSelectedColorsNum] = useState(0)  
 
   // Redux states
@@ -26,7 +26,6 @@ export default function BuyFormCustomize() {
   const logoColor2 = useSelector(state => state.buyFormData.logoColor2)
   const logoColor3 = useSelector(state => state.buyFormData.logoColor3)
   const logoUrl = useSelector(state => state.buyFormData.logoUrl)
-  const [warning, setWarning] = useState("")
 
   const colorsStatesData = [
     {
@@ -142,9 +141,6 @@ export default function BuyFormCustomize() {
             warning={"Care to use .png without background / .svg !"}
             imageSrc={logoUrl}
             onChange={(imageUrl) => {
-              // Save image in local state
-              setImageSrc(imageUrl)
-
               // Save in redux
               dispatch(setLogoUrl({logoUrl: imageUrl}))
             }}
