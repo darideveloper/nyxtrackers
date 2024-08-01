@@ -24,6 +24,6 @@ export const buyFormDataSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setEmail, setSet, setColor } = buyFormDataSlice.actions
+export const { setEmail, setSet, setColors } = buyFormDataSlice.actions
 
 export default buyFormDataSlice.reducer

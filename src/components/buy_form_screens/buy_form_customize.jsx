@@ -1,10 +1,14 @@
 import { setsColorNumPrices, colorsOptions } from '../../api/buy_form'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { setHasNext } from '../../features/buy_form_screen_slice'
+import { setColors } from '../../features/buy_form_data'
+import { useDispatch } from 'react-redux'
 import Select from 'react-select'
 
 
 export default function BuyFormCustomize() {
 
+  // Internal state
   const [colorsNum, setcolorsNum] = useState(0)
   const [selectColor1, setSelectColor1] = useState("")
   const [selectColor2, setSelectColor2] = useState("")
@@ -29,6 +33,10 @@ export default function BuyFormCustomize() {
     }
   ]
 
+  // Redux
+  const dispatch = useDispatch()
+
+  // Colors num options
   const optionsNumColors = [
     {
       "label": "Select the number of colors",
@@ -40,11 +48,31 @@ export default function BuyFormCustomize() {
     }))
   ]
 
+  // Colors options
   const optionsColorsSet = colorsOptions.map(color => ({
     label: color,
     value: color
   }))
 
+  useEffect(() => {
+    // Enable next button when required fields are filled
+    let colorsFilled = colorsStates.filter(color => color.state !== "").length
+    console.log({colorsFilled, colorsNum})
+    if (colorsFilled >= colorsNum && colorsNum > 0) {
+      
+      // Enable next button
+      dispatch(setHasNext(true))
+
+      // Save in redux selected colors
+      dispatch(setColors(colorsStates.map(color => color.state)))
+
+    } else {
+      // Disable next button
+      dispatch(setHasNext(false))
+    }
+
+
+  }, [colorsNum, selectColor1, selectColor2, selectColor3, selectColor4])
 
   return (
     <section
