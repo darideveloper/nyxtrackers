@@ -26,6 +26,7 @@ export default function BuyFormCustomize() {
   const logoColor2 = useSelector(state => state.buyFormData.logoColor2)
   const logoColor3 = useSelector(state => state.buyFormData.logoColor3)
   const logoUrl = useSelector(state => state.buyFormData.logoUrl)
+  const [warning, setWarning] = useState("")
 
   const colorsStatesData = [
     {
@@ -82,6 +83,13 @@ export default function BuyFormCustomize() {
       dispatch(setHasNext(false))
     }
 
+    // Update warning
+    if (colorsNum > 2) {
+      setWarning("Warning: Two or more logo colors don't be visible in the proview")
+    } else {
+      setWarning("")
+    }
+
 
   }, [colorsNum, setSelectedColor, logoColor1, logoColor2, logoColor3])
 
@@ -89,19 +97,6 @@ export default function BuyFormCustomize() {
     <section
       className="customize"
     >
-      {/* Logo image */}
-      <InputImage 
-        name="user-logo"
-        label={"Upload your logo"}
-        warning={"Care to use .png without background / .svg !"}
-        imageSrc={imageSrc}
-        onChange={(imageUrl) => {
-          // Save image in local state
-          setImageSrc(imageUrl)
-
-          // Save in redux
-        }}
-      />
 
       {/* Render colors num selector */}
       <Select
@@ -113,16 +108,9 @@ export default function BuyFormCustomize() {
         }}
       />
 
-      {/* <Select
-        key={index}
-        className={`select small color color-${index} ${colorsStatesData[index].state}`}
-        value={optionsColorsSet.find(color => color.value === colorsStatesData[index].state)}
-        options={optionsColorsSet}
-        onChange={(e) => {
-          const setFunc = colorsStatesData[index].set
-          dispatch(setFunc(e.value))              
-        }}
-      /> */}
+      <p className='warning'>
+        {warning}
+      </p>
       
       <div className="colors">
         {
@@ -144,7 +132,24 @@ export default function BuyFormCustomize() {
         }
       </div>
 
+      {/* Logo image */}
+      {
+        colorsNum > 1
+        &&
+          <InputImage 
+            name="user-logo"
+            label={"Upload your logo"}
+            warning={"Care to use .png without background / .svg !"}
+            imageSrc={logoUrl}
+            onChange={(imageUrl) => {
+              // Save image in local state
+              setImageSrc(imageUrl)
 
+              // Save in redux
+              dispatch(setLogoUrl({logoUrl: imageUrl}))
+            }}
+          />
+      }
 
       {/* Render  */}
     </section>
