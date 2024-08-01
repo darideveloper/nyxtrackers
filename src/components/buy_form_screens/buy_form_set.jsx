@@ -1,6 +1,6 @@
 import { setsOptions } from '../../api/buy_form'
 import { useSelector } from 'react-redux'
-import { setSet } from '../../features/buy_form_data'
+import { setSelectedSet } from '../../features/buy_form_data'
 import { useDispatch } from 'react-redux'
 import { setHasNext } from '../../features/buy_form_screen_slice'
 import { useEffect } from 'react'
@@ -12,7 +12,7 @@ export default function BuyFormSet() {
   // Redux  
   const dispatch = useDispatch()
   const selectedSet = useSelector(state => state.buyFormData.setSelected)
-  const selectedColor = useSelector(state => state.buyFormData.colorsSelected)[0]
+  const selectedColor = useSelector(state => state.buyFormData.colorSelected)
 
   useEffect(() => {
     // Enable next screen when load
@@ -33,7 +33,7 @@ export default function BuyFormSet() {
             price={set.price}
             recommended={set.recommended}
             selected={selectedSet.name === set.name}
-            onClick={() => dispatch(setSet(set))}
+            onClick={() => dispatch(setSelectedSet(set))}
           />
         ))
       }

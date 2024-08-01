@@ -1,40 +1,54 @@
 import { setsColorNumPrices, colorsOptions } from '../../api/buy_form'
 import { useState, useEffect } from 'react'
 import { setHasNext } from '../../features/buy_form_screen_slice'
-import { setColors } from '../../features/buy_form_data'
-import { useDispatch } from 'react-redux'
+import { 
+  setSelectedColor,
+  setlogoColor1,
+  setlogoColor2, 
+  setlogoColor3,
+  setLogoUrl
+} from '../../features/buy_form_data'
+import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
-
+import InputImage from '../input-image'
+import SelectColor from '../select_color'
 
 export default function BuyFormCustomize() {
 
   // Internal state
-  const [colorsNum, setcolorsNum] = useState(0)
-  const [selectColor1, setSelectColor1] = useState("")
-  const [selectColor2, setSelectColor2] = useState("")
-  const [selectColor3, setSelectColor3] = useState("")
-  const [selectColor4, setSelectColor4] = useState("")
-  const colorsStates = [
+  const [imageSrc, setImageSrc] = useState(null)
+  const [colorsNum, setSelectedColorsNum] = useState(0)  
+
+  // Redux states
+  const dispatch = useDispatch()
+  const colorSelected = useSelector(state => state.buyFormData.colorSelected)
+  const logoColor1 = useSelector(state => state.buyFormData.logoColor1)
+  const logoColor2 = useSelector(state => state.buyFormData.logoColor2)
+  const logoColor3 = useSelector(state => state.buyFormData.logoColor3)
+  const logoUrl = useSelector(state => state.buyFormData.logoUrl)
+
+  const colorsStatesData = [
     {
-      state: selectColor1,
-      set: setSelectColor1
+      label: "Tracker color",
+      state: colorSelected,
+      set: setSelectedColor
     },
     {
-      state: selectColor2,
-      set: setSelectColor2
+      label: "Primary Logo color", 
+      state: logoColor1,
+      set: setlogoColor1
     },
     {
-      state: selectColor3,
-      set: setSelectColor3
+      label: "Secondary Logo color",
+      state: logoColor2,
+      set: setlogoColor2
     },
     {
-      state: selectColor4,
-      set: setSelectColor4
+      label: "Tertiary Logo color",
+      state: logoColor3,
+      set: setlogoColor3
     }
   ]
-
-  // Redux
-  const dispatch = useDispatch()
 
   // Colors num options
   const optionsNumColors = [
@@ -56,15 +70,12 @@ export default function BuyFormCustomize() {
 
   useEffect(() => {
     // Enable next button when required fields are filled
-    let colorsFilled = colorsStates.filter(color => color.state !== "").length
+    let colorsFilled = colorsStatesData.filter(color => color.state !== "").length
     console.log({colorsFilled, colorsNum})
     if (colorsFilled >= colorsNum && colorsNum > 0) {
       
       // Enable next button
       dispatch(setHasNext(true))
-
-      // Save in redux selected colors
-      dispatch(setColors(colorsStates.map(color => color.state)))
 
     } else {
       // Disable next button
@@ -72,32 +83,61 @@ export default function BuyFormCustomize() {
     }
 
 
-  }, [colorsNum, selectColor1, selectColor2, selectColor3, selectColor4])
+  }, [colorsNum, setSelectedColor, logoColor1, logoColor2, logoColor3])
 
   return (
     <section
       className="customize"
     >
+      {/* Logo image */}
+      <InputImage 
+        name="user-logo"
+        label={"Upload your logo"}
+        warning={"Care to use .png without background / .svg !"}
+        imageSrc={imageSrc}
+        onChange={(imageUrl) => {
+          // Save image in local state
+          setImageSrc(imageUrl)
+
+          // Save in redux
+        }}
+      />
+
       {/* Render colors num selector */}
       <Select
         options={optionsNumColors}
         className='select numColors'
         value={optionsNumColors.find(color => color.value === colorsNum)}
         onChange={(e) => {
-          setcolorsNum(e.value)
+          setSelectedColorsNum(e.value)
         }}
       />
 
+      {/* <Select
+        key={index}
+        className={`select small color color-${index} ${colorsStatesData[index].state}`}
+        value={optionsColorsSet.find(color => color.value === colorsStatesData[index].state)}
+        options={optionsColorsSet}
+        onChange={(e) => {
+          const setFunc = colorsStatesData[index].set
+          dispatch(setFunc(e.value))              
+        }}
+      /> */}
+      
       <div className="colors">
         {
           [...Array(colorsNum)].map((_, index) => (
-            <Select
+
+            <SelectColor 
               key={index}
-              className={`select small color color-${index} ${colorsStates[index].state}`}
-              value={optionsColorsSet.find(color => color.value === colorsStates[index].state)}
+              value={colorsStatesData[index].state}
+              label={colorsStatesData[index].label}
+              index={index}
               options={optionsColorsSet}
               onChange={(e) => {
-                colorsStates[index].set(e.value)              
+                console.log({colorsStatesData})
+                const setFunc = colorsStatesData[index].set
+                dispatch(setFunc(e.value))              
               }}
             />
           ))
