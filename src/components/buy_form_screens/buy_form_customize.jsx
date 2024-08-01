@@ -1,4 +1,4 @@
-import { setsColorNumPrices, colorsOptions } from '../../api/buy_form'
+import { setsColorsNumPrices, colorsOptions } from '../../api/buy_form'
 import { useState, useEffect } from 'react'
 import { setHasNext } from '../../features/buy_form_screen_slice'
 import { 
@@ -6,7 +6,8 @@ import {
   setlogoColor1,
   setlogoColor2, 
   setlogoColor3,
-  setLogoUrl
+  setLogoUrl,
+  setColorsNum
 } from '../../features/buy_form_data'
 import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
@@ -17,7 +18,6 @@ export default function BuyFormCustomize() {
 
   // Internal state
   const [warning, setWarning] = useState("")
-  const [colorsNum, setSelectedColorsNum] = useState(0)  
 
   // Redux states
   const dispatch = useDispatch()
@@ -26,6 +26,7 @@ export default function BuyFormCustomize() {
   const logoColor2 = useSelector(state => state.buyFormData.logoColor2)
   const logoColor3 = useSelector(state => state.buyFormData.logoColor3)
   const logoUrl = useSelector(state => state.buyFormData.logoUrl)
+  const colorsNum = useSelector(state => state.buyFormData.colorsNum)
 
   const colorsStatesData = [
     {
@@ -56,9 +57,9 @@ export default function BuyFormCustomize() {
       "label": "Select the number of colors",
       "value": 0
     },
-    ...setsColorNumPrices.map(color => ({
+    ...setsColorsNumPrices.map(color => ({
       label: color.details,
-      value: color.colorsNum
+      value: color.num
     }))
   ]
 
@@ -70,9 +71,7 @@ export default function BuyFormCustomize() {
 
   useEffect(() => {
     // Enable next button when required fields are filled
-    let colorsFilled = colorsStatesData.filter(color => color.state !== "").length
-    console.log({colorsFilled, colorsNum})
-    if (colorsNum > 0) {
+    if (colorsNum.num > 0) {
       // Enable next button
       dispatch(setHasNext(true))
     } else {
@@ -84,7 +83,7 @@ export default function BuyFormCustomize() {
     }
 
     // Update warning
-    if (colorsNum > 2) {
+    if (colorsNum.num > 2) {
       setWarning("Warning: Select your logo colors carefully, they will be printed as they are.")
     } else {
       setWarning("")
@@ -102,9 +101,10 @@ export default function BuyFormCustomize() {
       <Select
         options={optionsNumColors}
         className='select numColors'
-        value={optionsNumColors.find(color => color.value === colorsNum)}
+        value={optionsNumColors.find(color => color === colorsNum)}
         onChange={(e) => {
-          setSelectedColorsNum(e.value)
+          const colorsNumPrice = setsColorsNumPrices.find(color => color.num === e.value)
+          dispatch(setColorsNum(colorsNumPrice))
         }}
       />
 
@@ -114,7 +114,7 @@ export default function BuyFormCustomize() {
       
       <div className="colors">
         {
-          [...Array(colorsNum)].map((_, index) => (
+          [...Array(colorsNum.num)].map((_, index) => (
 
             <SelectColor 
               key={index}
@@ -123,7 +123,6 @@ export default function BuyFormCustomize() {
               index={index}
               options={optionsColorsSet}
               onChange={(e) => {
-                console.log({colorsStatesData})
                 const setFunc = colorsStatesData[index].set
                 dispatch(setFunc(e.value))              
               }}
@@ -134,7 +133,7 @@ export default function BuyFormCustomize() {
 
       {/* Logo image */}
       {
-        colorsNum > 1
+        colorsNum.num > 1
         &&
           <InputImage 
             name="user-logo"

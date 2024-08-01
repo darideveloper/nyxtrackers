@@ -12,6 +12,9 @@
     .select
         width: 50%
 
+        > div > div > div:first-child
+            padding-left: 40px
+
     @media screen and (max-width: 400px)
         flex-direction: column
 
@@ -29,9 +32,6 @@
 
     > div
         background-color: $color-b
-
-        > div > div:first-child
-            padding-left: 40px
 
     &.color [data-value]::before
         content: " "
