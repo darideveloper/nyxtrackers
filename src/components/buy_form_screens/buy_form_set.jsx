@@ -12,7 +12,7 @@ export default function BuyFormSet() {
   // Redux  
   const dispatch = useDispatch()
   const selectedSet = useSelector(state => state.buyFormData.setSelected)
-  const selectedColor = useSelector(state => state.buyFormData.colorSelected)
+  const selectedColor = useSelector(state => state.buyFormData.colorsSelected)[0]
 
   useEffect(() => {
     // Enable next screen when load

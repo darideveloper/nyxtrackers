@@ -1,0 +1,64 @@
+.select
+    color: $color-d
+    width: calc(100% - 20px)
+    margin: 10px
+
+    svg
+        fill: $color-d
+
+    &.small
+        width: 70%
+        margin-left: 30px
+
+    > div
+        background-color: $color-b
+
+        > div > div:first-child
+            padding-left: 40px
+
+    &.color [data-value]::before
+        content: " "
+        width: 30px
+        height: 30px
+        opacity: 0.3
+
+    &.blue [data-value]::before
+        background-color: blue
+
+    &.white [data-value]::before
+        background-color: white
+
+    &.grey [data-value]::before
+        background-color: grey
+
+    &.green [data-value]::before
+        background-color: green
+
+    &.yellow [data-value]::before
+        background-color: yellow
+
+    &.orange [data-value]::before
+        background-color: orange
+
+    &.red [data-value]::before
+        background-color: red
+
+    &.pink [data-value]::before
+        background-color: pink
+
+    &.purple [data-value]::before
+        background-color: purple
+
+    &.black [data-value]::before
+        background-color: black
+
+
+    @media screen and (max-width: 750px)
+
+        &.small
+            margin: 10px auto
+
+    @media screen and (max-width: 400px)
+
+        &.small
+            width: 85%

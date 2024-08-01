@@ -1,13 +1,12 @@
 import { useSelector } from 'react-redux'
 import { useState, useEffect} from 'react'
 import Spinner from './spinner'
-import { set } from 'react-hook-form'
 
 export default function BuyFormPreview({}) {
 
   // Redux
   const currentSet = useSelector(state => state.buyFormData.setSelected)
-  const currentColor = useSelector(state => state.buyFormData.colorSelected)
+  const currentColor = useSelector(state => state.buyFormData.colorsSelected)[0]
   const formScreen = useSelector(state => state.buyFormScreen.value)
 
   const [isHidden, setIsHidden] = useState(false)
@@ -36,10 +35,9 @@ export default function BuyFormPreview({}) {
   const imagePath = `/sets/${currentSet.name} ${currentColor}.webp`
 
   return (
-    <div className="buy-form-preview">
+    <div className={`buy-form-preview ${isHidden ? 'hidden' : ''}`}>
       <Spinner isLoading={isLoading} />
       <img 
-        className={`${isHidden ? "hidden" : ""}`}
         src={imagePath}
       />
     </div>

@@ -48,24 +48,47 @@ export const screens = [
 ]
 
 export function getHasNextBackScreen(currentScreen, doneScreens) {
-  
+
   // Get indexes
   const currentScreenIndex = screens.indexOf(currentScreen)
   const nextScreenIndex = currentScreenIndex + 1
   const backScreenIndex = currentScreenIndex - 1
-  
+
   // Default in last screen
-  if (nextScreenIndex == screens.length) { 
-    return {hasNext: false, hasBack: true}
+  if (nextScreenIndex == screens.length) {
+    return { hasNext: false, hasBack: true }
   }
 
   // Default in first screen
-  if (backScreenIndex < 0) { 
-    return {hasNext: true, hasBack: false}
+  if (backScreenIndex < 0) {
+    return { hasNext: true, hasBack: false }
   }
 
   // Validate if there is already a done screen
   const nextScreen = screens[nextScreenIndex + 1]
   const hasNext = doneScreens.includes(nextScreen)
-  return {hasNext, hasBack: true}
+  return { hasNext, hasBack: true }
 }
+
+export const setsColorNumPrices = [
+  {
+    colorsNum: 1,
+    amount: -5,
+    details: "Single color (-5 USD)"
+  },
+  {
+    colorsNum: 2,
+    amount: 0,
+    details: "2 colors (Trackers and logo) Included"
+  },
+  {
+    colorsNum: 3,
+    amount: 10,
+    details: "3 Colors (Trackers and 2 logo colors) +10USD"
+  },
+  {
+    colorsNum: 4,
+    amount: 20,
+    details: "4 Colors (Trackers and 3 logo colors) +20USD"
+  },
+]
