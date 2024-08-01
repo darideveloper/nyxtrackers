@@ -72,19 +72,20 @@ export default function BuyFormCustomize() {
     // Enable next button when required fields are filled
     let colorsFilled = colorsStatesData.filter(color => color.state !== "").length
     console.log({colorsFilled, colorsNum})
-    if (colorsFilled >= colorsNum && colorsNum > 0) {
-      
+    if (colorsNum > 0) {
       // Enable next button
       dispatch(setHasNext(true))
-
     } else {
       // Disable next button
       dispatch(setHasNext(false))
+
+      // Delete logo image
+      dispatch(setLogoUrl(""))
     }
 
     // Update warning
     if (colorsNum > 2) {
-      setWarning("Warning: Two or more logo colors don't be visible in the proview")
+      setWarning("Warning: Select your logo colors carefully, they will be printed as they are.")
     } else {
       setWarning("")
     }
@@ -142,7 +143,7 @@ export default function BuyFormCustomize() {
             imageSrc={logoUrl}
             onChange={(imageUrl) => {
               // Save in redux
-              dispatch(setLogoUrl({logoUrl: imageUrl}))
+              dispatch(setLogoUrl(imageUrl))
             }}
           />
       }

@@ -8,6 +8,7 @@ export default function BuyFormPreview({}) {
   const currentSet = useSelector(state => state.buyFormData.setSelected)
   const currentColor = useSelector(state => state.buyFormData.colorSelected)
   const formScreen = useSelector(state => state.buyFormScreen.value)
+  const logoUrl = useSelector(state => state.buyFormData.logoUrl)
 
   const [isHidden, setIsHidden] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -35,11 +36,31 @@ export default function BuyFormPreview({}) {
   const imagePath = `/sets/${currentSet.name} ${currentColor}.webp`
 
   return (
-    <div className={`buy-form-preview ${isHidden ? 'hidden' : ''}`}>
+    <div className={`buy-form-preview ${currentSet.name} ${isHidden ? 'hidden' : ''}`}>
       <Spinner isLoading={isLoading} />
       <img 
         src={imagePath}
       />
+
+      {/* Logo images */}
+      {
+        logoUrl
+        &&
+        <div className="logo-images">
+          {
+            [...Array(currentSet.logos)].map((_, index) => (
+              <img 
+                key={index}
+                src={logoUrl}
+                className='logo-image'
+              />
+            ))
+          }
+        </div>
+      }
+
+      <span className="layer"></span>
+
     </div>
   )
 }

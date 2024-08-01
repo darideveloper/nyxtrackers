@@ -5,11 +5,18 @@
     align-items: center
 
     p
-        width: 50%
+        width: 45%
+        margin: 0
+        padding: 0
 
     .select
         width: 50%
 
+    @media screen and (max-width: 400px)
+        flex-direction: column
+
+        p, .select
+            width: 100%
 
 .select
     color: $color-d
@@ -19,10 +26,6 @@
 
     svg
         fill: $color-d
-
-    &.small
-        width: 70%
-        margin-left: 30px
 
     > div
         background-color: $color-b
@@ -71,8 +74,3 @@
 
         &.small
             margin: 10px auto
-
-    @media screen and (max-width: 400px)
-
-        &.small
-            width: 85%

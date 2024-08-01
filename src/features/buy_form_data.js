@@ -16,7 +16,7 @@ export const buyFormDataSlice = createSlice({
   },
   reducers: {
     setEmail: (state, action) => {
-      state.email = action.payload.email
+      state.email = action.payload
     },
     setSelectedSet: (state, action) => {
       state.setSelected = action.payload
@@ -34,7 +34,7 @@ export const buyFormDataSlice = createSlice({
       state.logoColor3 = action.payload
     },
     setLogoUrl: (state, action) => {
-      state.logoUrl = action.payload.logoUrl
+      state.logoUrl = action.payload
     },
   }
 })
