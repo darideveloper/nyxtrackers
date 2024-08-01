@@ -1,3 +1,6 @@
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
 /**
  * InputImage component with image preview
  * @param {Object} props - Component props
@@ -45,8 +48,24 @@ export default function InputImage({ name, imageSrc, onChange, label, warning = 
           type="file"
           accept="image/png, image/svg+xml"
           onChange={(e) => {
-            const imageUrl = URL.createObjectURL(e.target.files[0])
-            onChange(imageUrl)
+
+            // Catch errors on image upload and show alert
+            let imageUrl = ""
+            try {
+              imageUrl = URL.createObjectURL(e.target.files[0])
+            } catch (error) {
+              const MySwal = withReactContent(Swal)
+              MySwal.fire({
+                title: "Error uploading image",
+                text: "Please try again with a valid image file (png, svg)",
+                icon: "error",
+                showConfirmButton: true,
+              })
+            } 
+            
+            if (imageUrl) {
+              onChange(imageUrl)
+            }
           }}
           id={name}
           name={name}

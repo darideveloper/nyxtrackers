@@ -11,7 +11,7 @@ import {
 } from '../../features/buy_form_data'
 import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
-import InputImage from '../input-image'
+import InputImage from '../input_image'
 import SelectColor from '../select_color'
 
 export default function BuyFormCustomize() {
