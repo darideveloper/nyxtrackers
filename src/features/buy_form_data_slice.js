@@ -21,6 +21,13 @@ export const buyFormDataSlice = createSlice({
     includedExtras: [],
     promoDiscount: 0,
     promoCode: '',
+    fullName: '',
+    country: '',
+    state: '',
+    city: '',
+    postalCode: '',
+    streetAddress: '',
+    phone: '',
   },
   reducers: {
     setEmail: (state, action) => {
@@ -55,7 +62,28 @@ export const buyFormDataSlice = createSlice({
     },
     setPromoCode: (state, action) => {
       state.promoCode = action.payload
-    }
+    },
+    setFullName: (state, action) => {
+      state.fullName = action.payload
+    },
+    setCountry: (state, action) => {
+      state.country = action.payload
+    },
+    setState: (state, action) => {
+      state.state = action.payload
+    },
+    setCity: (state, action) => {
+      state.city = action.payload
+    },
+    setPostalCode: (state, action) => {
+      state.postalCode = action.payload
+    },
+    setStreetAddress: (state, action) => {
+      state.streetAddress = action.payload
+    },
+    setPhone: (state, action) => {
+      state.phone = action.payload
+    },
   }
 })
 
@@ -72,6 +100,13 @@ export const {
   setIncludedExtras,
   setPromoDiscount,
   setPromoCode,
+  setFullName,
+  setCountry,
+  setState,
+  setCity,
+  setPostalCode,
+  setStreetAddress,
+  setPhone,
 } = buyFormDataSlice.actions
 
 export default buyFormDataSlice.reducer

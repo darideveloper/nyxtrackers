@@ -9,16 +9,17 @@
  * @param {Boolean} props.required - Input required
  * @param {String} props.value - Input value
  * @param {Function} props.onChange - Input change function
+ * @param {Boolean} props.small - Small input
  * @returns {JSX.Element} Input component
  */
-export default function Input({type, name, label, hideLabel, placeholder, required, value, onChange}) {
+export default function Input({type, name, label, hideLabel, placeholder, required, value, onChange, small = false}) {
 
   const id = `input-${type}-${name}`
 
   return (
-    <div className="input-wrapper">
+    <div className={`input-wrapper ${small ? 'small' : ''}`}>
       <label 
-        htmlFor="email"
+        htmlFor={id}
         className={hideLabel ? "hide" : ""}
       >
         {label}

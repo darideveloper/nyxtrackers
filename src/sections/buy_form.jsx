@@ -20,6 +20,7 @@ export default function BuyForm() {
   const formScreen = useSelector(state => state.buyFormScreen.value)
   const formHasNext = useSelector(state => state.buyFormScreen.hasNext)
   const formHasBack = useSelector(state => state.buyFormScreen.hasBack)
+  const nextText = useSelector(state => state.buyFormScreen.nextText)
   
   // States
   const [fullWithContent, setFullWithContent] = useState(false)
@@ -149,7 +150,7 @@ export default function BuyForm() {
             }}
             disabled={!formHasNext}
           >
-            Next
+            {nextText}
           </FormBtn>
          
         </div>

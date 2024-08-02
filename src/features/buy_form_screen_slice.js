@@ -9,6 +9,7 @@ export const buyFormScreenSlice = createSlice({
     hasNext: true,
     hasBack: false,
     doneScreens: [],
+    nextText: 'Next',
   },
   reducers: {
     nextScreen: state => {
@@ -54,11 +55,20 @@ export const buyFormScreenSlice = createSlice({
     setHasBack: (state, action) => {
       state.hasBack = action.payload
     },
+    setNextText: (state, action) => {
+      state.nextText = action.payload
+    }
   }
 })
 
 
 // Action creators are generated for each case reducer function
-export const { nextScreen, backScreen, setHasNext, setHasBack } = buyFormScreenSlice.actions
+export const {
+  nextScreen,
+  backScreen,
+  setHasNext,
+  setHasBack,
+  setNextText,
+} = buyFormScreenSlice.actions
 
 export default buyFormScreenSlice.reducer
