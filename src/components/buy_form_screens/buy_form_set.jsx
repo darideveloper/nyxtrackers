@@ -1,6 +1,6 @@
 import { setsOptions } from '../../api/buy_form'
 import { useSelector } from 'react-redux'
-import { setSelectedSet } from '../../features/buy_form_data'
+import { setSelectedSet } from '../../features/buy_form_data_slice'
 import { useDispatch } from 'react-redux'
 import { setHasNext } from '../../features/buy_form_screen_slice'
 import { useEffect } from 'react'

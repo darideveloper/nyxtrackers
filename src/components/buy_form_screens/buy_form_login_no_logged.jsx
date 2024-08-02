@@ -1,7 +1,7 @@
 import FormBtn from "../form_btn"
 import { useState } from "react"
 import Input from "../input"
-import { setEmail } from "../../features/buy_form_data"
+import { setEmail } from "../../features/buy_form_data_slice"
 import { setHasNext } from "../../features/buy_form_screen_slice"
 import { useDispatch } from "react-redux"
 import { useEffect } from "react"

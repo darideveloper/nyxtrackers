@@ -1,6 +1,6 @@
 import FormBtn from "../../components/form_btn"
 import { clearCookies } from "../../tools/session"
-import { setEmail } from "../../features/buy_form_data"
+import { setEmail } from "../../features/buy_form_data_slice"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 

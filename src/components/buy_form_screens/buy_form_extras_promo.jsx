@@ -4,7 +4,12 @@ import { extras } from '../../api/buy_form'
 import { getPromoCodeDiscount } from '../../api/promo_code'
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
-import { setIncludedExtras, setPromoDiscount } from '../../features/buy_form_data'
+import { 
+  setIncludedExtras,
+  setPromoDiscount,
+  setPromoCode,
+} from '../../features/buy_form_data_slice'
+import { setHasNext } from '../../features/buy_form_screen_slice'
 import { useDispatch } from 'react-redux'
 import Spinner from '../spinner'
 
@@ -15,19 +20,19 @@ export default function BuyFormExtrasPromo() {
   const setSelected = useSelector(state => state.buyFormData.setSelected)
   const includedExtras = useSelector(state => state.buyFormData.includedExtras)
   const promoDiscount = useSelector(state => state.buyFormData.promoDiscount)
+  const promoCode = useSelector(state => state.buyFormData.promoCode)
 
 
   // Filter extras
   const extrasFiltered = extras.filter(extra => !extra.exclude_sets.includes(setSelected.name))
 
   // Initial state
-  const [promoCode, setPromoCode] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    // Log states
-    console.log({promoDiscount})
-  }, [includedExtras, promoCode, promoDiscount])
+    // Enable next button when load
+    dispatch(setHasNext(true))
+  }, [])
 
   return (
     <div className="extras-promo">
@@ -64,7 +69,7 @@ export default function BuyFormExtrasPromo() {
           setIsLoading(true)
 
           // Save promo code in local state
-          setPromoCode(e.target.value)
+          dispatch(setPromoCode(e.target.value))
 
           // Save promo discount in redux state
           getPromoCodeDiscount(e.target.value)

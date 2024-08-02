@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { buyFormVisibleSlice } from '../features/buy_form_visible_slice'
 import { buyFormScreenSlice } from '../features/buy_form_screen_slice'
 import { sessionSlice } from '../features/session_slice'
-import { buyFormDataSlice } from '../features/buy_form_data'
+import { buyFormDataSlice } from '../features/buy_form_data_slice'
 
 
 export default configureStore({

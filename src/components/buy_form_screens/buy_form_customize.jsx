@@ -8,7 +8,7 @@ import {
   setlogoColor3,
   setLogoUrl,
   setColorsNum
-} from '../../features/buy_form_data'
+} from '../../features/buy_form_data_slice'
 import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
 import InputImage from '../input_image'
