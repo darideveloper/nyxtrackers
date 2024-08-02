@@ -17,6 +17,7 @@ export const buyFormDataSlice = createSlice({
     logoColor2: colorsOptions[2],
     logoColor3: colorsOptions[3],
     logoUrl: "",
+    logoFile: "",
     colorsNum: setsColorsNumPrices[0],
     includedExtras: [],
     promoDiscount: 0,
@@ -28,6 +29,7 @@ export const buyFormDataSlice = createSlice({
     postalCode: '',
     streetAddress: '',
     phone: '',
+    total: 0,
   },
   reducers: {
     setEmail: (state, action) => {
@@ -50,6 +52,9 @@ export const buyFormDataSlice = createSlice({
     },
     setLogoUrl: (state, action) => {
       state.logoUrl = action.payload
+    },
+    setLogoFile: (state, action) => {
+      state.logoFile = action.payload
     },
     setColorsNum: (state, action) => {
       state.colorsNum = action.payload
@@ -96,6 +101,7 @@ export const {
   setlogoColor2,
   setlogoColor3,
   setLogoUrl,
+  setLogoFile,
   setColorsNum,
   setIncludedExtras,
   setPromoDiscount,

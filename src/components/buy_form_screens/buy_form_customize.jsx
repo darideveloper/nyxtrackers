@@ -7,7 +7,8 @@ import {
   setlogoColor2,
   setlogoColor3,
   setLogoUrl,
-  setColorsNum
+  setLogoFile,
+  setColorsNum,
 } from '../../features/buy_form_data_slice'
 import { useDispatch, useSelector } from 'react-redux'
 import Select from 'react-select'
@@ -134,9 +135,33 @@ export default function BuyFormCustomize() {
           label={"Upload your logo"}
           warning={"Care to use .png without background / .svg !"}
           imageSrc={logoUrl}
-          onChange={(imageUrl) => {
-            // Save in redux
+          onChange={(e) => {
+
+            // Convert image to URL and raise error if not possible
+            const file = e.target.files[0]
+            let imageUrl = ""
+            try {
+              imageUrl = URL.createObjectURL(file)
+            } catch (error) {
+              const MySwal = withReactContent(Swal)
+              MySwal.fire({
+                title: "Error uploading image",
+                text: "Please try again with a valid image file (png, svg)",
+                icon: "error",
+                showConfirmButton: true,
+              })
+            } 
+
+            // Save image url
             dispatch(setLogoUrl(imageUrl))
+
+            // Save image in base64
+            const reader = new FileReader()
+            reader.onloadend = () => {
+              const logoBase64 = reader.result
+              dispatch(setLogoFile(logoBase64))
+            }
+            reader.readAsDataURL(file)
           }}
         />
       }

@@ -83,8 +83,6 @@ export default function BuyFormShipping() {
     } else {
       dispatch(setHasNext(false))
     }
-
-    console.log({ fullName, country, state, city, postalCode, streetAddress, phone })
   }, [fullName, country, state, city, postalCode, streetAddress, phone])
 
   useEffect(() => {

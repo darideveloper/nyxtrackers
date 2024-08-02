@@ -18,7 +18,7 @@ export default function TopBar() {
     if (cookies.username && cookies.email) {
 
       const username = cookies.username
-      const email = cookies.email
+      const email = cookies.email.replaceAll('"', '')
 
       // Save cookie in hooks
       dispatch(setSession({

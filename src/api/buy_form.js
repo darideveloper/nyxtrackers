@@ -77,22 +77,22 @@ export function getHasNextBackScreen(currentScreen, doneScreens) {
 export const setsColorsNumPrices = [
   {
     num: 1,
-    amount: -5,
+    price: -5,
     details: "Single color (-5 USD)"
   },
   {
     num: 2,
-    amount: 0,
+    price: 0,
     details: "2 colors (Trackers and logo) Included"
   },
   {
     num: 3,
-    amount: 10,
+    price: 10,
     details: "3 Colors (Trackers and 2 logo colors) +10USD"
   },
   {
     num: 4,
-    amount: 20,
+    price: 20,
     details: "4 Colors (Trackers and 3 logo colors) +20USD"
   },
 ]
