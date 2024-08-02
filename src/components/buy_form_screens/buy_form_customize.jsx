@@ -66,7 +66,7 @@ export default function BuyFormCustomize() {
 
   useEffect(() => {
     // Enable next button when required fields are filled
-    if (colorsNum.num > 0) {
+    if (colorsNum.num > 1) {
       // Enable next button
       dispatch(setHasNext(true))
     } else {
