@@ -18,7 +18,8 @@ export const buyFormDataSlice = createSlice({
     logoColor3: colorsOptions[3],
     logoUrl: "",
     colorsNum: setsColorsNumPrices[0],
-    includedExtras: []
+    includedExtras: [],
+    promoDiscount: 0
   },
   reducers: {
     setEmail: (state, action) => {
@@ -47,6 +48,9 @@ export const buyFormDataSlice = createSlice({
     },
     setIncludedExtras: (state, action) => {
       state.includedExtras = action.payload
+    },
+    setPromoDiscount: (state, action) => {
+      state.promoDiscount = action.payload
     }
   }
 })
@@ -62,6 +66,7 @@ export const {
   setLogoUrl,
   setColorsNum,
   setIncludedExtras,
+  setPromoDiscount,
 } = buyFormDataSlice.actions
 
 export default buyFormDataSlice.reducer

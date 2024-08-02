@@ -1,6 +1,6 @@
 import { sleep } from '../tools/events.js'
 
-export async function ValidatePromoCode (promoCode) {
+export async function getPromoCodeDiscount (promoCode) {
 
   // Simullate api call
   const validPromoCodes = {
@@ -13,7 +13,7 @@ export async function ValidatePromoCode (promoCode) {
   await sleep(2)
 
   // Validate promo code
-  if (validPromoCodes.includes(promoCode)) {
+  if (validPromoCodes.hasOwnProperty(promoCode)) {
     return validPromoCodes[promoCode]
   } else {
     return 0
