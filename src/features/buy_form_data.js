@@ -43,7 +43,6 @@ export const buyFormDataSlice = createSlice({
       state.logoUrl = action.payload
     },
     setColorsNum: (state, action) => {
-      console.log("action.payload", action.payload)
       state.colorsNum = action.payload
     },
     setIncludedExtras: (state, action) => {
