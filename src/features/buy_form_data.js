@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { setsOptions, colorsOptions, setsColorsNumPrices } from '../api/buy_form'
+import { 
+  setsOptions,
+  colorsOptions,
+  setsColorsNumPrices,
+} from '../api/buy_form'
 
 
 // Show and hide the buy form
@@ -14,6 +18,7 @@ export const buyFormDataSlice = createSlice({
     logoColor3: colorsOptions[3],
     logoUrl: "",
     colorsNum: setsColorsNumPrices[0],
+    includedExtras: []
   },
   reducers: {
     setEmail: (state, action) => {
@@ -41,6 +46,9 @@ export const buyFormDataSlice = createSlice({
       console.log("action.payload", action.payload)
       state.colorsNum = action.payload
     },
+    setIncludedExtras: (state, action) => {
+      state.includedExtras = action.payload
+    }
   }
 })
 
@@ -54,6 +62,7 @@ export const {
   setlogoColor3,
   setLogoUrl,
   setColorsNum,
+  setIncludedExtras,
 } = buyFormDataSlice.actions
 
 export default buyFormDataSlice.reducer

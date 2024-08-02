@@ -65,14 +65,8 @@ export default function BuyFormCustomize() {
   }))
 
   useEffect(() => {
-    // Enable next button when required fields are filled
-    if (colorsNum.num > 1) {
-      // Enable next button
-      dispatch(setHasNext(true))
-    } else {
-      // Disable next button
-      dispatch(setHasNext(false))
-
+    // Reset logo if selected 1 color
+    if (colorsNum.num == 1) {
       // Delete logo image
       dispatch(setLogoUrl(""))
     }
@@ -86,6 +80,11 @@ export default function BuyFormCustomize() {
 
 
   }, [colorsNum, setSelectedColor, logoColor1, logoColor2, logoColor3])
+
+  useEffect(() => {
+    // Disable next button
+    dispatch(setHasNext(true))
+  }, [])
 
   return (
     <section

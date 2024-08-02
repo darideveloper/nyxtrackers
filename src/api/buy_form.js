@@ -96,3 +96,22 @@ export const setsColorsNumPrices = [
     details: "4 Colors (Trackers and 3 logo colors) +20USD"
   },
 ]
+
+export const extras = [
+  {
+    "name": "Wifi 2.4ghz USB Dongle",
+    "price": 14,
+    "exclude_sets": [],
+  },
+  {
+    "name": "Straps",
+    "price": 25,
+    "exclude_sets": [],
+  },
+  {
+    "name": "Convert Hip to main tracker",
+    "price": 25,
+    "exclude_sets": ["basic"],
+  },
+  
+]
