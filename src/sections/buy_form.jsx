@@ -68,14 +68,16 @@ export default function BuyForm() {
 
     // Set form align when component is mounted
     setFormMobile()
+  }, [])
 
+  useEffect(() => {
     // Update next text in shipping screen
     if (formScreen === 'Shipping address') {
-      dispatch(setNextText('Finish'))
+      dispatch(setNextText('Buy Now!'))
     } else {
       dispatch(setNextText('Next'))
     }
-  }, [])
+  }, [formScreen])
 
   useEffect(() => {
 
