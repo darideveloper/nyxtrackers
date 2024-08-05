@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { hideForm, showForm } from '../features/buy_form_visible_slice'
-import { nextScreen, backScreen } from '../features/buy_form_screen_slice'
+import { nextScreen, backScreen, setNextText } from '../features/buy_form_screen_slice'
 import { useEffect, useState } from 'react'
 import BuyFormLogin from '../components/buy_form_screens/buy_form_login'
 import BuyFormSet from '../components/buy_form_screens/buy_form_set'
@@ -68,6 +68,13 @@ export default function BuyForm() {
 
     // Set form align when component is mounted
     setFormMobile()
+
+    // Update next text in shipping screen
+    if (formScreen === 'Shipping address') {
+      dispatch(setNextText('Finish'))
+    } else {
+      dispatch(setNextText('Next'))
+    }
   }, [])
 
   useEffect(() => {

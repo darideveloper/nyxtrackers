@@ -9,8 +9,8 @@ import {
 } from '../../features/buy_form_data_slice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import { setHasNext } from '../../features/buy_form_screen_slice'
 import Input from '../input'
-import { setHasNext, setNextText } from '../../features/buy_form_screen_slice'
 
 
 export default function BuyFormShipping() {
@@ -84,11 +84,6 @@ export default function BuyFormShipping() {
       dispatch(setHasNext(false))
     }
   }, [fullName, country, state, city, postalCode, streetAddress, phone])
-
-  useEffect(() => {
-    // Update next text when load
-    dispatch(setNextText('Order Now!'))
-  }, [])
 
 
   return (

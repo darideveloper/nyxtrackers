@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { setHasNext, setHasBack, setNextText } from '../../features/buy_form_screen_slice'
 import Spinner from '../spinner'
 
-export default function BuyFormThanks() {
+export default function BuyFormDone() {
 
   // Redux data
   const dispatch = useDispatch()
