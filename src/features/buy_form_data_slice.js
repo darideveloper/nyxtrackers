@@ -95,7 +95,6 @@ export const buyFormDataSlice = createSlice({
       const extrasPrice = state.includedExtras.reduce((acc, extra) => acc + extra.price, 0)
       const subtotal = setPrice + colorsNumPrice + extrasPrice
       const discount = subtotal * state.promoDiscount / 100
-      console.log({setPrice, colorsNumPrice, extrasPrice, subtotal, discount})
       state.total = subtotal - discount
     }
   }
