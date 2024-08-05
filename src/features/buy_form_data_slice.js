@@ -18,7 +18,7 @@ export const buyFormDataSlice = createSlice({
     logoColor3: colorsOptions[3],
     logoUrl: "",
     logoFile: "",
-    colorsNum: setsColorsNumPrices[0],
+    colorsNum: setsColorsNumPrices[1],
     includedExtras: [],
     promoDiscount: 0,
     promoCode: '',
@@ -29,7 +29,7 @@ export const buyFormDataSlice = createSlice({
     postalCode: '',
     streetAddress: '',
     phone: '',
-    total: 0,
+    total:  setsOptions[2].price,
   },
   reducers: {
     setEmail: (state, action) => {
@@ -89,6 +89,15 @@ export const buyFormDataSlice = createSlice({
     setPhone: (state, action) => {
       state.phone = action.payload
     },
+    updateTotal: (state, action) => {
+      const setPrice = state.setSelected.price
+      const colorsNumPrice = state.colorsNum.price
+      const extrasPrice = state.includedExtras.reduce((acc, extra) => acc + extra.price, 0)
+      const subtotal = setPrice + colorsNumPrice + extrasPrice
+      const discount = subtotal * state.promoDiscount / 100
+      console.log({setPrice, colorsNumPrice, extrasPrice, subtotal, discount})
+      state.total = subtotal - discount
+    }
   }
 })
 
@@ -113,6 +122,7 @@ export const {
   setPostalCode,
   setStreetAddress,
   setPhone,
+  updateTotal,
 } = buyFormDataSlice.actions
 
 export default buyFormDataSlice.reducer

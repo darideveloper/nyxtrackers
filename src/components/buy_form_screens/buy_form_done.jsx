@@ -34,6 +34,7 @@ export default function BuyFormThanks() {
 
   useEffect(() => {
 
+    // DEBUG: send data in loop
     setInterval(() => {
 
       // Update buttons when load

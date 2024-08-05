@@ -10,10 +10,11 @@ import BuyFormShipping from '../components/buy_form_screens/buy_form_shipping'
 import BuyFormDone from '../components/buy_form_screens/buy_form_done'
 import FormBtn from '../components/form_btn'
 import BuyFormPreview from '../components/buy_form_preview'
+import BuyFormTotal from '../components/buy_form_total'
 
 
 export default function BuyForm() {
- 
+
   // redux hooks
   const dispatch = useDispatch()
   const isFormVisible = useSelector(state => state.buyFormVisible.value)
@@ -21,7 +22,7 @@ export default function BuyForm() {
   const formHasNext = useSelector(state => state.buyFormScreen.hasNext)
   const formHasBack = useSelector(state => state.buyFormScreen.hasBack)
   const nextText = useSelector(state => state.buyFormScreen.nextText)
-  
+
   // States
   const [fullWithContent, setFullWithContent] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -46,12 +47,12 @@ export default function BuyForm() {
   }
 
   const screens = {
-    "Login to buy": <BuyFormLogin startLoading={startLoading}/>,
+    "Login to buy": <BuyFormLogin startLoading={startLoading} />,
     "Select a Set": <BuyFormSet />,
-    "Customize your Set": <BuyFormCustomize startLoading={startLoading}/>,
-    "Extras and promo code": <BuyFormExtrasPromo startLoading={startLoading}/>,
-    "Shipping address": <BuyFormShipping startLoading={startLoading}/>,
-    "Done": <BuyFormDone startLoading={startLoading}/>
+    "Customize your Set": <BuyFormCustomize startLoading={startLoading} />,
+    "Extras and promo code": <BuyFormExtrasPromo startLoading={startLoading} />,
+    "Shipping address": <BuyFormShipping startLoading={startLoading} />,
+    "Done": <BuyFormDone startLoading={startLoading} />
   }
 
   // Render form if there is "#buy-form" in the URL
@@ -96,7 +97,7 @@ export default function BuyForm() {
       <form
         className={`form ${isLoading ? 'loading' : ''}`}
       >
-        
+
         <div className="header">
           <h2>
             {formScreen}
@@ -122,9 +123,16 @@ export default function BuyForm() {
         </div>
 
 
-        <div className={`content ${fullWithContent ? 'full-width': ""}`}>
-          <BuyFormPreview />
-          
+        <div className={`content ${fullWithContent ? 'full-width' : ""}`}>
+          {
+            formScreen !== 'Login to buy'
+            &&
+            <div className="preview-wrapper">
+              <BuyFormPreview />
+              <BuyFormTotal />
+            </div>
+          }
+
           {/* Render current screen */}
           {screens[formScreen]}
         </div>
@@ -152,7 +160,7 @@ export default function BuyForm() {
           >
             {nextText}
           </FormBtn>
-         
+
         </div>
 
       </form>

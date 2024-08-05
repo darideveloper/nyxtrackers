@@ -7,20 +7,9 @@ export default function BuyFormPreview({}) {
   // Redux
   const currentSet = useSelector(state => state.buyFormData.setSelected)
   const currentColor = useSelector(state => state.buyFormData.colorSelected)
-  const formScreen = useSelector(state => state.buyFormScreen.value)
   const logoUrl = useSelector(state => state.buyFormData.logoUrl)
 
-  const [isHidden, setIsHidden] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-
-  useEffect(() => {
-    // Hide image in login screen
-    if (formScreen === 'Login to buy') {
-      setIsHidden(true)
-    } else {
-      setIsHidden(false)
-    }
-  }, [formScreen])
 
   useEffect(() => {
     // Show loading spinner when set or color changes
@@ -36,7 +25,7 @@ export default function BuyFormPreview({}) {
   const imagePath = `/sets/${currentSet.name} ${currentColor}.webp`
 
   return (
-    <div className={`buy-form-preview ${currentSet.name} ${isHidden ? 'hidden' : ''}`}>
+    <div className={`buy-form-preview ${currentSet.name}`}>
       <Spinner isLoading={isLoading} />
       <img 
         src={imagePath}
@@ -58,9 +47,6 @@ export default function BuyFormPreview({}) {
           }
         </div>
       }
-
-      <span className="layer"></span>
-
     </div>
   )
 }
