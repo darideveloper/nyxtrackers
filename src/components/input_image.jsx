@@ -1,7 +1,3 @@
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-
-
 /**
  * InputImage component with image preview
  * @param {Object} props - Component props
