@@ -90,23 +90,22 @@ export default function BuyFormExtrasPromo() {
         />
 
 
-        <p>
-          {
-            !isLoading
+        {
+          !isLoading
+          &&
+          (
+            promoCode != ""
             &&
             (
-              promoCode != ""
-              &&
-              (
-                promoDiscount > 0
-                  ?
-                  `Promo code applied: -${promoDiscount}%`
-                  :
-                  'Invalid promo code'
-              )
+              promoDiscount > 0
+                ?
+                <p>{`Promo code applied: -${promoDiscount}%`}</p>
+                :
+                <p className='invalid'>Invalid promo code</p>
+                
             )
-          }
-        </p>
+          )
+        }
       </div>
 
     </div>
