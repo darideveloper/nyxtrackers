@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const buyFormVisibleSlice = createSlice({
   name: 'buyFormVisible',
   initialState: {
-    value: true,
+    value: false,
   },
   reducers: {
     showForm: state => {

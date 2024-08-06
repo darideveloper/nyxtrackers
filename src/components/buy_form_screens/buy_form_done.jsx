@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { setHasNext, setHasBack, setNextText } from '../../features/buy_form_screen_slice'
-import { hideForm } from '../../features/buy_form_visible_slice'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import Spinner from '../spinner'
@@ -79,9 +78,6 @@ export default function BuyFormDone() {
       body: dataJson
     })
     .then(response => {
-       // Hide form
-      dispatch(hideForm())
-
       // Validate response status
       if (response.ok) {
         return response.json()
@@ -99,6 +95,10 @@ export default function BuyFormDone() {
         showConfirmButton: true,
         icon: "success",
       })
+      .then(() => {
+        // Refresh page
+        window.location.reload()
+      })
 
     })
     .catch(error => {
@@ -111,6 +111,10 @@ export default function BuyFormDone() {
         text: "There was an error processing your order. Please try again later.",
         showConfirmButton: true,
         icon: "error",
+      })
+      .then(() => {
+        // Refresh page
+        window.location.reload()
       })
 
     })
