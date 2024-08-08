@@ -3,7 +3,7 @@ import { useState } from "react"
 import Input from "../input"
 import { setEmail } from "../../features/buy_form_data_slice"
 import { setHasNext } from "../../features/buy_form_screen_slice"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
 
 
@@ -17,6 +17,9 @@ export default function BuyFormLoginNoLogged({ setLogged }) {
 
   const dashboardHost = import.meta.env.VITE_DASHBOARD_HOST
   const [isGuest, setIsGuest] = useState(false)
+  const [emailValid, setEmailValid] = useState(true)
+
+  const email = useSelector((state) => state.buyFormData.email)
 
   // Redux
   const dispatch = useDispatch()
@@ -71,10 +74,24 @@ export default function BuyFormLoginNoLogged({ setLogged }) {
               }}
             />
 
+            {/* Error message */}
+            {
+              !emailValid
+              &&
+              <p className="invalid">Invalid email</p>
+            }
+
             <FormBtn
               onClick={() => {
+                // Validate email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+                const emailValid = emailRegex.test(email)
+                setEmailValid(emailValid)
+
                 // Go to next screen
-                setLogged(true)
+                if (emailValid) {
+                  setLogged(true)
+                }
               }}
             >
               Continue

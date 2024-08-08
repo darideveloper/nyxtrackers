@@ -95,10 +95,10 @@ export default function BuyFormDone() {
         showConfirmButton: true,
         icon: "success",
       })
-      .then(() => {
-        // Refresh page
-        window.location.reload()
-      })
+      // .then(() => {
+      //   // Refresh page
+      //   window.location.reload()
+      // })
 
     })
     .catch(error => {
