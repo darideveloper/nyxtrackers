@@ -94,11 +94,11 @@ export default function BuyFormDone() {
         text: "After the payment is confirmed, you will receive a confirmation email with the details of your trackers .",
         showConfirmButton: true,
         icon: "success",
+      }).then((response) => {
+        if (response.isConfirmed) {
+          window.location.reload()
+        }
       })
-      // .then(() => {
-      //   // Refresh page
-      //   window.location.reload()
-      // })
 
     })
     .catch(error => {
@@ -111,10 +111,10 @@ export default function BuyFormDone() {
         text: "There was an error processing your order. Please try again later.",
         showConfirmButton: true,
         icon: "error",
-      })
-      .then(() => {
-        // Refresh page
-        window.location.reload()
+      }).then((response) => {
+        if (response.isConfirmed) {
+          window.location.reload()
+        }
       })
 
     })
