@@ -54,13 +54,17 @@
                         margin: 5px
                         font-size: 0.8rem
 
-            .btn.display
-                height: 100%
-                display: none
+        .btn.display
+            height: 50px
+            width: 50px
+            display: none
 
-                img
-                    height: 80%
-                    width: auto
+            &.clossed 
+                margin-bottom: 20px
+
+            img
+                height: 80%
+                width: auto
 
     @media screen and (max-width: 950px)
 
@@ -73,9 +77,9 @@
                     display: block
 
                 nav
-                    position: absolute
+                    position: fixed
                     right: 0
-                    top: 60px
+                    top: 0
                     margin: 0
                     height: 100vh
                     transition-duration: $transition-duration
@@ -84,7 +88,7 @@
                         padding: 40px
                         padding-bottom: 0
                         flex-direction: column
-                        background-color: rgba($color-c, 0.8)
+                        background-color: $color-c
                         align-items: flex-start
                         justify-content: flex-start
                         height: 100%

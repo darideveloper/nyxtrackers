@@ -2,19 +2,31 @@
     display: flex
     justify-content: flex-end
     align-items: center
+    padding: 10px 0
+    flex-wrap: wrap
+    gap: 20px
+    width: calc(100% - 40px)
+    padding: 10px 20px
+
+    p
+        margin: 0
+        padding: 0
 
     button
-        margin: 0 10px
         padding: 5px 20px
-        background-color: rgba($color-c, 0.8)
-        border-top-right-radius: 5px
-        border-top-left-radius: 5px
+        background-color: $color-a
+        border-radius: 5px
         text-transform: capitalize
         transition-duration: $transition-duration
         border: none
-        color: $color-a
+        color: $color-d
         cursor: pointer
+        font-weight: bold
 
         &:hover
             background-color: rgba($color-b, 0.8)
             color: $color-d
+
+    @media screen and (max-width: 450px)
+        justify-content: center
+        gap: 10px

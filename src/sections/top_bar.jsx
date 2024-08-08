@@ -30,6 +30,10 @@ export default function TopBar() {
       setLinks([
         {
           "text": `Welcome ${username}`,
+          "link": ``,
+        },
+        {
+          "text": `Dashboard`,
           "link": `${dashboardHost}`,
         },
         {
@@ -57,6 +61,13 @@ export default function TopBar() {
     <section className="top-bar">
       {
         links.map((link, index) => (
+
+          link.link === ''
+          ?
+          <p>
+            {link.text}
+          </p>
+          :
           <button key={index} onClick={() => {
             // Delete cookie if logout and refresh page
             if (link.text === 'logout') {  
