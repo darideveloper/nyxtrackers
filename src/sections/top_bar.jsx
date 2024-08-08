@@ -64,7 +64,7 @@ export default function TopBar() {
 
           link.link === ''
           ?
-          <p>
+          <p key={index}>
             {link.text}
           </p>
           :
@@ -75,7 +75,7 @@ export default function TopBar() {
               dispatch(clearSession())
             } 
             // Open link in new tab
-            window.open(link.link, '_blank')
+            window.open(link.link, '_self')
           }}>
             {link.text}
           </button>

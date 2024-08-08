@@ -11,21 +11,21 @@ export const setsOptions = [
     "points": 6,
     "price": 295,
     "recommended": false,
-    "logos": 6,
+    "logos": 5,
   },
   {
     "name": "enhanced",
     "points": 8,
     "price": 335,
     "recommended": true,
-    "logos": 8,
+    "logos": 5,
   },
   {
     "name": "elite",
     "points": 10,
     "price": 460,
     "recommended": false,
-    "logos": 10,
+    "logos": 7,
   },
 ]
 
