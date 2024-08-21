@@ -19,6 +19,7 @@ export default function BuyFormDone() {
   const logoFile = useSelector(state => state.buyFormData.logoFile)
   const includedExtras = useSelector(state => state.buyFormData.includedExtras)
   const promoCode = useSelector(state => state.buyFormData.promoCode)
+  const promoDiscount = useSelector(state => state.buyFormData.promoDiscount)
   const fullName = useSelector(state => state.buyFormData.fullName)
   const country = useSelector(state => state.buyFormData.country)
   const state = useSelector(state => state.buyFormData.state)
@@ -27,9 +28,6 @@ export default function BuyFormDone() {
   const streetAddress = useSelector(state => state.buyFormData.streetAddress)
   const phone = useSelector(state => state.buyFormData.phone)
   const total = useSelector(state => state.buyFormData.value)
-
-  // Clean data
-  const extrasNames = includedExtras.map(extra => extra.name)
 
   // Env variables
   const apiBase = import.meta.env.VITE_DASHBOARD_API
@@ -52,8 +50,11 @@ export default function BuyFormDone() {
       "logo_color_2": logoColor2,
       "logo_color_3": logoColor3,
       "logo": logoFile,
-      "included_extras": extrasNames,
-      "promo_code": promoCode,
+      "included_extras": includedExtras,
+      "promo": {
+        "code": promoCode,
+        "discount": promoDiscount,
+      },
       "full_name": fullName,
       "country": country,
       "state": state,
