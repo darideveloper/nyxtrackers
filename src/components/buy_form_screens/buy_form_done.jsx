@@ -89,7 +89,7 @@ export default function BuyFormDone() {
       if (response.ok) {
         // Get stripe url from response
         response.json().then(json_data => {
-          const stripeUrl = json_data.data.stripe_url
+          const stripeLink = json_data.data.stripe_link
 
           // Show alert success
           MySwal.fire({
@@ -101,7 +101,7 @@ export default function BuyFormDone() {
           }).then((response) => {
             // Redirect to stripe when confirm
             if (response.isConfirmed) {
-              window.location.href = stripeUrl
+              window.location.href = stripeLink
             }
           })
     
