@@ -49,10 +49,10 @@ export default function BuyForm() {
   const screens = {
     "Login to buy": <BuyFormLogin startLoading={startLoading} />,
     "Select a Set": <BuyFormSet />,
-    "Customize your Set": <BuyFormCustomize startLoading={startLoading} />,
-    "Extras and promo code": <BuyFormExtrasPromo startLoading={startLoading} />,
-    "Shipping address": <BuyFormShipping startLoading={startLoading} />,
-    "Done": <BuyFormDone startLoading={startLoading} />
+    "Customize your Set": <BuyFormCustomize />,
+    "Extras and promo code": <BuyFormExtrasPromo />,
+    "Shipping address": <BuyFormShipping />,
+    "Done": <BuyFormDone />
   }
 
   // Render form if there is "#buy-form" in the URL

@@ -85,6 +85,11 @@ export default function BuyFormShipping() {
     }
   }, [fullName, country, state, city, postalCode, streetAddress, phone])
 
+  // Set has next to false when component is mounted
+  useEffect(() => {
+    dispatch(setHasNext(false))
+  }, [])
+
 
   return (
     <section

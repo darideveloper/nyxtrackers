@@ -33,13 +33,44 @@ export default function BuyFormDone() {
   // Env variables
   const apiBase = import.meta.env.VITE_DASHBOARD_API
 
-  // Fix promo code
-  if (promoDiscount.value == 0) {
-    dispatch(setPromoCode("no promo code"))
+  // Alert mesages
+  const alertsData = {
+    "Sale saved": {
+      title: "Thank you for your order!",
+      text: "You will be redirected to the payment gateway. After the payment is confirmed, you will receive a confirmation email with the details of your trackers .",
+      icon: "success",
+      confirmButtonText: "Go to payment",
+      onClick: (json_data) => {
+        const stripeLink = json_data.data.stripe_link
+        window.location.href = stripeLink
+      },
+    },
+    "No stock available": {
+      title: "Error",
+      text: "There is no stock available. Please try again later.",
+      icon: "error",
+      confirmButtonText: "Go back",
+      onClick: () => {
+        window.location.reload()
+      },
+    },
+    "Error": {
+      title: "Error",
+      text: "There was an error processing your order. Please try again later.",
+      icon: "error",
+      confirmButtonText: "Go back",
+      onClick: () => {
+        window.location.reload()
+      },
+    }
   }
 
   useEffect(() => {
 
+    // Fix promo code
+    if (promoDiscount.value == 0) {
+      dispatch(setPromoCode("no promo code"))
+    }
 
     // Update buttons when load
     dispatch(setHasNext(false))
@@ -73,61 +104,44 @@ export default function BuyFormDone() {
 
     // Start sweetalert
     const MySwal = withReactContent(Swal)
-
-    // Save sale in dashboard
     const dataJson = JSON.stringify(data)
     const endpoint = `${apiBase}/store/sale/`
-    fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: dataJson
-    })
-    .then(response => {
-      // Validate response status
-      if (response.ok) {
-        // Get stripe url from response
-        response.json().then(json_data => {
-          const stripeLink = json_data.data.stripe_link
 
-          // Show alert success
-          MySwal.fire({
-            title: "Thank you for your order!",
-            text: "You will be redirected to the payment gateway. After the payment is confirmed, you will receive a confirmation email with the details of your trackers .",
-            showConfirmButton: true,
-            icon: "success",
-            confirmButtonText: "Go to payment",
-          }).then((response) => {
-            // Redirect to stripe when confirm
-            if (response.isConfirmed) {
-              window.location.href = stripeLink
-            }
-          })
-    
-        })
-      } else {
-        throw response.json()
+    // Show specific alert
+    async function showAlert(alertData, json_data) {
+      const response = await MySwal.fire(alertData)
+      if (response.isConfirmed) {
+        alertData.onClick(json_data)
       }
-    })
-    .catch(error => {
+    }
 
-      console.error(error)
-      
-      // Show alert error
-      MySwal.fire({
-        title: "Error",
-        text: "There was an error processing your order. Please try again later.",
-        showConfirmButton: true,
-        icon: "error",
-      }).then((response) => {
-        if (response.isConfirmed) {
-          window.location.reload()
-        }
-      })
+    // Send data to dashboard and render alerts
+    async function sendData() {
+      try {
+        // Send sale data and get response
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: dataJson
+        })
 
-    })
-    
+        // Get json data
+        const json_data = await res.json()
+        const message = json_data.message
+        const alertData = alertsData[message]
+
+        // Show alert
+        showAlert(alertData, json_data)
+      } catch (error) {
+        // Show generic error alert
+        showAlert(alertsData["Error"])    
+      }
+    }
+
+    // Send main function
+    sendData()
   }, [])
 
 
