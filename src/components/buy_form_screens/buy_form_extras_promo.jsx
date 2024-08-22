@@ -97,9 +97,9 @@ export default function BuyFormExtrasPromo() {
             promoCode != ""
             &&
             (
-              promoDiscount > 0
+              promoDiscount["value"] > 0
                 ?
-                <p>{`Promo code applied: -${promoDiscount}%`}</p>
+                <p>{`Promo code applied: -${promoDiscount["value"]} USD`}</p>
                 :
                 <p className='invalid'>Invalid promo code</p>
                 

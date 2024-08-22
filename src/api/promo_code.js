@@ -4,9 +4,18 @@ export async function getPromoCodeDiscount (promoCode) {
 
   // Simullate api call
   const validPromoCodes = {
-    'NYXTRACKERS10': 10,
-    'NYXTRACKERS15': 15,
-    'NYXTRACKERS20': 20,
+    'NYXTRACKERS10': {
+      "type": "amount",
+      "value": 10,
+    },
+    'NYXTRACKERS15': {
+      "type": "amount",
+      "value": 15,
+    },
+    'NYXTRACKERS20': {
+      "type": "amount",
+      "value": 20,
+    },
   }
 
   // Simulate api call
@@ -16,6 +25,6 @@ export async function getPromoCodeDiscount (promoCode) {
   if (validPromoCodes.hasOwnProperty(promoCode)) {
     return validPromoCodes[promoCode]
   } else {
-    return 0
+    return { "type": "amount", "message": 0 }
   }
 }
