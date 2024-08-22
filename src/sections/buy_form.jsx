@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { hideForm, showForm } from '../features/buy_form_visible_slice'
 import { nextScreen, backScreen, setNextText } from '../features/buy_form_screen_slice'
 import { useEffect, useState } from 'react'
+
 import BuyFormLogin from '../components/buy_form_screens/buy_form_login'
 import BuyFormSet from '../components/buy_form_screens/buy_form_set'
 import BuyFormCustomize from '../components/buy_form_screens/buy_form_customize'
@@ -11,6 +12,9 @@ import BuyFormDone from '../components/buy_form_screens/buy_form_done'
 import FormBtn from '../components/form_btn'
 import BuyFormPreview from '../components/buy_form_preview'
 import BuyFormTotal from '../components/buy_form_total'
+
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
 export default function BuyForm() {
@@ -68,19 +72,40 @@ export default function BuyForm() {
 
     // Set form align when component is mounted
     setFormMobile()
+
+    // Show alerts if sale is done
+    const urlParams = new URLSearchParams(window.location.search)
+    const saleId = urlParams.get('sale-id')
+    const saleStatus = urlParams.get('sale-status')
+    console.log({saleId, saleStatus})
+
+    if (saleId && saleStatus) {
+
+      const MySwal = withReactContent(Swal)
+
+      if (saleStatus == "success") {
+        MySwal.fire({
+          title: 'Payment Sucessful',
+          text: `Your Order Number is ${saleId}`,
+          footer: 'You will receive your sale updates in your email',
+          icon: 'success',
+          confirmButtonText: 'Ok',
+        })
+      } else {
+        MySwal.fire({
+          title: 'Payment Failed',
+          text: `Something went wrong with your payment. Please try again later or contact us.`,
+          footer: `Order number: ${saleId}`,
+          icon: 'error',
+          confirmButtonText: 'Ok',
+        })
+      }
+    }
+
+
   }, [])
 
   useEffect(() => {
-    // Update next text in shipping screen
-    if (formScreen === 'Shipping address') {
-      dispatch(setNextText('Buy Now!'))
-    } else {
-      dispatch(setNextText('Next'))
-    }
-  }, [formScreen])
-
-  useEffect(() => {
-
     // Set full with content only to specific screens
     const fullWithSceens = ['Login to buy']
     if (fullWithSceens.includes(formScreen)) {
@@ -93,6 +118,13 @@ export default function BuyForm() {
     setTimeout(() => {
       setFormMobile()
     }, 10)
+
+    // Update next text in shipping screen
+    if (formScreen === 'Shipping address') {
+      dispatch(setNextText('Buy Now!'))
+    } else {
+      dispatch(setNextText('Next'))
+    }
 
   }, [formScreen])
 
