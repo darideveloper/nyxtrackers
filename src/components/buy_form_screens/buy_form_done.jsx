@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { setHasNext, setHasBack, setNextText } from '../../features/buy_form_screen_slice'
+import { setPromoCode } from '../../features/buy_form_data_slice'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import Spinner from '../spinner'
@@ -31,6 +32,11 @@ export default function BuyFormDone() {
 
   // Env variables
   const apiBase = import.meta.env.VITE_DASHBOARD_API
+
+  // Fix promo code
+  if (promoDiscount.value == 0) {
+    dispatch(setPromoCode("no promo code"))
+  }
 
   useEffect(() => {
 
