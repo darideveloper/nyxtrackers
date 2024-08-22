@@ -25,6 +25,6 @@ export async function getPromoCodeDiscount (promoCode) {
   if (validPromoCodes.hasOwnProperty(promoCode)) {
     return validPromoCodes[promoCode]
   } else {
-    return { "type": "amount", "message": 0 }
+    return { "type": "amount", "value": 0 }
   }
 }

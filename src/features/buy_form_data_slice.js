@@ -20,7 +20,7 @@ export const buyFormDataSlice = createSlice({
     logoFile: "",
     colorsNum: setsColorsNumPrices[1],
     includedExtras: [],
-    promoDiscount: 0,
+    promoDiscount: { type: "amount", value: 0 },
     promoCode: '',
     fullName: '',
     country: '',
@@ -94,8 +94,8 @@ export const buyFormDataSlice = createSlice({
       const colorsNumPrice = state.colorsNum.price
       const extrasPrice = state.includedExtras.reduce((acc, extra) => acc + extra.price, 0)
       const subtotal = setPrice + colorsNumPrice + extrasPrice
-      const discount = subtotal * state.promoDiscount / 100
-      state.total = subtotal - discount
+      // const discount = subtotal * state.promoDiscount.value / 100
+      state.total = subtotal - state.promoDiscount.value
     }
   }
 })

@@ -81,26 +81,28 @@ export default function BuyFormDone() {
     .then(response => {
       // Validate response status
       if (response.ok) {
-        return response.json()
+        // Get stripe url from response
+        response.json().then(json_data => {
+          const stripeUrl = json_data.data.stripe_url
+
+          // Show alert success
+          MySwal.fire({
+            title: "Thank you for your order!",
+            text: "You will be redirected to the payment gateway. After the payment is confirmed, you will receive a confirmation email with the details of your trackers .",
+            showConfirmButton: true,
+            icon: "success",
+            confirmButtonText: "Go to payment",
+          }).then((response) => {
+            // Redirect to stripe when confirm
+            if (response.isConfirmed) {
+              window.location.href = stripeUrl
+            }
+          })
+    
+        })
+      } else {
+        throw response.json()
       }
-      throw response.json()
-    })
-    .then(data => {
-
-      console.log(data)
-      
-      // Show alert success
-      MySwal.fire({
-        title: "Thank you for your order!",
-        text: "After the payment is confirmed, you will receive a confirmation email with the details of your trackers .",
-        showConfirmButton: true,
-        icon: "success",
-      }).then((response) => {
-        if (response.isConfirmed) {
-          window.location.reload()
-        }
-      })
-
     })
     .catch(error => {
 
