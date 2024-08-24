@@ -24,7 +24,7 @@ export function getCookies () {
  * Clear the nyx cookies
  * @param {boolean} redirectDashboard - Redirect to the dashboard logout page
  */
-export function clearCookies(redirectDashboard = false) {
+export function clearCookies() {
 
   // Delete nyx cookies
   const deletebase = `expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
@@ -37,15 +37,9 @@ export function clearCookies(redirectDashboard = false) {
     document.cookie = cookieExpired
   })
 
-  // Refresh page when recover focus
-  window.onfocus = () => {
-    window.location.reload()
-  }
 
   // Go to dashboard in new tab
-  if (redirectDashboard) {
-    const logoutLink = `${dashboardHost}/admin/logout`
-    window.open(logoutLink, '_blank')
-  }
+  const logoutLink = `${dashboardHost}/admin/logout`
+  window.location.href = logoutLink
 }
 

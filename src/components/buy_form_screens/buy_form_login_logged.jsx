@@ -45,7 +45,7 @@ export default function BuyFormLoginNoLogged({ setLogged }) {
       <FormBtn
         onClick={() => {
           // Clear cookies and reload page
-          clearCookies(true)
+          clearCookies()
         }}
       >
         Logout

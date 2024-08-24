@@ -36,7 +36,7 @@ export default function BuyFormLoginNoLogged({ setLogged }) {
         onClick={() => {
           // Open login page and refresh
           const loginLink = `${dashboardHost}/login`
-          window.open(loginLink, "_self")
+          window.location.href = loginLink
         }}
       >
         Login / Sign up
