@@ -69,13 +69,6 @@ export default function BuyFormDone() {
 
   useEffect(() => {
 
-    // Fix promo code
-    console.log(promoDiscount.value)
-    console.log(promoCode)
-    if (promoDiscount.value == 0) {
-      dispatch(setPromoCode("no promo code"))
-    }
-
     // Update buttons when load
     dispatch(setHasNext(false))
     dispatch(setHasBack(true))
@@ -95,7 +88,7 @@ export default function BuyFormDone() {
       "logo": logoFile,
       "included_extras": includedExtrasNames,
       "promo": {
-        "code": promoCode,
+        "code": promoCode ? promoCode : "no promo code",
         "discount": promoDiscount,
       },
       "full_name": fullName,
