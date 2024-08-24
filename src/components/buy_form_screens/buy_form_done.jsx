@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useRef  } from 'react'
 import { setHasNext, setHasBack, setNextText } from '../../features/buy_form_screen_slice'
 import { setPromoCode } from '../../features/buy_form_data_slice'
 import Swal from 'sweetalert2'
@@ -65,9 +65,13 @@ export default function BuyFormDone() {
     }
   }
 
+  const isFirstRun = useRef(true)
+
   useEffect(() => {
 
     // Fix promo code
+    console.log(promoDiscount.value)
+    console.log(promoCode)
     if (promoDiscount.value == 0) {
       dispatch(setPromoCode("no promo code"))
     }
@@ -77,17 +81,19 @@ export default function BuyFormDone() {
     dispatch(setHasBack(true))
     dispatch(setNextText("Loading..."))
 
+    const includedExtrasNames = includedExtras.map(extra => extra.name)
+
     // Encode data
     const data = {
       "email": email,
-      "set": setSelected,
-      "colors_num": colorsNum,
+      "set": setSelected.name,
+      "colors_num": colorsNum.num,
       "set_color": colorSelected,
       "logo_color_1": logoColor1,
       "logo_color_2": logoColor2,
       "logo_color_3": logoColor3,
       "logo": logoFile,
-      "included_extras": includedExtras,
+      "included_extras": includedExtrasNames,
       "promo": {
         "code": promoCode,
         "discount": promoDiscount,
@@ -140,8 +146,13 @@ export default function BuyFormDone() {
       }
     }
 
-    // Send main function
-    sendData()
+    if (isFirstRun.current) {
+      isFirstRun.current = false
+      // Send main function
+      sendData()
+    }
+
+    
   }, [])
 
 
