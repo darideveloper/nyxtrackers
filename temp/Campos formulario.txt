@@ -1,0 +1,72 @@
+Create your custom fbt!
+
+
+
+Set(Una sola eleccion):
+
+-Basic 5 point set +275USD
+-Standard 6 point set +295USD
+-Enhanced 8 point set (Recommended) +335USD
+-Elite 10 point set +460USD
+
+
+
+Color options(Una sola eleccion):
+
+-Single color -5USD
+-2 colors (Trackers and logo) Included
+-3 Colors (Trackers and 2 logo colors) +10USD
+-4 Colors (Trackers and 3 logo colors) +20USD
+
+
+
+Tracker color (Siempre aparece, una sola eleccion con todos los campos de color, estos 10 colores son para todos los formularios de color, ):
+
+-Black
+-Blue
+-White
+-Grey
+-Green
+-Yellow
+-Orange
+-Red
+-Pink
+-Purple
+
+Primary Logo color (Si la persona elige la opcion de dos colores debe aparecerle esta opcion)
+Secondary Logo color(Si la persona elige la opcion de tres colores debe aparecerle esta opcion y la anterior)
+Terciary Logo color (Si la persona elige la opcion de tres colores debe aparecerle esta opcion y las dos anteriores)
+
+
+Upload your logo (Care to use png without background/ svg!):
+
+-Casilla para subir un archivo png/ svg (Si se trata de subir cualquier otro, no dejar y dar warning)
+
+
+
+Addons(Seleccion multiple):
+
+-Wifi 2.4ghz USB Dongle +14USD
+-Straps +25USD
+-Convert Hip to main tracker +25USD  (Esta opcion solo debe estar habilitada para los Standard, enhanced y elite set)
+
+
+
+Discount codes (Casilla para codigos de descuento):
+
+
+
+TODO MY
+
+Validación email invitado 
+Trackers pequeños sin logo
+Cortar SVGs (revisar)
+Colores más nítidos en selector de color
+Extras details box (próxima entrega)
+Error al enviar el formulario (corregir)
+
+Redirigir al dashboard cuando venimos desde la landing (redirigir de la web a la landing)
+Update text: change color and "dashboard"
+
+Códigos de descuentos cantidades y porcentajes (próxima entrega)
+Lista de países dinámica a futuro (a futuro)
