@@ -33,10 +33,10 @@ function App() {
   return (
     <>
       <Loading />
-      <TopBar />
+      {/* <TopBar /> */}
       <Header />
       <main>
-        <CountDown />
+        {/* <CountDown /> */}
         <Notifications />
         <Hero />
         <About />
@@ -52,7 +52,7 @@ function App() {
       </main>
       <Footer />
       <Socials />
-      <BuyForm />
+      {/* <BuyForm /> */}
     </>
   )
 }
