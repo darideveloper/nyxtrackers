@@ -6,15 +6,12 @@ export default function Header() {
   const { setIsOpen } = useContext(TechnicalsContext)
 
   const [headerClass, setHeaderClass] = useState('clossed')
-  const [image_button, setImageButton] = useState('menu_opened_icon.svg')
 
   function toggleMenu() {
     if (headerClass === 'clossed') {
       setHeaderClass('opened')
-      setImageButton('menu_clossed_icon.svg')
     } else {
       setHeaderClass('clossed')
-      setImageButton('menu_opened_icon.svg')
     }
   }
 
@@ -28,6 +25,9 @@ export default function Header() {
           </a>
           <nav>
             <ul>
+              <button className="btn display clossed" onClick={toggleMenu}>
+                <img src="menu_clossed_icon.svg" alt={`header menu clossed icon`} />
+              </button>
               <li><a href="#about">About Us</a></li>
               <li><a href="#videos-grid">Videos</a></li>
               <li><a href="#models">Models</a></li>
@@ -44,8 +44,8 @@ export default function Header() {
               </a></li>
             </ul>
           </nav>
-          <button className="btn display" onClick={toggleMenu}>
-            <img src={image_button} alt={`header menu ${headerClass} icon`} />
+          <button className="btn display openned" onClick={toggleMenu}>
+            <img src="menu_opened_icon.svg" alt={`header menu opened icon`} />
           </button>
         </div>
       </div>

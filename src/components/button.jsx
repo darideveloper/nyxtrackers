@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-export default function Button ({link, text}) {
+export default function Button ({link, text, onClick}) {
 
     let content
     if (link) {
@@ -8,7 +8,7 @@ export default function Button ({link, text}) {
         content = <a href={link} className="btn text">{text}</a>
     } else {
         // Button
-        content = <button className="btn text">{text}</button>
+        content = <button className="btn text" onClick={onClick}>{text}</button>
     }
 
     return content

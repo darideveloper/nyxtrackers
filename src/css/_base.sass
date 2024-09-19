@@ -2,6 +2,7 @@ $color-a: #E7F6F2
 $color-b: #A5C9CA
 $color-c: #395B64
 $color-d: #2C3333
+$color-e: #f06c6c
 $transition-duration: 0.6s
 $regular-width: 1250px
 $regular-width-media-query: $regular-width + 50px
@@ -12,7 +13,8 @@ html
     scroll-behavior: smooth
     font-size: 16px
 
-    @media screen and (max-width: 700px)
+@media screen and (max-width: 700px)
+    html
         font-size: 12px
 
 body
@@ -21,7 +23,12 @@ body
     background-color: $color-d
     font-family: 'Overpass', sans-serif
     overflow-x: hidden
+    color: $color-a
+    width: 100vw
 
+#root
+    overflow-x: hidden
+    width: 100vw
 
 p
     font-size: 1rem
@@ -29,16 +36,17 @@ p
     &.small
         font-size: 0.8rem
 
-.hide
+.hide, .hidden
     display: none !important
 
-a
+a, button
     text-decoration: none
     color: $color-a
 
 .regular-width
     max-width: $regular-width
     margin: 0 auto
+    width: 100%
 
     @media screen and (max-width: $regular-width-media-query)
         padding: 0 5%
@@ -231,3 +239,6 @@ h1, h2, h3, h4, h5, h6, .title
 
     .swiper-button-disabled
         color: rgba($color-a, 0.1) !important
+
+p.invalid
+    color: $color-e

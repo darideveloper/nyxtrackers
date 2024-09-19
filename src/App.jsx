@@ -14,13 +14,11 @@ import Footer from './sections/footer'
 import Socials from './sections/socials'
 import Collaborations from './sections/collaborations'
 import Personalization from './sections/personalization'
-import Form from './components/form'
+import EmailForm from './sections/email_form'
 import Notifications from './sections/notifications'
-
-// Alert imports
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
-import { alert_title, alert_text } from './api/alert'
+import TopBar from './sections/top_bar'
+import CountDown from './sections/countdown'
+import BuyForm from './sections/buy_form'
 
 function App() {
 
@@ -30,32 +28,17 @@ function App() {
       .then(() => {
         document.getElementById('loading').style.display = 'none'
       })
-      .then(() => {
-        sleep(1)
-          .then(() => {
-            // Show alert after loading ends
-            const MySwal = withReactContent(Swal)
-            MySwal.fire({
-              position: 'top-end',
-              iconHtml: '<img src="./kofi-logo.png"/>',
-              title: alert_title,
-              text: alert_text,
-              showConfirmButton: false,
-              timer: 6000,
-            })
-          })
-      })
-
   }, [])
 
   return (
     <>
-      <Header />
       <Loading />
+      <TopBar />
+      <Header />
       <main>
+        <CountDown />
         <Notifications />
         <Hero />
-        <Form />
         <About />
         <Personalization />
         <ColorOptions />
@@ -65,9 +48,11 @@ function App() {
         <VideosCustomer />
         <Collaborations />
         <WhyUs />
+        <EmailForm />
       </main>
       <Footer />
       <Socials />
+      <BuyForm />
     </>
   )
 }

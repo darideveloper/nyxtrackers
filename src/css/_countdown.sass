@@ -1,0 +1,53 @@
+.countdown
+    color: $color-d
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    margin: 55px 0px
+    
+    &.animated
+        animation: scale 0.5s ease-in-out infinite alternate
+
+    h2
+        margin: 0px
+
+    p, small
+        color: $color-a
+    
+    .counters
+        margin: 0 auto
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: $color-b
+        padding: 0px 10px
+        margin: 20px 0
+
+        p
+            display: inline-block
+            display: flex
+            align-items: center
+            justify-content: center 
+            margin: 10px
+            color: $color-d
+
+            span:first-child
+                font-size: 50px
+                margin: 5px
+                text-align: right
+
+    .btn
+        text-transform: uppercase
+    
+
+
+    @media screen and (max-width: 500px)
+        .counters p span:first-child
+                font-size: 18px
+
+@keyframes scale
+    from
+        transform: scale(0.9)
+    to
+        transform: scale(1.0)
