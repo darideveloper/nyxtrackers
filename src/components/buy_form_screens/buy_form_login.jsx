@@ -28,7 +28,7 @@ export default function BuyFormLogin({startLoading}) {
 
   useEffect(() => {
     // Setup initial screen
-    if (screen == "noLogged" && sessionEmail) {
+    if (screen == "noLogged" && sessionEmail && sessionEmail.trim() != "") {
       setScreen("logged")
     } 
   }, [screen, sessionEmail])
