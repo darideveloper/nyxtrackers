@@ -1,17 +1,19 @@
 import Input from '../input'
 import InputCheckbox from '../input_checkbox'
+import Spinner from '../spinner'
+import FormBtn from '../form_btn'
+
 import { extras } from '../../api/buy_form'
 import { getPromoCodeDiscount } from '../../api/promo_code'
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
-import { 
+import {
   setIncludedExtras,
   setPromoDiscount,
   setPromoCode,
 } from '../../features/buy_form_data_slice'
 import { setHasNext } from '../../features/buy_form_screen_slice'
 import { useDispatch } from 'react-redux'
-import Spinner from '../spinner'
 
 export default function BuyFormExtrasPromo() {
 
@@ -28,6 +30,7 @@ export default function BuyFormExtrasPromo() {
 
   // Initial state
   const [isLoading, setIsLoading] = useState(false)
+  const [isValidated, setIsValidated] = useState(false)
 
   useEffect(() => {
     // Enable next button when load
@@ -65,20 +68,8 @@ export default function BuyFormExtrasPromo() {
         value={promoCode}
         onChange={(e) => {
 
-          // Show spinner
-          setIsLoading(true)
-
           // Save promo code in local state
           dispatch(setPromoCode(e.target.value))
-
-          // Save promo discount in redux state
-          getPromoCodeDiscount(e.target.value)
-            .then(promoCodeDiscount => {
-              dispatch(setPromoDiscount(promoCodeDiscount))
-
-              // Hide spinner
-              setTimeout(() => setIsLoading(false), 500)
-            })
 
         }}
       />
@@ -91,22 +82,42 @@ export default function BuyFormExtrasPromo() {
 
 
         {
-          !isLoading
+          !isLoading && isValidated && promoCode != ""
           &&
           (
-            promoCode != ""
-            &&
-            (
-              promoDiscount["value"] > 0
-                ?
-                <p>{`Promo code applied: -${promoDiscount["value"]} USD`}</p>
-                :
-                <p className='invalid'>Invalid promo code</p>
-                
-            )
+            promoDiscount["value"] > 0
+              ?
+              <p>{`Promo code applied: -${promoDiscount["value"]} USD`}</p>
+              :
+              <p className='invalid'>Invalid promo code</p>
+
           )
         }
       </div>
+
+      <FormBtn
+        className="no-margin-x"
+        disabled={promoCode == ""}
+        onClick={() => {
+
+          // Set validation state
+          setIsValidated(true)
+
+          // Show spinner
+          setIsLoading(true)
+
+          // Save promo discount in redux state
+          getPromoCodeDiscount(promoCode)
+            .then(promoCodeDiscount => {
+              dispatch(setPromoDiscount(promoCodeDiscount))
+
+              // Hide spinner
+              setTimeout(() => setIsLoading(false), 500)
+            })
+        }}
+      >
+        Validate
+      </FormBtn>
 
     </div>
   )
