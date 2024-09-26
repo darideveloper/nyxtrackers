@@ -16,6 +16,18 @@ export async function getPromoCodeDiscount (promoCode) {
       "type": "amount",
       "value": 20,
     },
+    'NYXTRACKERS10P': {
+      "type": "percentage",
+      "value": 10,
+    },
+    'NYXTRACKERS15P': {
+      "type": "percentage",
+      "value": 15,
+    },
+    'NYXTRACKERS20P': {
+      "type": "percentage",
+      "value": 20,
+    },
   }
 
   // Simulate api call

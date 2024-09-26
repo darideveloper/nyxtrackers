@@ -87,7 +87,11 @@ export default function BuyFormExtrasPromo() {
           (
             promoDiscount["value"] > 0
               ?
-              <p>{`Promo code applied: -${promoDiscount["value"]} USD`}</p>
+              promoDiscount["type"] == "percentage"
+                ?
+                <p>{`Promo code applied: -${promoDiscount["value"]}%`}</p>
+                :
+                <p>{`Promo code applied: -${promoDiscount["value"]} USD`}</p>
               :
               <p className='invalid'>Invalid promo code</p>
 
@@ -112,7 +116,7 @@ export default function BuyFormExtrasPromo() {
               dispatch(setPromoDiscount(promoCodeDiscount))
 
               // Hide spinner
-              setTimeout(() => setIsLoading(false), 500)
+              setTimeout(() => setIsLoading(false), 10)
             })
         }}
       >
