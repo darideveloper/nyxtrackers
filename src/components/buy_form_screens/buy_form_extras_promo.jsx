@@ -15,6 +15,8 @@ import {
 import { setHasNext } from '../../features/buy_form_screen_slice'
 import { useDispatch } from 'react-redux'
 
+import { Tooltip } from 'react-tooltip'
+
 export default function BuyFormExtrasPromo() {
 
   // Redux
@@ -43,6 +45,7 @@ export default function BuyFormExtrasPromo() {
       <div className="extras-wrapper">
 
         {extrasFiltered.map((extra, index) => (
+        <div key={index} className="extra">
           <InputCheckbox
             key={index}
             label={`${extra.name} (+${extra.price}USD)`}
@@ -56,7 +59,17 @@ export default function BuyFormExtrasPromo() {
                 dispatch(setIncludedExtras(includedExtras.filter(e => e !== extra)))
               }
             }}
+
+            // Tooltip settings
+            data-tooltip-id={`tooltip-${index}`}
+            data-tooltip-html={extra.description}
           />
+
+          {/* Tooltop elem */}
+          <Tooltip
+            id={`tooltip-${index}`}
+          />
+        </div>
         ))}
       </div>
 
