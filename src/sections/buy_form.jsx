@@ -77,7 +77,6 @@ export default function BuyForm() {
     const urlParams = new URLSearchParams(window.location.search)
     const saleId = urlParams.get('sale-id')
     const saleStatus = urlParams.get('sale-status')
-    console.log({saleId, saleStatus})
 
     if (saleId && saleStatus) {
 
