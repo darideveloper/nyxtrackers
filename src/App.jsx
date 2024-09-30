@@ -20,10 +20,12 @@ import TopBar from './sections/top_bar'
 import CountDown from './sections/countdown'
 import BuyForm from './sections/buy_form'
 
+
 function App() {
 
-  // Wait for the page to load before removing the loading screen
   useEffect(() => {
+
+    // Wait for the page to load before removing the loading screen
     sleep(3.5)
       .then(() => {
         document.getElementById('loading').style.display = 'none'

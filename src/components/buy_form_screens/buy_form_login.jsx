@@ -5,6 +5,7 @@ import BuyFormLoginNoLogged from "./buy_form_login_no_logged"
 import { nextScreen } from '../../features/buy_form_screen_slice'
 import { useDispatch } from 'react-redux'
 
+
 /**
  * Login form for the buy form
  * @param {Object} props
@@ -12,7 +13,6 @@ import { useDispatch } from 'react-redux'
  * @returns 
  */
 export default function BuyFormLogin({startLoading}) {
-
 
   // Local screens
   const [screen, setScreen] = useState("noLogged")

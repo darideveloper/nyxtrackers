@@ -1,3 +1,5 @@
+import Input from '../input'
+
 import { 
   setFullName,
   setCountry,
@@ -10,7 +12,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { setHasNext } from '../../features/buy_form_screen_slice'
-import Input from '../input'
+import { submitEvent } from '../../libs/google-analytics'
 
 
 export default function BuyFormShipping() {
@@ -66,7 +68,12 @@ export default function BuyFormShipping() {
     {
       label: 'Phone',
       value: phone,
-      onChange: (e) => dispatch(setPhone(e.target.value)),
+      onChange: (e) => { 
+        dispatch(setPhone(e.target.value))
+      
+        // Google Analytics
+        submitEvent('shipping_data_set')
+      },
       placeholder: '+1 123 456 7890',
     },
   ]

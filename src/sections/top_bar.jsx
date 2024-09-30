@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch } from 'react-redux'
 import { setSession, clearSession } from "../features/session_slice"
 import { getCookies, clearCookies } from '../tools/session'
+import { submitEvent } from '../libs/google-analytics'
 
 export default function TopBar() {
 
@@ -16,6 +17,9 @@ export default function TopBar() {
     const cookies = getCookies()
     
     if (cookies.username && cookies.email) {
+
+      // Google Analytics
+      submitEvent("logged_in")
 
       const username = cookies.username
       const email = cookies.email.replaceAll('"', '')
@@ -42,6 +46,8 @@ export default function TopBar() {
         },
       ])
     } else {
+      submitEvent("not_logged_in")
+
       setLinks([
         {
           "text": "login",
@@ -68,14 +74,15 @@ export default function TopBar() {
             {link.text}
           </p>
           :
-          <button key={index} onClick={() => {
+          <button key={index} onClick={() => {          
+
             // Delete cookie if logout and refresh page
             if (link.text === 'logout') {  
               clearCookies()
               dispatch(clearSession())
             } 
             // Open link in new tab
-            window.open(link.link, '_self')
+            // window.open(link.link, '_self')
           }}>
             {link.text}
           </button>

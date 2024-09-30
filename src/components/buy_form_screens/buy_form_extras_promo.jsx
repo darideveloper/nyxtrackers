@@ -14,8 +14,9 @@ import {
 } from '../../features/buy_form_data_slice'
 import { setHasNext } from '../../features/buy_form_screen_slice'
 import { useDispatch } from 'react-redux'
-
 import { Tooltip } from 'react-tooltip'
+import { submitEvent } from '../../libs/google-analytics'
+
 
 export default function BuyFormExtrasPromo() {
 
@@ -54,9 +55,16 @@ export default function BuyFormExtrasPromo() {
               if (e.target.checked) {
                 // Add extra when unchecked
                 dispatch(setIncludedExtras([...includedExtras, extra]))
+
+                // Google Analytics
+                submitEvent('select_extra', extra.name)
+
               } else {
                 // Remove extra when checked
                 dispatch(setIncludedExtras(includedExtras.filter(e => e !== extra)))
+
+                // Google Analytics
+                submitEvent('unselect_extra', extra.name)
               }
             }}
 
@@ -130,6 +138,10 @@ export default function BuyFormExtrasPromo() {
 
               // Hide spinner
               setTimeout(() => setIsLoading(false), 10)
+
+              // Google Analytics
+              submitEvent('promo_code', promoCode)
+              submitEvent('promo_code_discount', promoCodeDiscount["value"])
             })
         }}
       >

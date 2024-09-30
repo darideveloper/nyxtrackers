@@ -1,8 +1,3 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { hideForm, showForm } from '../features/buy_form_visible_slice'
-import { nextScreen, backScreen, setNextText } from '../features/buy_form_screen_slice'
-import { useEffect, useState } from 'react'
-
 import BuyFormLogin from '../components/buy_form_screens/buy_form_login'
 import BuyFormSet from '../components/buy_form_screens/buy_form_set'
 import BuyFormCustomize from '../components/buy_form_screens/buy_form_customize'
@@ -15,6 +10,13 @@ import BuyFormTotal from '../components/buy_form_total'
 
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+
+import { useSelector, useDispatch } from 'react-redux'
+import { hideForm, showForm } from '../features/buy_form_visible_slice'
+import { nextScreen, backScreen, setNextText } from '../features/buy_form_screen_slice'
+import { useEffect, useState } from 'react'
+
+import { submitEvent } from '../libs/google-analytics'
 
 
 export default function BuyForm() {
@@ -63,6 +65,9 @@ export default function BuyForm() {
   useEffect(() => {
     if (window.location.hash === '#buy-form') {
       dispatch(showForm())
+
+      // Google Analytics
+      submitEvent("open_form")
     }
 
     // Change form align when mobile

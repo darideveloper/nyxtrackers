@@ -1,10 +1,12 @@
+import SetBtn from '../set_btn'
+
 import { setsOptions } from '../../api/buy_form'
 import { useSelector } from 'react-redux'
 import { setSelectedSet } from '../../features/buy_form_data_slice'
 import { useDispatch } from 'react-redux'
 import { setHasNext } from '../../features/buy_form_screen_slice'
 import { useEffect } from 'react'
-import SetBtn from '../set_btn'
+import { submitEvent } from '../../libs/google-analytics'
 
 
 export default function BuyFormSet() {
@@ -33,7 +35,12 @@ export default function BuyFormSet() {
             price={set.price}
             recommended={set.recommended}
             selected={selectedSet.name === set.name}
-            onClick={() => dispatch(setSelectedSet(set))}
+            onClick={() => {
+              dispatch(setSelectedSet(set))
+
+              // Google Analytics
+              submitEvent('select_set', set.name)
+            }}
           />
         ))
       }

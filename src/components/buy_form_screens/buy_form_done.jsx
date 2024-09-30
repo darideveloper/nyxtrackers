@@ -1,10 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect, useRef  } from 'react'
-import { setHasNext, setHasBack, setNextText } from '../../features/buy_form_screen_slice'
-import { setPromoCode } from '../../features/buy_form_data_slice'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import Spinner from '../spinner'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect, useRef  } from 'react'
+import { setHasNext, setHasBack, setNextText } from '../../features/buy_form_screen_slice'
+import { submitEvent } from '../../libs/google-analytics'
+
 
 export default function BuyFormDone() {
 
@@ -131,11 +133,17 @@ export default function BuyFormDone() {
         const message = json_data.message
         const alertData = alertsData[message]
 
+        // Google Analytics
+        submitEvent('sale_done', message)
+
         // Show alert
         showAlert(alertData, json_data)
       } catch (error) {
         // Show generic error alert
-        showAlert(alertsData["Error"])    
+        showAlert(alertsData["Error"])  
+        
+        // Google Analytics
+        submitEvent('sale_error')
       }
     }
 

@@ -1,10 +1,13 @@
 import FormBtn from "../form_btn"
-import { useState } from "react"
 import Input from "../input"
+
+import { useState } from "react"
 import { setEmail } from "../../features/buy_form_data_slice"
 import { setHasNext } from "../../features/buy_form_screen_slice"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
+
+import { submitEvent } from "../../libs/google-analytics"
 
 
 /**
@@ -85,6 +88,9 @@ export default function BuyFormLoginNoLogged({ setLogged }) {
                 // Go to next screen
                 if (emailValid) {
                   setLogged(true)
+
+                  // Google Analytics
+                  submitEvent('guest_login', email)
                 }
               }}
             >
