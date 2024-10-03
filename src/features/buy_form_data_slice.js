@@ -30,6 +30,7 @@ export const buyFormDataSlice = createSlice({
     streetAddress: '',
     phone: '',
     total:  setsOptions[2].price,
+    comments: '',
   },
   reducers: {
     setEmail: (state, action) => {
@@ -103,7 +104,10 @@ export const buyFormDataSlice = createSlice({
       } else if (state.promoDiscount.type === "percentage") {
         state.total = subtotal - (subtotal * state.promoDiscount.value / 100)
       }
-    }
+    },
+    setComments: (state, action) => {
+      state.comments = action.payload
+    },
   }
 })
 
@@ -129,6 +133,7 @@ export const {
   setStreetAddress,
   setPhone,
   updateTotal,
+  setComments,
 } = buyFormDataSlice.actions
 
 export default buyFormDataSlice.reducer

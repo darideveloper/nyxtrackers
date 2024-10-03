@@ -31,6 +31,7 @@ export default function BuyFormDone() {
   const streetAddress = useSelector(state => state.buyFormData.streetAddress)
   const phone = useSelector(state => state.buyFormData.phone)
   const total = useSelector(state => state.buyFormData.value)
+  const comments = useSelector(state => state.buyFormData.comments)
 
   // Env variables
   const apiBase = import.meta.env.VITE_DASHBOARD_API
@@ -101,6 +102,7 @@ export default function BuyFormDone() {
       "street_address": streetAddress,
       "phone": phone,
       "total": total,
+      "comments": comments,
     }
 
     // Start sweetalert

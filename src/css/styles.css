@@ -499,7 +499,7 @@ p.invalid {
   }
 }
 
-.input-wrapper input {
+.input-wrapper input, .input-wrapper textarea, .textarea-wrapper input, .textarea-wrapper textarea {
   padding: 10px 15px;
   border-radius: 5px;
   width: 100%;
@@ -507,16 +507,20 @@ p.invalid {
   transition-duration: 0.6s;
   border: 2px solid #E7F6F2;
 }
-.input-wrapper input:focus {
+.input-wrapper input:focus, .input-wrapper textarea:focus, .textarea-wrapper input:focus, .textarea-wrapper textarea:focus {
   opacity: 0.8;
   background-color: rgba(231, 246, 242, 0);
   color: #E7F6F2;
 }
-.input-wrapper input:focus::-moz-placeholder {
+.input-wrapper input:focus::-moz-placeholder, .input-wrapper textarea:focus::-moz-placeholder, .textarea-wrapper input:focus::-moz-placeholder, .textarea-wrapper textarea:focus::-moz-placeholder {
   color: rgba(231, 246, 242, 0.5);
 }
-.input-wrapper input:focus::placeholder {
+.input-wrapper input:focus::placeholder, .input-wrapper textarea:focus::placeholder, .textarea-wrapper input:focus::placeholder, .textarea-wrapper textarea:focus::placeholder {
   color: rgba(231, 246, 242, 0.5);
+}
+.input-wrapper textarea, .textarea-wrapper textarea {
+  height: 150px;
+  resize: none;
 }
 
 .input-image {
@@ -1596,7 +1600,7 @@ p.invalid {
   align-items: center;
   flex-direction: column;
 }
-.buy-form form .content .login > section .input-wrapper {
+.buy-form form .content .login > section .input-wrapper, .buy-form form .content .login > section .textarea-wrapper {
   margin-top: 30px;
 }
 .buy-form form .content .set {
@@ -1677,16 +1681,16 @@ p.invalid {
 .buy-form form .content .extras-promo .message .spinner {
   margin: 12px;
 }
-.buy-form form .content .shipping .input-wrapper {
+.buy-form form .content .shipping .input-wrapper, .buy-form form .content .shipping .textarea-wrapper {
   width: 100%;
   margin-top: 5px;
 }
-.buy-form form .content .shipping .input-wrapper label {
+.buy-form form .content .shipping .input-wrapper label, .buy-form form .content .shipping .textarea-wrapper label {
   font-size: 1.2rem;
   margin: 10px;
   display: block;
 }
-.buy-form form .content .shipping .input-wrapper input {
+.buy-form form .content .shipping .input-wrapper input, .buy-form form .content .shipping .textarea-wrapper input {
   padding: 10px 20px;
   font-size: 0.8rem;
 }
