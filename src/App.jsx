@@ -35,7 +35,7 @@ function App() {
   return (
     <>
       <Loading />
-      {/* <TopBar /> */}
+      <TopBar />
       <Header />
       <main>
         {/* <CountDown /> */}
