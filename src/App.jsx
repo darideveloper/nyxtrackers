@@ -38,7 +38,7 @@ function App() {
       <TopBar />
       <Header />
       <main>
-        {/* <CountDown /> */}
+        <CountDown />
         <Notifications />
         <Hero />
         <About />
