@@ -1,30 +1,19 @@
 import { sleep } from '../tools/events.js'
 
+const VITE_DASHBOARD_API = import.meta.env.VITE_DASHBOARD_API
+
 export async function getPromoCodeDiscount (promoCode) {
 
-  // Simullate api call
-  const validPromoCodes = {
-    'NYXTRACKERS10': {
-      "type": "amount",
-      "value": 10,
-    },
-    'NYXTRACKERS15': {
-      "type": "amount",
-      "value": 15,
-    },
-    'NYXTRACKERS20': {
-      "type": "amount",
-      "value": 20,
-    },
-  }
+  const enpoint = `${VITE_DASHBOARD_API}/store/promo-code/`
 
-  // Simulate api call
-  await sleep(2)
-
-  // Validate promo code
-  if (validPromoCodes.hasOwnProperty(promoCode)) {
-    return validPromoCodes[promoCode]
-  } else {
-    return { "type": "amount", "value": 0 }
-  }
+  // Simulate api call with promo code as json
+  const response = await fetch(enpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ "promo_code": promoCode }),
+  })
+  const jsonData = await response.json()
+  return jsonData["data"]
 }

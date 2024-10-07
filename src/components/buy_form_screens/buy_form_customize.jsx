@@ -1,3 +1,7 @@
+import Select from 'react-select'
+import InputImage from '../input_image'
+import SelectColor from '../select_color'
+
 import { setsColorsNumPrices, colorsOptions } from '../../api/buy_form'
 import { useState, useEffect } from 'react'
 import { setHasNext } from '../../features/buy_form_screen_slice'
@@ -11,9 +15,8 @@ import {
   setColorsNum,
 } from '../../features/buy_form_data_slice'
 import { useDispatch, useSelector } from 'react-redux'
-import Select from 'react-select'
-import InputImage from '../input_image'
-import SelectColor from '../select_color'
+import { submitEvent } from '../../libs/google-analytics'
+
 
 export default function BuyFormCustomize() {
 
@@ -100,6 +103,9 @@ export default function BuyFormCustomize() {
         onChange={(e) => {
           const colorsNumPrice = setsColorsNumPrices.find(color => color.num === e.value)
           dispatch(setColorsNum(colorsNumPrice))
+
+          // Google Analytics
+          submitEvent('select_colors_num', colorsNumPrice.num)
         }}
       />
 

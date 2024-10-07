@@ -1,10 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect, useRef  } from 'react'
-import { setHasNext, setHasBack, setNextText } from '../../features/buy_form_screen_slice'
-import { setPromoCode } from '../../features/buy_form_data_slice'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import Spinner from '../spinner'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect, useRef  } from 'react'
+import { setHasNext, setHasBack, setNextText } from '../../features/buy_form_screen_slice'
+import { submitEvent } from '../../libs/google-analytics'
+
 
 export default function BuyFormDone() {
 
@@ -29,6 +31,7 @@ export default function BuyFormDone() {
   const streetAddress = useSelector(state => state.buyFormData.streetAddress)
   const phone = useSelector(state => state.buyFormData.phone)
   const total = useSelector(state => state.buyFormData.value)
+  const comments = useSelector(state => state.buyFormData.comments)
 
   // Env variables
   const apiBase = import.meta.env.VITE_DASHBOARD_API
@@ -99,6 +102,7 @@ export default function BuyFormDone() {
       "street_address": streetAddress,
       "phone": phone,
       "total": total,
+      "comments": comments,
     }
 
     // Start sweetalert
@@ -131,11 +135,17 @@ export default function BuyFormDone() {
         const message = json_data.message
         const alertData = alertsData[message]
 
+        // Google Analytics
+        submitEvent('sale_done', message)
+
         // Show alert
         showAlert(alertData, json_data)
       } catch (error) {
         // Show generic error alert
-        showAlert(alertsData["Error"])    
+        showAlert(alertsData["Error"])  
+        
+        // Google Analytics
+        submitEvent('sale_error')
       }
     }
 

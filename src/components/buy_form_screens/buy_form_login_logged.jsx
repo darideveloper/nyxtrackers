@@ -4,6 +4,7 @@ import { setEmail } from "../../features/buy_form_data_slice"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 
+
 /**
  * Buy form login, when user is logged
  * @param {Object} props - Component props
