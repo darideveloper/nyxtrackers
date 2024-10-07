@@ -54,7 +54,7 @@ function App() {
       </main>
       <Footer />
       <Socials />
-      {/* <BuyForm /> */}
+      <BuyForm />
     </>
   )
 }
