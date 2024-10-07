@@ -82,7 +82,7 @@ export default function TopBar() {
               dispatch(clearSession())
             } 
             // Open link in new tab
-            // window.open(link.link, '_self')
+            window.open(link.link, '_self')
           }}>
             {link.text}
           </button>
