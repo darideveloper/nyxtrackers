@@ -1472,6 +1472,7 @@ p.invalid {
 }
 .email_form form .inputs input[type=submit] {
   border: none;
+  padding: 10px;
 }
 @media screen and (min-width: 650px) {
   .email_form form .inputs {
