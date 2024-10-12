@@ -1,0 +1,244 @@
+$color-a: #E7F6F2
+$color-b: #A5C9CA
+$color-c: #395B64
+$color-d: #2C3333
+$color-e: #f06c6c
+$transition-duration: 0.6s
+$regular-width: 1250px
+$regular-width-media-query: $regular-width + 50px
+
+html
+    margin: 0
+    padding: 0
+    scroll-behavior: smooth
+    font-size: 16px
+
+@media screen and (max-width: 700px)
+    html
+        font-size: 12px
+
+body
+    margin: 0
+    padding: 0
+    background-color: $color-d
+    font-family: 'Overpass', sans-serif
+    overflow-x: hidden
+    color: $color-a
+    width: 100vw
+
+#root
+    overflow-x: hidden
+    width: 100vw
+
+p
+    font-size: 1rem
+
+    &.small
+        font-size: 0.8rem
+
+.hide, .hidden
+    display: none !important
+
+a, button
+    text-decoration: none
+    color: $color-a
+
+.regular-width
+    max-width: $regular-width
+    margin: 0 auto
+    width: 100%
+
+    @media screen and (max-width: $regular-width-media-query)
+        padding: 0 5%
+        width: 90%
+
+.full-width
+    max-width: 100%
+    margin: 0 auto
+
+h1, h2, h3, h4, h5, h6, .title
+    font-family: 'Asap Condensed', cursive
+    color: $color-b
+
+*:focus
+    outline: none
+
+.title-separator
+    margin-top: 80px
+    margin-bottom: 60px
+
+    h2
+        font-size: 2.2rem
+        margin: 0
+        margin-left: 100px
+        background-color: $color-d
+        display: inline-block
+        padding: 40px
+        padding-top: 0px
+        padding-bottom: 0
+        text-transform: uppercase
+
+    hr
+        margin-top: -20px
+
+    @media screen and (max-width: 700px)
+        h2
+            text-align: center
+            margin: 0
+            width: 100%
+            padding: 0
+
+        hr
+            display: none
+
+.zoom-wrapper
+    position: relative
+
+    &:hover video, &:hover img
+        opacity: 1
+        filter: blur(0)
+
+    .play-icon
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        opacity: 0.8
+        display: flex
+        align-items: center
+        justify-content: center
+
+        img
+            width: 30%
+            height: 30%
+
+    video, img
+        width: 100%
+        transition-duration: $transition-duration
+        opacity: 0.6
+        filter: blur(2px)
+
+    
+
+.info-cards-wrapper
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    width: 100%
+    margin-top: 30px
+    gap: 30px
+    text-transform: capitalize
+
+    &.hero
+        grid-template-columns: repeat(4, 1fr)
+
+    .card
+        width: calc(100% - 80px)
+        margin: 0 auto
+        background-color: $color-c
+        border-radius: 30px
+        padding-left: 40px
+        padding-right: 40px
+        display: flex
+        align-items: center
+
+        &.link
+            cursor: pointer
+            transition-duration: $transition-duration
+
+            &:hover
+                opacity: 0.8
+                transform: scale(1.05)
+
+        &:hover .icon
+            transform: scale(1.15)
+            opacity: 1
+
+        .icon
+            opacity: 0.6
+            width: 55px
+            margin-right: 21px
+            transition-duration: $transition-duration
+
+        .separator
+            width: 3px
+            height: 80%
+            margin-right: 21px
+            background-color: $color-d
+
+        .text
+            width: calc(100% - 100px)
+
+            h3
+                display: block
+                font-size: 1.25rem
+                margin: 0
+                margin-top: 20px
+                color: $color-a
+
+            p
+                display: block
+                color: $color-b
+                margin-top: 10px
+                margin-bottom: 20px
+
+    @media screen and (max-width: 1250px)
+        &.hero
+            grid-template-columns: repeat(2, 1fr)
+
+    @media screen and (max-width: 900px)
+        grid-template-columns: repeat(1, 1fr)
+
+        &.hero
+            grid-template-columns: repeat(1, 1fr)
+
+        .card
+            width: calc(70% - 80px)
+
+    @media screen and (max-width: 500px)
+
+        .card
+            width: calc(90% - 80px)
+
+.grid
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 30px
+
+    .zoom-wrapper
+        padding: 20px
+        transition-duration: $transition-duration
+
+        &:hover
+            padding: 0
+
+    @media screen and (max-width: 1200px)
+        grid-gap: 10px
+
+
+    @media screen and (max-width: 1000px)
+        grid-template-columns: repeat(2, 1fr)
+
+    @media screen and (max-width: 700px)
+        grid-template-columns: repeat(1, 1fr)
+
+// Overwrite sweetalert2 styles
+.swal2-icon.swal2-icon-show
+    border: none !important
+
+    img
+        width: 80px
+
+.debug
+    border: 1px solid red !important
+
+// Overwrite splide styles
+.swiper-button-next, .swiper-button-prev
+    color: rgba($color-a, 0.8) !important
+
+    .swiper-button-disabled
+        color: rgba($color-a, 0.1) !important
+
+p.invalid
+    color: $color-e

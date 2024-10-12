@@ -1,0 +1,76 @@
+.select-color-wrapper
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    p
+        width: 45%
+        margin: 0
+        padding: 0
+
+    .select
+        width: 50%
+
+        > div > div > div:first-child
+            padding-left: 40px
+
+    @media screen and (max-width: 400px)
+        flex-direction: column
+
+        p, .select
+            width: 100%
+
+.select
+    color: $color-d
+    width: 100%
+    margin: 10px 0
+    margin-left: 0
+
+    svg
+        fill: $color-d
+
+    > div
+        background-color: $color-b
+
+    &.color [data-value]::before
+        content: " "
+        width: 30px
+        height: 30px
+        opacity: 0.6
+
+    &.blue [data-value]::before
+        background-color: blue
+
+    &.white [data-value]::before
+        background-color: white
+
+    &.grey [data-value]::before
+        background-color: grey
+
+    &.green [data-value]::before
+        background-color: green
+
+    &.yellow [data-value]::before
+        background-color: yellow
+
+    &.orange [data-value]::before
+        background-color: orange
+
+    &.red [data-value]::before
+        background-color: red
+
+    &.pink [data-value]::before
+        background-color: pink
+
+    &.purple [data-value]::before
+        background-color: purple
+
+    &.black [data-value]::before
+        background-color: black
+
+
+    @media screen and (max-width: 750px)
+
+        &.small
+            margin: 10px auto

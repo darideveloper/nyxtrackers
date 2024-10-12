@@ -1,0 +1,21 @@
+.input-wrapper, .textarea-wrapper
+
+    input, textarea
+        padding: 10px 15px
+        border-radius: 5px
+        width: 100%
+        box-sizing: border-box
+        transition-duration: $transition-duration
+        border: 2px solid $color-a
+
+        &:focus
+            opacity: 0.8
+            background-color: rgba($color-a, 0)
+            color: $color-a
+
+            &::placeholder 
+                color: rgba($color-a, 0.5)
+
+    textarea
+        height: 150px
+        resize: none

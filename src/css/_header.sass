@@ -1,0 +1,107 @@
+#header
+    
+    position: sticky
+    top: 0px
+    left: 0
+    width: 100%
+    z-index: 2
+
+    .bg
+        position: absolute
+        left: 0
+        width: 100%
+        height: calc(100%)
+        background-color: rgba($color-c, 0.8)
+        z-index: -1
+        backdrop-filter: blur(4px)
+
+    .content
+        .content-internal
+            height: 50px
+            width: 90%
+            margin: 0 auto
+            display: flex
+            align-items: center
+            justify-content: space-between
+
+            .logo
+                margin: 0
+                padding: 0
+                height: 100%
+                img
+                    height: 100%
+                    width: auto
+
+            nav
+                ul
+                    margin: 0
+                    padding: 0
+                    display: flex
+                    align-items: center
+                    justify-content: flex-end
+
+                li
+                    list-style: none
+
+                    &:hover a
+                        color: $color-b
+                        font-size: 0.9rem
+
+                    a
+                        transition-duration: $transition-duration
+                        color: $color-a
+                        padding: 10px 20px
+                        margin: 5px
+                        font-size: 0.8rem
+
+        .btn.display
+            height: 50px
+            width: 50px
+            display: none
+
+            &.clossed 
+                margin-bottom: 20px
+
+            img
+                height: 80%
+                width: auto
+
+    @media screen and (max-width: 950px)
+
+        .content
+            .content-internal
+                width: 100%
+                height: 60px
+
+                .btn.display
+                    display: block
+
+                nav
+                    position: fixed
+                    right: 0
+                    top: 0
+                    margin: 0
+                    height: 100vh
+                    transition-duration: $transition-duration
+
+                    ul
+                        padding: 40px
+                        padding-bottom: 0
+                        flex-direction: column
+                        background-color: $color-c
+                        align-items: flex-start
+                        justify-content: flex-start
+                        height: 100%
+
+                        li
+
+                            a
+                                font-size: 1.5rem
+                                padding: 20px 0
+                                display: inline-block
+
+        &.clossed .content .content-internal
+            nav
+                right: -300px
+
+            

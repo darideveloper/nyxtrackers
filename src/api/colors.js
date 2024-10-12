@@ -1,0 +1,1 @@
+export const colors_image = "colors.png"
