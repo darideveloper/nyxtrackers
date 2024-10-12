@@ -10,9 +10,10 @@ export function DashboardContextProvider(props) {
   const [notifications, setNotifications] = useState([])
   const [heroImages, setHeroImages] = useState([])
   const [aboutVideos, setAboutVideos] = useState([])
-
+  
   // Store states
   const [nextFutureStock, setNextFutureStock] = useState(0)
+  const [currentStock, setCurrentStock] = useState(0)
 
   const apiBase = import.meta.env.VITE_DASHBOARD_API
 
@@ -56,19 +57,30 @@ export function DashboardContextProvider(props) {
   }, [])
 
   // Get store data
-  const url = `${apiBase}/store/next-future-stock/`
   useEffect(() => {
-    fetch(url)
+
+    // Update futue stock date
+    const urlFutureStock = `${apiBase}/store/next-future-stock/`
+    fetch(urlFutureStock)
       .then(response => response.json())
       .then(data => {
         setNextFutureStock(data["next_future_stock"])
       })
       .catch(error => console.error(error))
+
+    // Update current stock date
+    const urlCurrentStock = `${apiBase}/store/current-stock/`
+    fetch(urlCurrentStock)
+      .then(response => response.json())
+      .then(data => {
+        setCurrentStock(data.data["current_stock"])
+      })
+      .catch(error => console.error(error))
   }, [])
 
   useEffect(() => {
-    // console.log({heroCounters, notifications, heroImages, aboutVideos, nextFutureStock})
-  }, [heroCounters, notifications, heroImages, aboutVideos, nextFutureStock])
+    console.log({heroCounters, notifications, heroImages, aboutVideos, nextFutureStock, currentStock})
+  }, [heroCounters, notifications, heroImages, aboutVideos, nextFutureStock, currentStock])
 
   return (
     <DashboardContext.Provider
@@ -78,6 +90,7 @@ export function DashboardContextProvider(props) {
         heroImages,
         aboutVideos,
         nextFutureStock,
+        currentStock,
       }}
     >
       {props.children}

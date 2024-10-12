@@ -10,7 +10,7 @@ export default function CountDown() {
   
   const dispatch = useDispatch()
 
-  const { nextFutureStock } = useContext(DashboardContext)
+  const { nextFutureStock, currentStock } = useContext(DashboardContext)
 
   // Counter states
   const [days, setDays] = useState(0)
@@ -19,6 +19,7 @@ export default function CountDown() {
   const [seconds, setSeconds] = useState(0)
   const [totalSeconds, setTotalSeconds] = useState(0)
   const [totalSecondsLoaded, setTotalSecondsLoaded] = useState(false)
+  const [buyBtnText, setBuyBtnText] = useState('Buy here!')
 
   useEffect(() => {
     if (!totalSecondsLoaded && nextFutureStock != 0) {
@@ -27,6 +28,10 @@ export default function CountDown() {
       setTotalSecondsLoaded(true)
     }
   }, [nextFutureStock])
+
+  useEffect(() => {
+    setBuyBtnText(currentStock > 0 ? 'Buy here!' : 'No Sets Left')
+  }, [currentStock])
 
   // Start running the counter
   useEffect(() => {
@@ -85,7 +90,7 @@ export default function CountDown() {
         totalSeconds <= 0
           ?
           <Button
-            text="Buy here!"
+            text={buyBtnText}
             onClick={() => {
               // Show form with redux
               dispatch(showForm())
