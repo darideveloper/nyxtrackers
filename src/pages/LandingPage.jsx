@@ -18,20 +18,29 @@ import BuyForm from '../sections/buy_form'
 import ScrollToHash from '../utils/ScrollHash'
 
 
-
 function LandingPage() {
 
   useEffect(() => {
-
     // Wait for the page to load before removing the loading screen
-    sleep(3.5)
-      .then(() => {
+    // Only the first time
+    const hasVisited = sessionStorage.getItem("homeVisited")
+    console.log({hasVisited})
+
+    if (!hasVisited) {
+      document.getElementById('loading').style.display = 'flex'
+
+      setTimeout(() => {
         document.getElementById('loading').style.display = 'none'
-      })
+      }, 3000)
+
+      sessionStorage.setItem("homeVisited", 'true');
+    }
   }, [])
+
+
   return (
     <>
-      <ScrollToHash/>
+      <ScrollToHash />
       <Loading />
       <CountDown />
       <Notifications />
@@ -51,4 +60,4 @@ function LandingPage() {
   )
 }
 
-export default LandingPage;
+export default LandingPage
