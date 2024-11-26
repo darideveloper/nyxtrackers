@@ -1,5 +1,3 @@
-import TopBar from '../sections/top_bar'
-import Header from '../sections/header'
 import DocsContainer from '../components/docs/DocsContainer'
 
 function IssuesPage() {
