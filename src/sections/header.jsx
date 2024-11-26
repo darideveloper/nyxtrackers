@@ -19,7 +19,7 @@ export default function Header() {
     {
       "text": "About Us",
       "path": "/",
-      "hash": "#about"
+      "hash": "#about",
     },
     {
       "text": "Videos",
