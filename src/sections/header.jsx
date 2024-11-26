@@ -15,6 +15,52 @@ export default function Header() {
     }
   }
 
+  const homeLinks = [
+    {
+      "text": "About Us",
+      "path": "/",
+      "hash": "#about"
+    },
+    {
+      "text": "Videos",
+      "path": "/",
+      "hash": "#videos-main"
+    },
+    {
+      "text": "Models",
+      "path": "/",
+      "hash": "#models"
+    },
+    {
+      "text": "Testimonials",
+      "path": "/",
+      "hash": "#testimonials"
+    },
+    {
+      "text": "Why us",
+      "path": "/",
+      "hash": "#why-us"
+    },
+    {
+      "text": "Technical Specs",
+      "path": "/",
+      "hash": "#technicals"
+    },
+  ]
+
+  const pagesLinks = [
+    {
+      "text": "Setup",
+      "path": "/setup",
+      "hash": ""
+    },
+    {
+      "text": "Issues",
+      "path": "/issues",
+      "hash": ""
+    }
+  ]
+
   return (
     <header className={`${headerClass} header`} id="header">
       <div className="bg"></div>
@@ -32,48 +78,37 @@ export default function Header() {
               <button className="btn display clossed" onClick={toggleMenu}>
                 <img src="menu_clossed_icon.svg" alt={`header menu clossed icon`} />
               </button>
-              <li><Link to={{
-                pathname: "/",
-                hash: "#about"
-              }}>About Us</Link></li>
 
+              {/* Render home sections links */}
+              {
+                homeLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link 
+                      to={{
+                        pathname: link.path,
+                        hash: link.hash
+                      }}
+                      onClick={() => toggleMenu()}
+                    >
+                      {link.text}
+                    </Link>
+                  </li>
+                ))
+              }
 
-              <li><Link to={{
-                pathname: "/",
-                hash: "#videos-main"
-              }}>Videos</Link></li>
+              {/* Render pages links */}
+              {
+                pagesLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link 
+                      to={link.path}
+                      onClick={() => toggleMenu()}>
+                      {link.text}
+                    </Link>
+                  </li>
+                ))
+              }
 
-
-              <li><Link to={{
-                pathname: "/",
-                hash: "#models"
-              }}>Models</Link></li>
-
-
-
-
-              <li><Link to={{
-                pathname: "/",
-                hash: "#testimonials"
-              }}>Testimonials</Link></li>
-
-              <li><Link to={{
-                pathname: "/",
-                hash: "#why-us"
-              }}>Why us</Link></li>
-
-
-              <li><Link to={{
-                pathname: "/",
-                hash: "#technicals"
-              }}
-                onClick={() => setIsOpen(true)}
-              >Technical Specs</Link></li>
-
-              <li><Link to="/setup" >Setup</Link></li>
-
-
-              <li><Link to="/issues" >Issues</Link></li>
 
             </ul>
           </nav>
