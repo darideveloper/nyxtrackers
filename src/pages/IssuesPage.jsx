@@ -5,9 +5,6 @@ import DocsContainer from '../components/docs/DocsContainer'
 function IssuesPage() {
   return (
     <>
-      <TopBar />
-      <Header />
-
       <DocsContainer>
 
         <div className="docs-body">

@@ -6,9 +6,6 @@ import { Link } from "react-router";
 function SetupPage() {
   return (
     <>
-      <TopBar />
-      <Header />
-
       <DocsContainer>
         <div className="docs-body">
           <>

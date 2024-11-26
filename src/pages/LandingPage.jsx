@@ -37,26 +37,19 @@ function LandingPage() {
     <>
       <ScrollToHash/>
       <Loading />
-      <TopBar />
-      <Header />
-      <main>
-        <CountDown />
-        <Notifications />
-        <Hero />
-        <About />
-        <Personalization />
-        <ColorOptions />
-        <VideosMain />
-        <Models />
-        <Testimonials />
-        <VideosCustomer />
-        <Collaborations />
-        <WhyUs />
-        <EmailForm />
-      </main>
-      <Footer />
-      <Socials />
-      <BuyForm />
+      <CountDown />
+      <Notifications />
+      <Hero />
+      <About />
+      <Personalization />
+      <ColorOptions />
+      <VideosMain />
+      <Models />
+      <Testimonials />
+      <VideosCustomer />
+      <Collaborations />
+      <WhyUs />
+      <EmailForm />
     </>
   )
 }
