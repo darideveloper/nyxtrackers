@@ -20,31 +20,37 @@ export default function Header() {
       "text": "About Us",
       "path": "/",
       "hash": "#about",
+      "onClick": null,
     },
     {
       "text": "Videos",
       "path": "/",
-      "hash": "#videos-main"
+      "hash": "#videos-main",
+      "onClick": null,
     },
     {
       "text": "Models",
       "path": "/",
-      "hash": "#models"
+      "hash": "#models",
+      "onClick": null,
     },
     {
       "text": "Testimonials",
       "path": "/",
-      "hash": "#testimonials"
+      "hash": "#testimonials",
+      "onClick": null,
     },
     {
       "text": "Why us",
       "path": "/",
-      "hash": "#why-us"
+      "hash": "#why-us",
+      "onClick": null,
     },
     {
       "text": "Technical Specs",
       "path": "/",
-      "hash": "#technicals"
+      "hash": "#technicals",
+      "onClick": () => setIsOpen(true),
     },
   ]
 
@@ -88,7 +94,12 @@ export default function Header() {
                         pathname: link.path,
                         hash: link.hash
                       }}
-                      onClick={() => toggleMenu()}
+                      onClick={() => {
+                        toggleMenu()
+                        if (link.onClick) {
+                          link.onClick()
+                        }
+                      }}
                     >
                       {link.text}
                     </Link>
