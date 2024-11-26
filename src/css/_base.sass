@@ -142,14 +142,15 @@ h1, h2, h3, h4, h5, h6, .title
         padding-right: 40px
         display: flex
         align-items: center
+        transition-duration: $transition-duration
+        
+        &:hover
+            opacity: 0.8
+            transform: scale(1.05)
 
         &.link
             cursor: pointer
-            transition-duration: $transition-duration
 
-            &:hover
-                opacity: 0.8
-                transform: scale(1.05)
 
         &:hover .icon
             transform: scale(1.15)

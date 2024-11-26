@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-export default function InfoCard({ icon, title, text, link }) {
+export default function InfoCard({ icon, title, text, link = null }) {
 
     let full_alt_text = `${title} ${text}`
     if (full_alt_text.length > 30) {
