@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"
 import { TechnicalsContext } from "../context/technicals"
-
+import { Link } from "react-router"
 export default function Header() {
 
   const { setIsOpen } = useContext(TechnicalsContext)
@@ -20,28 +20,61 @@ export default function Header() {
       <div className="bg"></div>
       <div className="content regular-width">
         <div className="content-internal">
-          <a className="logo" href="#">
+          <Link className="logo" to={
+            {
+              pathname: "/"
+            }
+          }>
             <img src="logo.png" alt="NYX Trackers Logo" />
-          </a>
+          </Link>
           <nav>
             <ul>
               <button className="btn display clossed" onClick={toggleMenu}>
                 <img src="menu_clossed_icon.svg" alt={`header menu clossed icon`} />
               </button>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#videos-grid">Videos</a></li>
-              <li><a href="#models">Models</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#why-us">Why us</a></li>
-              <li><a
-                href="#technicals"
-                onClick={() => {
-                  // Open technicals
-                  setIsOpen (true)
-                }}
-              >
-                Technical Specs
-              </a></li>
+              <li><Link to={{
+                pathname: "/",
+                hash: "#about"
+              }}>About Us</Link></li>
+
+
+              <li><Link to={{
+                pathname: "/",
+                hash: "#videos-main"
+              }}>Videos</Link></li>
+
+
+              <li><Link to={{
+                pathname: "/",
+                hash: "#models"
+              }}>Models</Link></li>
+
+
+
+
+              <li><Link to={{
+                pathname: "/",
+                hash: "#testimonials"
+              }}>Testimonials</Link></li>
+
+              <li><Link to={{
+                pathname: "/",
+                hash: "#why-us"
+              }}>Why us</Link></li>
+
+
+              <li><Link to={{
+                pathname: "/",
+                hash: "#technicals"
+              }}
+                onClick={() => setIsOpen(true)}
+              >Technical Specs</Link></li>
+
+              <li><Link to="/setup" >Setup</Link></li>
+
+
+              <li><Link to="/issues" >Issues</Link></li>
+
             </ul>
           </nav>
           <button className="btn display openned" onClick={toggleMenu}>
