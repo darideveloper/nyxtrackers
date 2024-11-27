@@ -7,6 +7,8 @@ export default defineConfig({
   server: {
     watch: {
       usePolling: true,
-    }
+    },
+    // react router fix 404
+    historyApiFallback: true,
   },
 })
