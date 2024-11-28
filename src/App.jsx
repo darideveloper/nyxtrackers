@@ -1,20 +1,29 @@
 import React from 'react'
-import LandingPage from './pages/LandingPage'
-import { Route, Routes } from 'react-router'
-import SetupPage from './pages/SetupPage'
-import IssuesPage from './pages/IssuesPage'
-import RootLayout from './layouts/RootLayout'
+
+import { Outlet } from 'react-router'
+
+import Footer from './sections/footer'
+import Header from './sections/header'
+import Socials from './sections/socials'
+import TopBar from './sections/top_bar'
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<RootLayout />}>
-        <Route index element={<LandingPage />}></Route>
-        <Route path='/#' element={<LandingPage />}></Route>
-        <Route path='/setup' element={<SetupPage />}></Route>
-        <Route path='/issues' element={<IssuesPage />}></Route>
-      </Route>
-    </Routes>
+    <div>
+      
+      {/* Global header */}
+      <TopBar />
+      <Header />
+
+      {/* Content */}
+      <main>
+        <Outlet />
+      </main>
+
+      {/* Global fotter */}
+      <Footer />
+      <Socials />
+    </div>
   )
 }
 
