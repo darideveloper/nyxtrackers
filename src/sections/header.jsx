@@ -110,7 +110,7 @@ export default function Header() {
               {/* Render pages links */}
               {
                 pagesLinks.map((link, index) => (
-                  <li key={index}>
+                  <li key={index} className="page-link">
                     <Link className="page-link" 
                       to={link.path}
                       onClick={() => toggleMenu()}>

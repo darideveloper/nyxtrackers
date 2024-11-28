@@ -7,14 +7,15 @@
     z-index: 2
 
     .page-link
-        background-color: $color-page-link
-        color: $color-a
-        font-weight: bold
-        border-radius: 5px
-        border: 1px solid $color-page-link
+        a
+            background-color: $color-page-link
+            color: $color-a
+            font-weight: bold
+            border-radius: 5px
+            border: 1px solid $color-page-link
+            &:hover
+                border: 1px solid $color-a
 
-        &:hover
-            border: 1px solid $color-a
 
     .bg
         position: absolute
@@ -77,6 +78,7 @@
                 width: auto
 
     @media screen and (max-width: 1120px)
+        
 
         .content
             .content-internal
@@ -107,8 +109,11 @@
 
                             a
                                 font-size: 1.5rem
-                                padding: 20px 0
+                                padding: 10px 0
                                 display: inline-block
+                        .page-link
+                            a
+                                padding: 10px
 
         &.clossed .content .content-internal
             nav
