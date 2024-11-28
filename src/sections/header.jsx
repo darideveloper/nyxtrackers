@@ -111,7 +111,11 @@ export default function Header() {
               {
                 pagesLinks.map((link, index) => (
                   <li key={index}>
+<<<<<<< HEAD
                     <Link className="page-link" 
+=======
+                    <Link 
+>>>>>>> c2b4b36c302c3aacaca81109518c1c32f5e164c8
                       to={link.path}
                       onClick={() => toggleMenu()}>
                       {link.text}
