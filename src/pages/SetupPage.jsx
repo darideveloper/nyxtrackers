@@ -90,7 +90,7 @@ function SetupPage() {
               Install the latest SlimeVR Installer
             </h2>
             <p>
-              The latest SlimeVR Installer can be found here. Download it and
+              The latest SlimeVR Installer can be found <a href="https://slimevr.dev/download" target="_blank">here</a>. Download it and
               install it, this installer can be used to update the server
               software in the future.
             </p>
