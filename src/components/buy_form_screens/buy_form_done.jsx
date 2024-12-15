@@ -130,6 +130,11 @@ export default function BuyFormDone() {
           body: dataJson
         })
 
+        // Raise when fetch fails
+        if (!res.ok) {
+          throw new Error('Network response was not ok')
+        }
+
         // Get json data
         const json_data = await res.json()
         const message = json_data.message
