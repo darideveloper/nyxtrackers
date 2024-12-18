@@ -141,6 +141,7 @@ export default function BuyForm() {
     >
       <form
         className={`form ${isLoading ? 'loading' : ''}`}
+        onSubmit={(e) => { e.preventDefault() }}
       >
 
         <div className="header">
