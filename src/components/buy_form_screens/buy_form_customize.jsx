@@ -1,4 +1,7 @@
 import Select from 'react-select'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
 import InputImage from '../input_image'
 import SelectColor from '../select_color'
 
@@ -148,7 +151,20 @@ export default function BuyFormCustomize() {
             let imageUrl = ""
             try {
               imageUrl = URL.createObjectURL(file)
+
+              // Raise error if file is not an image
+              if (!file.type.includes("image")) {
+                throw new Error("Not an image")
+              }
+
+              // Raise error if invalid image format
+              if (!["image/png", "image/svg+xml"].includes(file.type)) {
+                throw new Error("Invalid image format")
+              }
+
             } catch (error) {
+
+              // Show error alert
               const MySwal = withReactContent(Swal)
               MySwal.fire({
                 title: "Error uploading image",
@@ -156,7 +172,14 @@ export default function BuyFormCustomize() {
                 icon: "error",
                 showConfirmButton: true,
               })
-            } 
+
+              // Delete image
+              dispatch(setLogoUrl(""))
+              e.target.value = null 
+
+              // Quit function
+              return  
+            }
 
             // Save image url
             dispatch(setLogoUrl(imageUrl))
