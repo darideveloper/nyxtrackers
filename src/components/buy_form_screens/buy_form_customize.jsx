@@ -90,8 +90,17 @@ export default function BuyFormCustomize() {
 
   useEffect(() => {
     // Disable next button
-    dispatch(setHasNext(true))
+    dispatch(setHasNext(false))
   }, [])
+
+  useEffect(() => {
+    // Enable next button when load valid logo or select single color
+    if (logoUrl || colorsNum.num == 1) {
+      dispatch(setHasNext(true))
+    } else {
+      dispatch(setHasNext(false))
+    }
+  }, [logoUrl, colorsNum])
 
   return (
     <section
