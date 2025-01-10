@@ -1,5 +1,6 @@
 import Input from '../input'
 import TextArea from '../text_area'
+import InputCheckbox from '../input_checkbox'
 
 import { 
   setFullName,
@@ -10,6 +11,7 @@ import {
   setStreetAddress,
   setPhone,
   setComments,
+  setAcceptTerms,
 } from '../../features/buy_form_data_slice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
@@ -29,6 +31,7 @@ export default function BuyFormShipping() {
   const streetAddress = useSelector(state => state.buyFormData.streetAddress)
   const phone = useSelector(state => state.buyFormData.phone)
   const comments = useSelector(state => state.buyFormData.comments)
+  const acceptTerms = useSelector(state => state.buyFormData.acceptTerms)
 
 
   const inputsData = [
@@ -95,12 +98,12 @@ export default function BuyFormShipping() {
       fullName, country, state, city, postalCode, streetAddress, phone
     ]
     const emptyInputs = inputValues.filter(input => input === '')
-    if (emptyInputs.length === 0) {
+    if (emptyInputs.length === 0 && acceptTerms) {
       dispatch(setHasNext(true))
     } else {
       dispatch(setHasNext(false))
     }
-  }, [fullName, country, state, city, postalCode, streetAddress, phone])
+  }, [fullName, country, state, city, postalCode, streetAddress, phone, acceptTerms])
 
   // Set has next to false when component is mounted
   useEffect(() => {
@@ -136,6 +139,21 @@ export default function BuyFormShipping() {
         small={true}
         onChange={(e) => dispatch(setComments(e.target.value))}
       />
+
+      <br />
+      <InputCheckbox 
+        required={true}
+        checked={acceptTerms}
+        onChange={() => dispatch(setAcceptTerms(!acceptTerms))}
+      >
+        Accept 
+        &nbsp;
+          <a href="/terms-of-service" target='_blank'>Terms of Service</a>
+        &nbsp;
+        &
+        &nbsp;
+          <a href="/refund-policy" target='_blank'>Refund Policy</a>
+      </InputCheckbox>
     </section>
   )
 }
