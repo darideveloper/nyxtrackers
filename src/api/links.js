@@ -30,4 +30,15 @@ export const links_socials_data = [
   },
 ]
 
+export const legals = [
+  {
+    title: 'Terms of Service',
+    link: '/terms-of-service',
+  },
+  {
+    title: 'Refund Policy',
+    link: '/refund-policy',
+  },
+]
+
 export const contact_email = "Nyxtrackers@gmail.com"

@@ -1,4 +1,4 @@
-import { payments_data, links_socials_data, contact_email } from "../api/links"
+import { payments_data, links_socials_data, contact_email, legals } from "../api/links"
 
 export default function Footer () {
     return (
@@ -6,14 +6,12 @@ export default function Footer () {
             <div className="content regular-width">
                 <div className="content-internal">
                     <section className="top">
-                        <section className="left">
-                            {links_socials_data.map ((social, index) => (
-                                <a href={social.link} key={index}>{social.title}</a>
-                            ))}
-                        </section>
-                        <section className="right">
-                            
-                        </section>
+                      {links_socials_data.map ((social, index) => (
+                          <a href={social.link} key={index}>{social.title}</a>
+                      ))}
+                      {legals.map ((legal, index) => (
+                          <a href={legal.link} key={index}>{legal.title}</a>
+                      ))}
                     </section>
                     <hr />
                     <section className="buttom">
