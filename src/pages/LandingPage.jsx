@@ -24,7 +24,7 @@ function LandingPage() {
     // Wait for the page to load before removing the loading screen
     // Only the first time
     const hasVisited = sessionStorage.getItem("homeVisited")
-    console.log({hasVisited})
+    // console.log({hasVisited})
 
     if (!hasVisited) {
       document.getElementById('loading').style.display = 'flex'

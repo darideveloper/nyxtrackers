@@ -79,7 +79,7 @@ export function DashboardContextProvider(props) {
   }, [])
 
   useEffect(() => {
-    console.log({heroCounters, notifications, heroImages, aboutVideos, nextFutureStock, currentStock})
+    // console.log({heroCounters, notifications, heroImages, aboutVideos, nextFutureStock, currentStock})
   }, [heroCounters, notifications, heroImages, aboutVideos, nextFutureStock, currentStock])
 
   return (

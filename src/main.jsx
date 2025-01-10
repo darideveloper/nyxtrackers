@@ -8,10 +8,12 @@ import store from './app/store'
 import { Provider } from 'react-redux'
 
 import { createBrowserRouter } from 'react-router'
+import { RouterProvider } from 'react-router'
 import LandingPage from './pages/LandingPage'
 import IssuesPage from './pages/IssuesPage'
 import SetupPage from './pages/SetupPage'
-import { RouterProvider } from 'react-router'
+import TermsOfService from './pages/TermsOfService'
+import RefoundPolicy from './pages/RefoundPolicy'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
       {
         "path": "/setup",
         "element": <SetupPage />
+      },
+      {
+        "path": "/terms-of-service",
+        "element": <TermsOfService />
+      },
+      {
+        "path": "/refund-policy",
+        "element": <RefoundPolicy />
       }
     ]
   }

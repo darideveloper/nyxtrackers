@@ -9,5 +9,5 @@ export function submitEvent(eventName, value = 1) {
     'value': value
   })
 
-  console.log({ eventName, value })
+  // console.log({ eventName, value })
 }

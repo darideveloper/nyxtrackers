@@ -31,6 +31,7 @@ export const buyFormDataSlice = createSlice({
     phone: '',
     total:  setsOptions[2].price,
     comments: '',
+    acceptTerms: false,
   },
   reducers: {
     setEmail: (state, action) => {
@@ -108,6 +109,9 @@ export const buyFormDataSlice = createSlice({
     setComments: (state, action) => {
       state.comments = action.payload
     },
+    setAcceptTerms: (state, action) => {
+      state.acceptTerms = action.payload
+    },
   }
 })
 
@@ -134,6 +138,7 @@ export const {
   setPhone,
   updateTotal,
   setComments,
+  setAcceptTerms,
 } = buyFormDataSlice.actions
 
 export default buyFormDataSlice.reducer
