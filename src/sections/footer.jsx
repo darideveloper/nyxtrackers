@@ -18,7 +18,7 @@ export default function Footer () {
                         <address>
                             <a href={`mailto:${contact_email}`}>{contact_email}</a>
                             <p>© 2022 by NYX Trackers</p>
-                            <p>Powered by <a href="mailto:darideveloper@gmail.com">Dari Developer</a> </p>
+                            <p>Powered by <a href="https://api.whatsapp.com/send?phone=5214493402622">Dari Developer</a> </p>
                         </address>
                         <div className="payments">
                             {payments_data.map ((payment, index) => (
