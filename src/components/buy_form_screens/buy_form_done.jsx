@@ -51,8 +51,8 @@ export default function BuyFormDone() {
       icon: "success",
       confirmButtonText: "Go to payment",
       onClick: (json_data) => {
-        const stripeLink = json_data.data.stripe_link
-        window.location.href = stripeLink
+        const paymentLink = json_data.data.payment_link
+        window.location.href = paymentLink
       },
     },
     "No stock available": {
