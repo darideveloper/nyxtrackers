@@ -27,6 +27,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      VITE_API_HOST: ${{ secrets.VITE_DASHBOARD_API }}
+      VITE_DASHBOARD: ${{ secrets.VITE_DASHBOARD_HOST }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
