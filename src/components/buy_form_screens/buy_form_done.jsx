@@ -163,6 +163,8 @@ export default function BuyFormDone() {
 
       } catch (error) {
         // Show generic error alert
+        console.error("Error:", error)
+        alertsData["Error"].text += ` Details: ${error}. Data sent: ${dataJson}`
         showAlert(alertsData["Error"])
 
         // Google Analytics
