@@ -14,7 +14,6 @@ export default function DetailsCard({ title, video, texts }) {
               <span key={index}>{text}</span>
             ))}
           </p>
-          <Chibis />
         </div>
       </div>
     </div>
