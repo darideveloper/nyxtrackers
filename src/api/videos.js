@@ -8,8 +8,10 @@ export const videos_main_data = [
 ]
 
 export const videos_customer_data = [
-    'video-customer-1.mp4',
-    'video-customer-2.mp4',
-    'video-customer-3.mp4',
-    'video-customer-4.mp4',
+    '/customer-videos/furry-girl-v1.mp4',
+    '/customer-videos/guy-laying-v1.mp4',
+    '/customer-videos/guy-sword-swing-v1.mp4',
+    '/customer-videos/human-girl-kicking-water-v1.mp4',
+    '/customer-videos/human-girl-teacher-v1.mp4',
+    '/customer-videos/human-girl-teacher-v2.mp4',
 ]
