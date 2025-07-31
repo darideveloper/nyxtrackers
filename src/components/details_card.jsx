@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import Video from './video'
-import Chibis from './chibis'
 
 export default function DetailsCard({ title, video, texts }) {
   return (
@@ -14,7 +13,6 @@ export default function DetailsCard({ title, video, texts }) {
               <span key={index}>{text}</span>
             ))}
           </p>
-          <Chibis />
         </div>
       </div>
     </div>
