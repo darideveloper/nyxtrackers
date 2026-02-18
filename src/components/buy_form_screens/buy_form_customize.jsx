@@ -18,7 +18,7 @@ import {
   setColorsNum,
 } from '../../features/buy_form_data_slice'
 import { useDispatch, useSelector } from 'react-redux'
-import { submitEvent } from '../../libs/google-analytics'
+import { submitEvent } from '../../libs/google_analytics'
 
 
 export default function BuyFormCustomize() {

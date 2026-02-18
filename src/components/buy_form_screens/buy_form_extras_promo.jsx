@@ -15,7 +15,7 @@ import {
 import { setHasNext } from '../../features/buy_form_screen_slice'
 import { useDispatch } from 'react-redux'
 import { Tooltip } from 'react-tooltip'
-import { submitEvent } from '../../libs/google-analytics'
+import { submitEvent } from '../../libs/google_analytics'
 
 
 export default function BuyFormExtrasPromo() {

@@ -4,7 +4,7 @@ import { useContext, useState, useEffect } from 'react'
 import { DashboardContext } from '../context/dashboard'
 import { useDispatch } from 'react-redux'
 import { showForm } from '../features/buy_form_visible_slice'
-import { submitEvent } from '../libs/google-analytics'
+import { submitEvent } from '../libs/google_analytics'
 
 export default function CountDown() {
   

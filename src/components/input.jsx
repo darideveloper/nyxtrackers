@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 /**
  * Basic input component
  * @param {Object} props - Component props
@@ -12,20 +14,29 @@
  * @param {Boolean} props.small - Small input
  * @returns {JSX.Element} Input component
  */
-export default function Input({type, name, label, hideLabel, placeholder, required, value, onChange, small = false}) {
-
+export default function Input({
+  type,
+  name,
+  label,
+  hideLabel,
+  placeholder,
+  required,
+  value,
+  onChange,
+  small = false,
+}) {
   const id = `input-${type}-${name}`
 
   return (
-    <div className={`input-wrapper ${small ? 'small' : ''}`}>
-      <label 
+    <div className={clsx('input-wrapper', { small })}>
+      <label
         htmlFor={id}
-        className={hideLabel ? "hide" : ""}
+        className={clsx({ hide: hideLabel })}
       >
         {label}
       </label>
-      <input 
-        type={type} 
+      <input
+        type={type}
         name={name}
         id={id}
         placeholder={placeholder}

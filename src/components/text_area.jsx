@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 /**
  * Basic textarea component
  * @param {Object} props - Component props
@@ -11,15 +13,23 @@
  * @param {Boolean} props.small - Small input
  * @returns {JSX.Element} Input component
  */
-export default function TextArea({name, label, hideLabel, placeholder, required, value, onChange, small = false}) {
-
+export default function TextArea({
+  name,
+  label,
+  hideLabel,
+  placeholder,
+  required,
+  value,
+  onChange,
+  small = false,
+}) {
   const id = `text-area-${name}`
 
   return (
-    <div className={`textarea-wrapper ${small ? 'small' : ''}`}>
-      <label 
+    <div className={clsx('textarea-wrapper', { small })}>
+      <label
         htmlFor={id}
-        className={hideLabel ? "hide" : ""}
+        className={clsx({ hide: hideLabel })}
       >
         {label}
       </label>

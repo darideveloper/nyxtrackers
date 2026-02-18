@@ -7,7 +7,7 @@ import { setHasNext } from "../../features/buy_form_screen_slice"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
 
-import { submitEvent } from "../../libs/google-analytics"
+import { submitEvent } from "../../libs/google_analytics"
 
 
 /**

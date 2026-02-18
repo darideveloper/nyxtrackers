@@ -15,7 +15,7 @@ import EmailForm from '../sections/email_form'
 import Notifications from '../sections/notifications'
 import CountDown from '../sections/countdown'
 import BuyForm from '../sections/buy_form'
-import ScrollToHash from '../utils/ScrollHash'
+import ScrollToHash from '../utils/scroll_hash'
 
 
 function LandingPage() {

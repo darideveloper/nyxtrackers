@@ -16,7 +16,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { setHasNext } from '../../features/buy_form_screen_slice'
-import { submitEvent } from '../../libs/google-analytics'
+import { submitEvent } from '../../libs/google_analytics'
 
 
 export default function BuyFormShipping() {

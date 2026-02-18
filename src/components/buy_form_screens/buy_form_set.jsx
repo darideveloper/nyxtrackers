@@ -10,7 +10,7 @@ import { setSelectedSet } from '../../features/buy_form_data_slice'
 import { useDispatch } from 'react-redux'
 import { setHasNext } from '../../features/buy_form_screen_slice'
 import { useEffect } from 'react'
-import { submitEvent } from '../../libs/google-analytics'
+import { submitEvent } from '../../libs/google_analytics'
 
 
 export default function BuyFormSet() {

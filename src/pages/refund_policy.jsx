@@ -1,6 +1,6 @@
 import DocsContainer from '../components/docs/DocsContainer'
 
-function RefoundPolicy() {
+function RefundPolicy() {
 
   const today = new Date()
   const todayStr = today.toISOString().split('T')[0]
@@ -80,4 +80,4 @@ function RefoundPolicy() {
   )
 }
 
-export default RefoundPolicy
+export default RefundPolicy

@@ -9,11 +9,11 @@ import { Provider } from 'react-redux'
 
 import { createBrowserRouter } from 'react-router'
 import { RouterProvider } from 'react-router'
-import LandingPage from './pages/LandingPage'
-import IssuesPage from './pages/IssuesPage'
-import SetupPage from './pages/SetupPage'
-import TermsOfService from './pages/TermsOfService'
-import RefoundPolicy from './pages/RefoundPolicy'
+import LandingPage from './pages/landing_page'
+import IssuesPage from './pages/issues_page'
+import SetupPage from './pages/setup_page'
+import TermsOfService from './pages/terms_of_service'
+import RefundPolicy from './pages/refund_policy'
 
 const router = createBrowserRouter([
   {
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         "path": "/refund-policy",
-        "element": <RefoundPolicy />
+        "element": <RefundPolicy />
       }
     ]
   }

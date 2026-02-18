@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch } from 'react-redux'
 import { setSession, clearSession } from "../features/session_slice"
 import { getCookies, clearCookies } from '../tools/session'
-import { submitEvent } from '../libs/google-analytics'
+import { submitEvent } from '../libs/google_analytics'
 
 export default function TopBar() {
 

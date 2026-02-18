@@ -5,7 +5,7 @@ import Spinner from '../spinner'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useRef } from 'react'
 import { setHasNext, setHasBack, setNextText } from '../../features/buy_form_screen_slice'
-import { submitEvent } from '../../libs/google-analytics'
+import { submitEvent } from '../../libs/google_analytics'
 
 
 export default function BuyFormDone() {
