@@ -1,13 +1,13 @@
-import DocsContainer from "../components/docs/DocsContainer";
-import { Link } from "react-router";
+import DocsContainer from '../components/docs/DocsContainer'
+import { Link } from 'react-router'
 
 function SetupPage() {
   return (
     <>
       <DocsContainer>
-        <div className="docs-body">
+        <div className='docs-body'>
           <>
-            <h1 id="quick-setup">Quick Setup</h1>
+            <h1 id='quick-setup'>Quick Setup</h1>
             <p>
               If you are using phones, DIY trackers or substituting some body
               locations with anything not prebuilt there are added
@@ -16,69 +16,69 @@ function SetupPage() {
 
             <ul>
               <li>
-                <a href="#making-sure-your-system-is-ready">
+                <a href='#making-sure-your-system-is-ready'>
                   Making sure your system is ready
                 </a>
               </li>
 
               <li>
-                <a href="#install-the-latest-slimevr-installer">
+                <a href='#install-the-latest-slimevr-installer'>
                   Install the latest SlimeVR Installer
                 </a>
               </li>
 
               <li>
-                <a href="#connecting-and-preparing-your-trackers">
+                <a href='#connecting-and-preparing-your-trackers'>
                   Connecting and preparing your trackers
                 </a>
               </li>
 
               <li>
-                <a href="#choosing-and-assigning-body-locations">
+                <a href='#choosing-and-assigning-body-locations'>
                   Choosing and assigning body locations
                 </a>
               </li>
               <li>
-                <a href="#automatically-setting-mounting">
+                <a href='#automatically-setting-mounting'>
                   Automatically setting mounting
                 </a>
               </li>
 
               <li>
-                <a href="#reset-tutorial">Reset Tutorial</a>
+                <a href='#reset-tutorial'>Reset Tutorial</a>
               </li>
 
               <li>
-                <a href="#configuring-proportions">Configuring Proportions</a>
+                <a href='#configuring-proportions'>Configuring Proportions</a>
               </li>
               <li>
-                <a href="#manual-proportions">Manual Proportions</a>
+                <a href='#manual-proportions'>Manual Proportions</a>
               </li>
               <li>
-                <a href="final-settings">Final settings</a>
-              </li>
-
-              <li>
-                <a href="#spawning-trackers">Spawning trackers</a>
-              </li>
-              <li>
-                <a href="#osc">OSC</a>
+                <a href='final-settings'>Final settings</a>
               </li>
 
               <li>
-                <a href="#alternative-wi-fi-options">
+                <a href='#spawning-trackers'>Spawning trackers</a>
+              </li>
+              <li>
+                <a href='#osc'>OSC</a>
+              </li>
+
+              <li>
+                <a href='#alternative-wi-fi-options'>
                   Alternative Wi-Fi Options
                 </a>
               </li>
 
               <li>
-                <a href="#congratulations-your-slime-trackers-should-now-be-set-up">
+                <a href='#congratulations-your-slime-trackers-should-now-be-set-up'>
                   Congratulations, your Slime trackers should now be set up!
                 </a>
               </li>
             </ul>
 
-            <h2 id="making-sure-your-system-is-ready">
+            <h2 id='making-sure-your-system-is-ready'>
               Making sure your system is ready
             </h2>
             <p>
@@ -86,75 +86,85 @@ function SetupPage() {
               is installed and <strong>run it at least once</strong> before
               moving forward.
             </p>
-            <h2 id="install-the-latest-slimevr-installer">
+            <h2 id='install-the-latest-slimevr-installer'>
               Install the latest SlimeVR Installer
             </h2>
             <p>
-              The latest SlimeVR Installer can be found <a href="https://slimevr.dev/download" target="_blank">here</a>. Download it and
-              install it, this installer can be used to update the server
-              software in the future.
+              The latest SlimeVR Installer can be found{' '}
+              <a
+                href='https://slimevr.dev/download'
+                target='_blank'
+              >
+                here
+              </a>
+              . Download it and install it, this installer can be used to update
+              the server software in the future.
             </p>
             <p>
-              If you are on Windows and encounter the following pop up, click{" "}
+              If you are on Windows and encounter the following pop up, click{' '}
               <em>
                 <strong>More info</strong>
-              </em>{" "}
-              text to show the run button. Once it is visible, click{" "}
+              </em>{' '}
+              text to show the run button. Once it is visible, click{' '}
               <strong>Run anyway</strong> to progress.
             </p>
             <p>
               <img
-                src="page-assets/quick_protected.png"
-                alt="Windows defender"
+                src='page-assets/quick_protected.png'
+                alt='Windows defender'
+                loading='lazy'
                 style={{
-                  maxWidth: "45%",
-                  margin: "0 2%",
-                  display: "inline-block",
+                  maxWidth: '45%',
+                  margin: '0 2%',
+                  display: 'inline-block',
                 }}
               />
               <img
-                src="page-assets/quick_runAnyway.png"
-                alt="Windows defender"
+                src='page-assets/quick_runAnyway.png'
+                alt='Windows defender'
+                loading='lazy'
                 style={{
-                  maxWidth: "45%",
-                  margin: "0 2%",
-                  display: "inline-block",
+                  maxWidth: '45%',
+                  margin: '0 2%',
+                  display: 'inline-block',
                 }}
               />
             </p>
             <p>
               If this doesn't solve your issues, try unblocking the file via
-              right clicking on it, properties, and then ticking the{" "}
+              right clicking on it, properties, and then ticking the{' '}
               <strong>Unblock</strong> checkbox.
             </p>
             <p>
               <img
-                src="page-assets/quick_windowsProperties.png"
-                alt="Properties unblock"
+                src='page-assets/quick_windowsProperties.png'
+                alt='Properties unblock'
+                loading='lazy'
               />
             </p>
             <p>
-              Once you have the installer launched, click{" "}
+              Once you have the installer launched, click{' '}
               <strong>Next &gt;</strong> to move through the process. Be sure
               not to change the pre-checked install packages for use with
               SteamVR.
             </p>
             <p>
               <img
-                src="page-assets/quick_installer.png"
-                alt="The Installer wizard"
+                src='page-assets/quick_installer.png'
+                alt='The Installer wizard'
+                loading='lazy'
               />
             </p>
             <p>
-              Bear in mind, if you plan on using the server purely for{" "}
+              Bear in mind, if you plan on using the server purely for{' '}
               standalone usage via OSC , and not PC VR via SteamVR, you can
-              de-select <strong>SteamVR Driver</strong>,{" "}
-              <strong>SlimeVR Feeder App</strong>, and{" "}
+              de-select <strong>SteamVR Driver</strong>,{' '}
+              <strong>SlimeVR Feeder App</strong>, and{' '}
               <strong>USB drivers</strong>. If you don't already have SteamVR
               installed and have launched it previously, you may encounter an
               error.
             </p>
-            <h2 id="connecting-and-preparing-your-trackers">
+            <h2 id='connecting-and-preparing-your-trackers'>
               Connecting and preparing your trackers
             </h2>
             <ol>
@@ -166,8 +176,9 @@ function SetupPage() {
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_intro.png"
-                    alt="The first page of the SlimeVR Wizard"
+                    src='page-assets/quick_intro.png'
+                    alt='The first page of the SlimeVR Wizard'
+                    loading='lazy'
                   />
                 </p>
               </li>
@@ -178,8 +189,9 @@ function SetupPage() {
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_wifi.png"
-                    alt="Inputting WiFi credentials"
+                    src='page-assets/quick_wifi.png'
+                    alt='Inputting WiFi credentials'
+                    loading='lazy'
                   />
                 </p>
               </li>
@@ -193,8 +205,9 @@ function SetupPage() {
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_connectTracker.gif"
-                    alt="Animation of the connection process"
+                    src='page-assets/quick_connectTracker.gif'
+                    alt='Animation of the connection process'
+                    loading='lazy'
                   />
                 </p>
               </li>
@@ -203,28 +216,30 @@ function SetupPage() {
                   Once you have connected all your trackers, you should see them
                   listed with numbers on the right. If you have forgotten which
                   trackers have yet to be plugged in, shaking a connected
-                  tracker will highlight it in the list. Click{" "}
+                  tracker will highlight it in the list. Click{' '}
                   <strong>I connected all my trackers</strong> once you are
                   finished.
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_trackerConnected.png"
-                    alt="Connect trackers page"
+                    src='page-assets/quick_trackerConnected.png'
+                    alt='Connect trackers page'
+                    loading='lazy'
                   />
                 </p>
               </li>
               <li>
                 <p>
                   Following the directions shown on the page, place your
-                  trackers on a flat surface while powered on and click{" "}
+                  trackers on a flat surface while powered on and click{' '}
                   <strong>I placed my trackers on the table</strong> before
                   waiting for the process to complete.
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_calibrate.png"
-                    alt="Calibration page"
+                    src='page-assets/quick_calibrate.png'
+                    alt='Calibration page'
+                    loading='lazy'
                   />
                 </p>
                 <p>
@@ -234,18 +249,19 @@ function SetupPage() {
               </li>
               <li>
                 <p>
-                  Once calibration is complete, click <strong>Continue</strong>{" "}
+                  Once calibration is complete, click <strong>Continue</strong>{' '}
                   to continue.
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_calibrateComplete.png"
-                    alt="Calibration complete"
+                    src='page-assets/quick_calibrateComplete.png'
+                    alt='Calibration complete'
+                    loading='lazy'
                   />
                 </p>
               </li>
             </ol>
-            <h2 id="choosing-and-assigning-body-locations">
+            <h2 id='choosing-and-assigning-body-locations'>
               Choosing and assigning body locations
             </h2>
             <ol>
@@ -285,8 +301,9 @@ function SetupPage() {
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_assign.png"
-                    alt="Tracker location page"
+                    src='page-assets/quick_assign.png'
+                    alt='Tracker location page'
+                    loading='lazy'
                   />
                 </p>
               </li>
@@ -299,14 +316,15 @@ function SetupPage() {
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_assignPopup.png"
-                    alt="Tracker list pop up for choosing the right tracker"
+                    src='page-assets/quick_assignPopup.png'
+                    alt='Tracker list pop up for choosing the right tracker'
+                    loading='lazy'
                   />
                 </p>
               </li>
               <li>
                 <p>
-                  Once you have assigned all your trackers, click{" "}
+                  Once you have assigned all your trackers, click{' '}
                   <strong>I'm ready</strong> to move forward.
                 </p>
               </li>
@@ -330,8 +348,8 @@ function SetupPage() {
                   </li>
                   <li>
                     Make sure your trackers are at a cardinal direction from
-                    you, they must be facing <strong>front</strong>,{" "}
-                    <strong>back</strong>, <strong>left</strong> or{" "}
+                    you, they must be facing <strong>front</strong>,{' '}
+                    <strong>back</strong>, <strong>left</strong> or{' '}
                     <strong>right</strong>.
                   </li>
                   <li>
@@ -363,13 +381,14 @@ function SetupPage() {
                   tracking quality, but improper calibration can make it worse.
                   It requires some time to figure out and check if it's right
                   for you and the way you put on your trackers. We're working on
-                  making it better, but we suggest{" "}
+                  making it better, but we suggest{' '}
                   <strong>new users use the manual process</strong>.
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_mountingChoice.png"
-                    alt="Manual or Automatic mounting page"
+                    src='page-assets/quick_mountingChoice.png'
+                    alt='Manual or Automatic mounting page'
+                    loading='lazy'
                   />
                 </p>
               </li>
@@ -380,8 +399,9 @@ function SetupPage() {
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_mountingManual.png"
-                    alt="Manual mounting page"
+                    src='page-assets/quick_mountingManual.png'
+                    alt='Manual mounting page'
+                    loading='lazy'
                   />
                 </p>
               </li>
@@ -392,8 +412,9 @@ function SetupPage() {
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_mountingPopup.png"
-                    alt="Manual mounting popup"
+                    src='page-assets/quick_mountingPopup.png'
+                    alt='Manual mounting popup'
+                    loading='lazy'
                   />
                 </p>
               </li>
@@ -404,7 +425,7 @@ function SetupPage() {
                 </p>
               </li>
             </ol>
-            <h3 id="automatically-setting-mounting">
+            <h3 id='automatically-setting-mounting'>
               Automatically setting mounting
             </h3>
             <p>
@@ -431,11 +452,12 @@ function SetupPage() {
             </blockquote>
             <p>
               <img
-                src="page-assets/quick_mountingAuto.png"
-                alt="The automatic process for determining facing location"
+                src='page-assets/quick_mountingAuto.png'
+                alt='The automatic process for determining facing location'
+                loading='lazy'
               />
             </p>
-            <h2 id="reset-tutorial">Reset Tutorial</h2>
+            <h2 id='reset-tutorial'>Reset Tutorial</h2>
             <ol>
               <li>
                 <p>
@@ -444,8 +466,9 @@ function SetupPage() {
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_reset.png"
-                    alt="Reset Tutorials"
+                    src='page-assets/quick_reset.png'
+                    alt='Reset Tutorials'
+                    loading='lazy'
                   />
                 </p>
                 <ul>
@@ -473,7 +496,7 @@ function SetupPage() {
                 </p>
               </li>
             </ol>
-            <h2 id="configuring-proportions">Configuring Proportions</h2>
+            <h2 id='configuring-proportions'>Configuring Proportions</h2>
             <ol>
               <li>
                 <p>
@@ -483,8 +506,9 @@ function SetupPage() {
                 </p>
                 <p>
                   <img
-                    src="page-assets/quick_proportionsChoice.png"
-                    alt="Manual or Automatic Proportions page"
+                    src='page-assets/quick_proportionsChoice.png'
+                    alt='Manual or Automatic Proportions page'
+                    loading='lazy'
                   />
                 </p>
                 <p>
@@ -495,8 +519,8 @@ function SetupPage() {
                   trying this.
                 </p>
                 <p>
-                  If you are not using SlimeVR with SteamVR, you will have to{" "}
-                  <a href="#manual-proportions">
+                  If you are not using SlimeVR with SteamVR, you will have to{' '}
+                  <a href='#manual-proportions'>
                     manually set your proportions
                   </a>
                   .
@@ -516,39 +540,41 @@ function SetupPage() {
                 </blockquote>
                 <p>
                   <img
-                    src="page-assets/quick_proportionsAuto.png"
-                    alt="Automatic proportions wizard"
+                    src='page-assets/quick_proportionsAuto.png'
+                    alt='Automatic proportions wizard'
+                    loading='lazy'
                   />
                 </p>
               </li>
             </ol>
-            <h3 id="manual-proportions">Manual Proportions</h3>
+            <h3 id='manual-proportions'>Manual Proportions</h3>
             <p>
               If you are not using SteamVR you will have to manually set each of
               these values or use VRChat OSC Query to enable the use of
               automatic proportions. For more information on how to measure each
-              value please refer to the information at the top of the{" "}
-              <a href="server/body-config.html#measurements">
+              value please refer to the information at the top of the{' '}
+              <a href='server/body-config.html#measurements'>
                 body proportions configuration page
               </a>
               .
             </p>
             <p>
               <img
-                src="page-assets/quick_proportionsManual.png"
-                alt="Manual proportions"
+                src='page-assets/quick_proportionsManual.png'
+                alt='Manual proportions'
+                loading='lazy'
               />
             </p>
             <p>
               For more information on how to set up VRChat OSC Query please
               refer to the [mobile installation]
             </p>
-            <h2 id="final-settings">Final settings</h2>
+            <h2 id='final-settings'>Final settings</h2>
             <p>
               The last step is to go to the settings page and set up the
               specifics of how you want to use it.
             </p>
-            <h3 id="spawning-trackers">Spawning trackers</h3>
+            <h3 id='spawning-trackers'>Spawning trackers</h3>
             <p>
               The SlimeVR Server now has automatic assignment of SteamVR
               trackers, this shows what will activate for each set with that
@@ -573,40 +599,45 @@ function SetupPage() {
             </ul>
             <p>
               <img
-                src="page-assets/quick_settingsPage.png"
-                alt="SteamVR Settings"
+                src='page-assets/quick_settingsPage.png'
+                alt='SteamVR Settings'
+                loading='lazy'
               />
             </p>
-            <h3 id="osc">OSC</h3>
+            <h3 id='osc'>OSC</h3>
             <p>
               If you are primarily using OSC, make sure you first disable all of
               the trackers for SteamVR before going to OSC on the settings page.
             </p>
             <p>
-              <img src="page-assets/quick_oscSettings.png" alt="OSC Settings" />
+              <img
+                src='page-assets/quick_oscSettings.png'
+                alt='OSC Settings'
+                loading='lazy'
+              />
             </p>
             <p>
               If you wish to change to SteamVR trackers you will have to disable
               OSC and turn the SteamVR trackers back on first.
             </p>
             <p>
-              For more information on OSC, please visit the{" "}
-              <a href="server/osc-information.html">OSC page</a>.
+              For more information on OSC, please visit the{' '}
+              <a href='server/osc-information.html'>OSC page</a>.
             </p>
             <p>
               <strong>More info to come on this process soon.</strong>
             </p>
             <main>
-              <h3 id="alternative-wi-fi-options">Alternative Wi-Fi Options</h3>
-              <h4 id="windows-mobile-hotspot">Windows Mobile Hotspot</h4>
+              <h3 id='alternative-wi-fi-options'>Alternative Wi-Fi Options</h3>
+              <h4 id='windows-mobile-hotspot'>Windows Mobile Hotspot</h4>
               <p>
                 You can set up a Wi-Fi hotspot through Windows using the Mobile
                 Hotspot feature.
               </p>
               <ol>
                 <li>
-                  Navigate in Windows settings to{" "}
-                  <a href="ms-settings:network-mobilehotspot">
+                  Navigate in Windows settings to{' '}
+                  <a href='ms-settings:network-mobilehotspot'>
                     Settings &gt; Network &amp; internet &gt; Mobile hotspot
                   </a>
                   .
@@ -630,16 +661,17 @@ function SetupPage() {
               </ol>
             </main>
 
-            <h2 id="congratulations-your-slime-trackers-should-now-be-set-up">
+            <h2 id='congratulations-your-slime-trackers-should-now-be-set-up'>
               Congratulations, your Slime trackers should now be set up!
             </h2>
             <p>
               <img
-                src="page-assets/quick_allDone.png"
-                alt="Setup complete page"
+                src='page-assets/quick_allDone.png'
+                alt='Setup complete page'
+                loading='lazy'
               />
             </p>
-            <h3 id="putting-them-on-again-after-this-setup">
+            <h3 id='putting-them-on-again-after-this-setup'>
               Putting them on again after this setup
             </h3>
             <p>
@@ -649,7 +681,7 @@ function SetupPage() {
               setup! Make sure that you have your headset on and SteamVR running
               before going through this process.
             </p>
-            <h3 id="having-problems">Having problems?</h3>
+            <h3 id='having-problems'>Having problems?</h3>
             <p>
               <strong>My trackers in SteamVR aren't set up properly</strong>
             </p>
@@ -660,10 +692,10 @@ function SetupPage() {
               this is in game it could be a calibration issue!
             </p>
             <p>
-              For all other problems, check the{" "}
+              For all other problems, check the{' '}
               <Link
                 to={{
-                  pathname: "/issues",
+                  pathname: '/issues',
                 }}
               >
                 Common Issues page
@@ -673,7 +705,7 @@ function SetupPage() {
         </div>
       </DocsContainer>
     </>
-  );
+  )
 }
 
-export default SetupPage;
+export default SetupPage

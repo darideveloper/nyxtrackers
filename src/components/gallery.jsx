@@ -1,16 +1,23 @@
 import PropTypes from 'prop-types'
 
-import { useState } from 'react';
+import { useState } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 
-export default function Gallery({ images_data, cards_data, spaceBetween=10, slidesPerView=1, loop=true, pagination=true, onClick }) {
-
+export default function Gallery({
+  images_data,
+  cards_data,
+  spaceBetween = 10,
+  slidesPerView = 1,
+  loop = true,
+  pagination = true,
+  onClick,
+}) {
   const [delay, setDelay] = useState(8000)
 
   let modules = [Navigation, Autoplay]
@@ -18,7 +25,6 @@ export default function Gallery({ images_data, cards_data, spaceBetween=10, slid
     modules.push(Pagination)
   }
 
-  
   return (
     <Swiper
       aria-label='Hero gallery'
@@ -35,35 +41,41 @@ export default function Gallery({ images_data, cards_data, spaceBetween=10, slid
       onSlideChange={() => setDelay(3000)}
       loop={loop}
     >
-      {images_data && images_data.map((image_data, index) => {
-        return (
-          <SwiperSlide key={index}>
-            <a
-              href={image_data.link}
-              target='_blank'
-            >
-              <img
-                src={image_data.image}
-                alt={image_data.alt}
-              />
-            </a>
-          </SwiperSlide>
-        )
-      })}
+      {images_data &&
+        images_data.map((image_data, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <a
+                href={image_data.link}
+                target='_blank'
+              >
+                <img
+                  src={image_data.image}
+                  alt={image_data.alt}
+                  loading='lazy'
+                />
+                <div className='swiper-lazy-preloader'></div>
+              </a>
+            </SwiperSlide>
+          )
+        })}
 
-      {cards_data && cards_data.map((card_data, index) => {
-        return (
-          <SwiperSlide key={index}>
-            <div className="content">
-              <img
-                src={card_data.image}
-                alt={`${card_data.user} profile image`}
-                onClick={onClick}
-              />
-            </div>
-          </SwiperSlide>
-        )
-      })}
+      {cards_data &&
+        cards_data.map((card_data, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <div className='content'>
+                <img
+                  src={card_data.image}
+                  alt={`${card_data.user} profile image`}
+                  onClick={onClick}
+                  loading='lazy'
+                />
+                <div className='swiper-lazy-preloader'></div>
+              </div>
+            </SwiperSlide>
+          )
+        })}
     </Swiper>
   )
 }

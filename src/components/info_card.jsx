@@ -20,6 +20,7 @@ export default function InfoCard({ icon, title, text, link = null }) {
         src={icon}
         alt={`${full_alt_text} icon`}
         className='icon'
+        loading='lazy'
       />
       <div className='separator'></div>
       <div className='text'>
